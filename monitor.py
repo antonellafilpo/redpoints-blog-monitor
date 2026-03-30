@@ -2,12 +2,13 @@
 Red Points Blog Monitor
 =======================
 Weekly script that:
-  1. Pulls Google Search Console data for KEEP posts
-  2. Pulls Omnia citation data per blog post URL
-  3. Applies 3 flags: traffic drop, LLM drop, stale content
-  4. Generates a filterable HTML report and saves weekly JSON data
-  5. Sends 3-bullet executive summary to Slack (#blog-monitor)
-  6. Emails the HTML report to the distribution list
+  1. Fetches last_updated dates from WordPress REST API for all KEEP posts
+  2. Pulls Google Search Console data for KEEP posts
+  3. Pulls Omnia citation data per blog post URL
+  4. Applies 3 flags: traffic drop, LLM drop, stale content
+  5. Generates a filterable HTML report and saves weekly JSON data
+  6. Sends 3-bullet executive summary to Slack (#blog-monitor)
+  7. Emails the HTML report to the distribution list
 
 Flags:
   🔴 Traffic drop  — weekly clicks ≥30% below 12-week average AND absolute drop ≥50 clicks
@@ -18,9 +19,11 @@ Timing rules (per PDF best practices):
   - Always analyse last complete Mon–Sun week (never current partial week)
   - Respect GSC 3-day reporting lag
   - Suppress traffic alerts for first 4 weeks (baseline not yet reliable)
+  - 6-week cooldown for score 12–14 posts after update (high-value, needs clean signal)
+  - 4-week cooldown for score 8–11 posts after update
   - 4-week cooldown for newly merged posts after 301 redirect
-  - 2-week cooldown after any manual content update
   - Exclude seasonal periods from baseline AND suppress alerts during them
+  - WordPress API called at start of run (scheduled 6am UTC = low traffic window)
 
 Run: python monitor.py
 Deploy: GitHub Actions (see blog_monitor.yml)
@@ -70,6 +73,11 @@ OMNIA_TOKEN              = os.getenv("OMNIA_TOKEN")
 OMNIA_BRAND_ID           = os.getenv("OMNIA_BRAND_ID", "03adaaca-5265-404e-b4b1-bbaea0ce73f9")
 
 ANTHROPIC_API_KEY        = os.getenv("ANTHROPIC_API_KEY")
+
+# WordPress REST API — auto-fetches last_updated for each post
+# No credentials needed — public API for published posts
+WP_API_BASE              = os.getenv("WP_API_BASE", "https://www.redpoints.com/wp-json/wp/v2/posts")
+WP_API_TIMEOUT           = 10  # seconds per request
 
 DATA_DIR                 = Path("data")
 DATA_DIR.mkdir(exist_ok=True)
@@ -142,11 +150,64 @@ def is_seasonal(check_date: datetime.date) -> str | None:
 
 
 # ---------------------------------------------------------------------------
+# WORDPRESS API — auto-fetch last_updated for each KEEP post
+# ---------------------------------------------------------------------------
+
+def fetch_wordpress_last_updated() -> dict[str, str]:
+    """
+    Queries WordPress REST API for the modified date of every KEEP post.
+    Returns a dict of {slug: "YYYY-MM-DD"}.
+    Falls back to hardcoded last_updated in KEEP_POSTS if the API call fails.
+    Called once at the start of the pipeline (6am UTC = low-traffic window).
+    """
+    wp_dates = {}
+    slugs = [path.strip("/").split("/")[-1] for path in KEEP_POSTS.keys()]
+    log.info(f"Fetching WordPress last_updated for {len(slugs)} posts...")
+
+    for slug in slugs:
+        try:
+            resp = requests.get(
+                WP_API_BASE,
+                params={"slug": slug, "_fields": "slug,modified"},
+                timeout=WP_API_TIMEOUT,
+            )
+            resp.raise_for_status()
+            data = resp.json()
+            if data and isinstance(data, list) and len(data) > 0:
+                modified_raw = data[0].get("modified", "")
+                if modified_raw:
+                    # WordPress returns ISO 8601: "2026-03-27T12:19:35"
+                    wp_dates[slug] = modified_raw[:10]
+                    log.debug(f"  WP {slug}: {modified_raw[:10]}")
+        except Exception as e:
+            log.warning(f"  WP API failed for {slug}: {e} — will use hardcoded date")
+
+    log.info(f"WordPress dates fetched for {len(wp_dates)}/{len(slugs)} posts")
+    return wp_dates
+
+
+def get_last_updated(path: str, wp_dates: dict) -> str | None:
+    """
+    Returns the best available last_updated date for a post.
+    Priority: WordPress API (live) > hardcoded in KEEP_POSTS (fallback).
+    """
+    slug = path.strip("/").split("/")[-1]
+    if slug in wp_dates:
+        return wp_dates[slug]
+    # Fallback to hardcoded value
+    return KEEP_POSTS.get(path, {}).get("last_updated")
+
+
+# ---------------------------------------------------------------------------
 # KEEP POSTS
 # Loaded from blog audit. Each entry: URL path → metadata
-# Score, cluster, last_updated_date are from the 2026 blog audit.
-# Add update_cooldown_until when a post is manually updated.
+# last_updated is used as fallback only — live date comes from WordPress API.
+# Add update_cooldown_until when forcing a manual cooldown override.
 # Add merge_cooldown_until when a post completes a 301 merge.
+# Cooldown periods:
+#   - Score 12–14 (Tier 1): 6 weeks after update (needs clean traffic signal)
+#   - Score 8–11  (Tier 2): 4 weeks after update
+#   - Merged posts:         4 weeks after 301 redirect goes live
 # ---------------------------------------------------------------------------
 
 KEEP_POSTS = {
@@ -445,11 +506,14 @@ def run_flags(
     omnia_previous: dict,
     history: dict,
     baseline_weeks_available: int,
+    wp_dates: dict | None = None,
 ) -> list[dict]:
     """Runs all 3 flags across KEEP posts and returns list of flagged posts."""
     today = datetime.date.today()
     season = is_seasonal(current_monday)
     flagged = []
+    if wp_dates is None:
+        wp_dates = {}
 
     for path, meta in KEEP_POSTS.items():
         full_url = GSC_SITE_URL.rstrip("/") + path
@@ -506,20 +570,23 @@ def run_flags(
                 })
 
         # ── FLAG 3: Stale content ────────────────────────────────────────────
-        last_updated_str = meta.get("last_updated")
+        # Uses WordPress API date if available, falls back to hardcoded last_updated
+        last_updated_str = get_last_updated(path, wp_dates)
         if last_updated_str and meta.get("score", 0) >= STALE_MIN_SCORE:
             last_updated = datetime.date.fromisoformat(last_updated_str)
             months_since = (today - last_updated).days / 30
+            source = "WP" if path.strip("/").split("/")[-1] in wp_dates else "audit"
             if months_since >= STALE_MONTHS:
                 flags.append({
                     "type": "stale",
                     "label": "📅 Stale Content",
                     "detail": (
                         f"Not updated in {months_since:.0f} months "
-                        f"(last updated: {last_updated_str}, score {meta['score']}/14)"
+                        f"(last updated: {last_updated_str} [{source}], score {meta['score']}/14)"
                     ),
                     "months_since_update": round(months_since, 1),
                     "last_updated": last_updated_str,
+                    "last_updated_source": source,
                 })
 
         if flags:
@@ -1205,6 +1272,9 @@ def main():
     if season:
         log.info(f"Seasonal period detected: {season}")
 
+    # ── Step 1: WordPress API — fetch live last_updated dates (6am UTC, low traffic) ──
+    wp_dates = fetch_wordpress_last_updated()
+
     # Load historical data
     history = load_historical_data()
     baseline_weeks_available = len(history)
@@ -1222,7 +1292,7 @@ def main():
         week_key(prev_monday), prev_sunday.strftime("%Y-%m-%d")
     )
 
-    # Run flags
+    # Run flags — pass WordPress dates so stale check uses live modified dates
     flagged = run_flags(
         current_monday=current_monday,
         gsc_current=gsc_current,
@@ -1230,6 +1300,7 @@ def main():
         omnia_previous=omnia_previous,
         history=history,
         baseline_weeks_available=baseline_weeks_available,
+        wp_dates=wp_dates,
     )
 
     # Generate executive summary
