@@ -715,46 +715,51 @@ def run_traffic_diagnosis(
         full_url = post["url"]
         path = post["path"]
 
-        diagnosis = diagnose_traffic_drop(
-            path=path,
-            full_url=full_url,
-            gsc_current_clicks=post.get("gsc_clicks_this_week", 0),
-            gsc_avg_clicks=traffic_flags[0].get("baseline", 0),
-            gsc_service=gsc_service,
-            week_start=week_start,
-            week_end=week_end,
-            prev_week_start=prev_week_start,
-            prev_week_end=prev_week_end,
-        )
-
-        # Generate content brief — fetch our content + top competitor content
-        content_brief_html = ""
-        primary_keyword = diagnosis.get("primary_keyword", "")
-        competitors = diagnosis.get("competitors", [])
-        top_competitor = next(
-            (c for c in competitors if "redpoints.com" not in c.get("url", "")), None
-        )
-
-        if primary_keyword and top_competitor:
-            log.info(f"  Fetching content for brief: {full_url} vs {top_competitor['url']}")
-            our_content = fetch_post_content(full_url)
-            competitor_content = fetch_post_content(top_competitor["url"])
-            content_brief_html = generate_content_brief(
-                post_title=post["title"],
-                post_url=full_url,
-                primary_keyword=primary_keyword,
-                our_content=our_content,
-                competitor_url=top_competitor["url"],
-                competitor_content=competitor_content,
-                diagnosis=diagnosis,
+        try:
+            diagnosis = diagnose_traffic_drop(
+                path=path,
+                full_url=full_url,
+                gsc_current_clicks=post.get("gsc_clicks_this_week", 0),
+                gsc_avg_clicks=traffic_flags[0].get("baseline", 0),
+                gsc_service=gsc_service,
+                week_start=week_start,
+                week_end=week_end,
+                prev_week_start=prev_week_start,
+                prev_week_end=prev_week_end,
             )
-        else:
-            log.warning(f"  Skipping content brief for {path} — no keyword or competitor data")
 
-        # Attach diagnosis and brief to the traffic flag
-        for flag in traffic_flags:
-            flag["diagnosis"] = diagnosis
-            flag["content_brief_html"] = content_brief_html
+            # Generate content brief
+            content_brief_html = ""
+            primary_keyword = diagnosis.get("primary_keyword", "")
+            competitors = diagnosis.get("competitors", [])
+            top_competitor = next(
+                (c for c in competitors if "redpoints.com" not in c.get("url", "")), None
+            )
+
+            if primary_keyword and top_competitor:
+                log.info(f"  Fetching content for brief: {full_url} vs {top_competitor['url']}")
+                our_content = fetch_post_content(full_url)
+                competitor_content = fetch_post_content(top_competitor["url"])
+                content_brief_html = generate_content_brief(
+                    post_title=post["title"],
+                    post_url=full_url,
+                    primary_keyword=primary_keyword,
+                    our_content=our_content,
+                    competitor_url=top_competitor["url"],
+                    competitor_content=competitor_content,
+                    diagnosis=diagnosis,
+                )
+            else:
+                log.warning(f"  Skipping content brief — no keyword or competitor found for {path}")
+
+            # Attach diagnosis and brief to the traffic flag
+            for flag in traffic_flags:
+                flag["diagnosis"] = diagnosis
+                flag["content_brief_html"] = content_brief_html
+
+        except Exception as e:
+            log.error(f"  Phase 2 diagnosis failed for {path}: {e}")
+            # Continue — email still sends without brief for this post
 
     return flagged_posts
 # Loaded from blog audit. Each entry: URL path → metadata
@@ -1941,14 +1946,18 @@ def main():
 
     # ── Phase 2: Diagnosis + content brief for all traffic drop posts ─────────
     prev_monday, prev_sunday = date_range_for_week_n(current_monday, 1)
-    flagged = run_traffic_diagnosis(
-        flagged_posts=flagged,
-        gsc_service=gsc_service,
-        week_start=week_start,
-        week_end=week_end,
-        prev_week_start=week_key(prev_monday),
-        prev_week_end=prev_sunday.strftime("%Y-%m-%d"),
-    )
+    try:
+        flagged = run_traffic_diagnosis(
+            flagged_posts=flagged,
+            gsc_service=gsc_service,
+            week_start=week_start,
+            week_end=week_end,
+            prev_week_start=week_key(prev_monday),
+            prev_week_end=prev_sunday.strftime("%Y-%m-%d"),
+        )
+        log.info("Phase 2 diagnosis completed")
+    except Exception as e:
+        log.error(f"Phase 2 diagnosis failed — email will send without briefs: {e}")
 
     # Generate executive summary
     summary = generate_executive_summary(flagged, week_end, season)
