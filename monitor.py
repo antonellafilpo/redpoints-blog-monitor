@@ -3,19 +3,25 @@ Red Points Blog Monitor
 =======================
 Weekly script that:
   1. Fetches last_updated dates from WordPress REST API for all KEEP posts
-  2. Pulls Google Search Console data for KEEP posts
+  2. Pulls Google Search Console data for KEEP posts (clicks + query breakdown)
   3. Pulls Omnia citation data per blog post URL
   4. Applies 3 flags: traffic drop, LLM drop, stale content
-  5. Generates a filterable HTML report and saves weekly JSON data
-  6. Sends 3-bullet executive summary to Slack (#blog-monitor)
-  7. Emails the HTML report to the distribution list
+  5. For each traffic drop flag: runs full diagnosis via GSC + Semrush
+     - Position change, impressions pattern → root cause verdict
+     - Top queries driving the drop (GSC query-level data)
+     - Competitor movement on primary keyword (Semrush)
+     - Fetches our post + competitor post content
+     - Sends both to Claude API → auto-generates content brief
+  6. Generates a filterable HTML report and saves weekly JSON data
+  7. Sends 3-bullet executive summary + diagnosis to Slack (#blog-monitor)
+  8. Emails the HTML report with content briefs to the distribution list
 
 Flags:
   🔴 Traffic drop  — weekly clicks ≥30% below 12-week average AND absolute drop ≥50 clicks
   🟡 LLM drop      — citations drop ≥15 AND ≥40% week over week (Omnia)
   📅 Stale content — not updated in 6+ months AND post score ≥10/14
 
-Timing rules (per PDF best practices):
+Timing rules:
   - Always analyse last complete Mon–Sun week (never current partial week)
   - Respect GSC 3-day reporting lag
   - Suppress traffic alerts for first 4 weeks (baseline not yet reliable)
@@ -24,6 +30,7 @@ Timing rules (per PDF best practices):
   - 4-week cooldown for newly merged posts after 301 redirect
   - Exclude seasonal periods from baseline AND suppress alerts during them
   - WordPress API called at start of run (scheduled 6am UTC = low traffic window)
+  - Semrush: ~20 units per flagged post, well within Business plan 3,000/day limit
 
 Run: python monitor.py
 Deploy: GitHub Actions (see blog_monitor.yml)
@@ -81,6 +88,11 @@ WP_API_TIMEOUT           = 10  # seconds per request
 
 DATA_DIR                 = Path("data")
 DATA_DIR.mkdir(exist_ok=True)
+
+# Semrush API — competitor analysis for traffic drop flags
+SEMRUSH_API_KEY          = os.getenv("SEMRUSH_API_KEY")
+SEMRUSH_DATABASE         = os.getenv("SEMRUSH_DATABASE", "us")
+SEMRUSH_API_BASE         = "https://api.semrush.com/"
 
 # Alert thresholds
 TRAFFIC_DROP_PCT         = float(os.getenv("TRAFFIC_DROP_PCT", "0.30"))    # 30%
@@ -199,7 +211,552 @@ def get_last_updated(path: str, wp_dates: dict) -> str | None:
 
 
 # ---------------------------------------------------------------------------
-# KEEP POSTS
+# PHASE 2 — TRAFFIC DROP DIAGNOSIS + CONTENT BRIEF
+# ---------------------------------------------------------------------------
+
+def fetch_gsc_query_breakdown(service, url: str, start_date: str, end_date: str,
+                               prev_start: str, prev_end: str) -> dict:
+    """
+    Pulls query-level click data for a specific URL.
+    Returns current week vs 4 weeks ago for top 5 queries.
+    """
+    def query_gsc(s_date, e_date):
+        body = {
+            "startDate": s_date, "endDate": e_date,
+            "dimensions": ["query"],
+            "rowLimit": 10,
+            "dimensionFilterGroups": [{"filters": [{
+                "dimension": "page", "operator": "equals", "expression": url,
+            }]}],
+        }
+        try:
+            resp = service.searchanalytics().query(siteUrl=GSC_SITE_URL, body=body).execute()
+            return {r["keys"][0]: {"clicks": r["clicks"], "position": r["position"]}
+                    for r in resp.get("rows", [])}
+        except Exception as e:
+            log.warning(f"  GSC query breakdown failed for {url}: {e}")
+            return {}
+
+    current = query_gsc(start_date, end_date)
+    previous = query_gsc(prev_start, prev_end)
+
+    breakdown = []
+    all_queries = set(list(current.keys())[:5]) | set(list(previous.keys())[:5])
+    for q in sorted(all_queries,
+                    key=lambda x: previous.get(x, {}).get("clicks", 0)
+                    - current.get(x, {}).get("clicks", 0),
+                    reverse=True)[:5]:
+        curr_clicks = current.get(q, {}).get("clicks", 0)
+        prev_clicks = previous.get(q, {}).get("clicks", 0)
+        breakdown.append({
+            "query": q,
+            "prev_clicks": round(prev_clicks),
+            "curr_clicks": round(curr_clicks),
+            "change": round(curr_clicks - prev_clicks),
+        })
+    return {"queries": breakdown, "primary_keyword": breakdown[0]["query"] if breakdown else ""}
+
+
+def fetch_semrush_competitors(keyword: str) -> list[dict]:
+    """
+    Queries Semrush for top 5 organic results on a given keyword.
+    Returns list of {url, position, domain} sorted by position.
+    Uses ~10 Semrush units.
+    """
+    if not SEMRUSH_API_KEY:
+        log.warning("  SEMRUSH_API_KEY not set — skipping competitor analysis")
+        return []
+    try:
+        params = {
+            "type": "phrase_organic",
+            "key": SEMRUSH_API_KEY,
+            "phrase": keyword,
+            "database": SEMRUSH_DATABASE,
+            "display_limit": 5,
+            "export_columns": "Dn,Ur,Po",
+        }
+        resp = requests.get(SEMRUSH_API_BASE, params=params, timeout=15)
+        resp.raise_for_status()
+        lines = resp.text.strip().split("\n")
+        if len(lines) < 2:
+            return []
+        competitors = []
+        for line in lines[1:]:
+            parts = line.split(";")
+            if len(parts) >= 3:
+                competitors.append({
+                    "domain": parts[0].strip(),
+                    "url": parts[1].strip(),
+                    "position": int(parts[2].strip()) if parts[2].strip().isdigit() else 99,
+                })
+        log.info(f"  Semrush: {len(competitors)} competitors for '{keyword}'")
+        return competitors
+    except Exception as e:
+        log.error(f"  Semrush failed for '{keyword}': {e}")
+        return []
+
+
+def fetch_semrush_position_history(url: str, keyword: str) -> dict:
+    """
+    Gets current vs previous position for our URL on a keyword.
+    Uses ~10 Semrush units.
+    """
+    if not SEMRUSH_API_KEY:
+        return {}
+    try:
+        params = {
+            "type": "url_organic",
+            "key": SEMRUSH_API_KEY,
+            "url": url,
+            "database": SEMRUSH_DATABASE,
+            "display_limit": 10,
+            "export_columns": "Ph,Po,Pp",
+        }
+        resp = requests.get(SEMRUSH_API_BASE, params=params, timeout=15)
+        resp.raise_for_status()
+        lines = resp.text.strip().split("\n")
+        for line in lines[1:]:
+            parts = line.split(";")
+            if len(parts) >= 3 and parts[0].strip().lower() == keyword.lower():
+                return {
+                    "keyword": keyword,
+                    "position_now": int(parts[1].strip()) if parts[1].strip().isdigit() else None,
+                    "position_prev": int(parts[2].strip()) if parts[2].strip().isdigit() else None,
+                }
+        return {}
+    except Exception as e:
+        log.warning(f"  Semrush position history failed: {e}")
+        return {}
+
+
+def fetch_post_content(url: str, timeout: int = 15) -> str:
+    """
+    Fetches the text content of a webpage for content brief generation.
+    Returns plain text, truncated to ~4,000 chars for Claude context efficiency.
+    """
+    try:
+        headers = {"User-Agent": "Mozilla/5.0 (compatible; RedPointsBlogMonitor/1.0)"}
+        resp = requests.get(url, headers=headers, timeout=timeout)
+        resp.raise_for_status()
+        # Basic HTML → text stripping (no beautifulsoup dependency)
+        import re
+        text = resp.text
+        # Remove scripts, styles, nav, footer
+        text = re.sub(r'<(script|style|nav|footer|header)[^>]*>.*?</\1>', ' ', text, flags=re.S)
+        # Remove all HTML tags
+        text = re.sub(r'<[^>]+>', ' ', text)
+        # Collapse whitespace
+        text = re.sub(r'\s+', ' ', text).strip()
+        return text[:4000]
+    except Exception as e:
+        log.warning(f"  Could not fetch content from {url}: {e}")
+        return ""
+
+
+def diagnose_traffic_drop(
+    path: str,
+    full_url: str,
+    gsc_current_clicks: float,
+    gsc_avg_clicks: float,
+    gsc_service,
+    week_start: str,
+    week_end: str,
+    prev_week_start: str,
+    prev_week_end: str,
+) -> dict:
+    """
+    Runs full diagnosis for a traffic drop flag:
+    1. GSC query breakdown (top queries, which ones dropped)
+    2. Impression check (ranking loss vs CTR problem vs indexing issue)
+    3. Semrush competitor movement
+    4. Root cause verdict
+    5. Recommended action
+    Returns a diagnosis dict to be attached to the flag.
+    """
+    log.info(f"  Running diagnosis for {path}")
+    diagnosis = {
+        "query_breakdown": [],
+        "primary_keyword": "",
+        "impressions_signal": "",
+        "competitors": [],
+        "our_position_now": None,
+        "our_position_prev": None,
+        "root_cause": "",
+        "verdict": "",
+        "recommended_action": "",
+    }
+
+    # ── Step 1: GSC query breakdown ──────────────────────────────────────────
+    qb = fetch_gsc_query_breakdown(
+        gsc_service, full_url,
+        week_start, week_end,
+        prev_week_start, prev_week_end,
+    )
+    diagnosis["query_breakdown"] = qb.get("queries", [])
+    diagnosis["primary_keyword"] = qb.get("primary_keyword", "")
+
+    # ── Step 2: Impressions check ────────────────────────────────────────────
+    try:
+        imp_body = {
+            "startDate": week_start, "endDate": week_end,
+            "dimensions": ["page"],
+            "dimensionFilterGroups": [{"filters": [{
+                "dimension": "page", "operator": "equals", "expression": full_url,
+            }]}],
+        }
+        imp_resp = gsc_service.searchanalytics().query(
+            siteUrl=GSC_SITE_URL, body=imp_body
+        ).execute()
+        curr_imp = imp_resp.get("rows", [{}])[0].get("impressions", 0) if imp_resp.get("rows") else 0
+
+        prev_imp_body = {**imp_body, "startDate": prev_week_start, "endDate": prev_week_end}
+        prev_imp_resp = gsc_service.searchanalytics().query(
+            siteUrl=GSC_SITE_URL, body=prev_imp_body
+        ).execute()
+        prev_imp = prev_imp_resp.get("rows", [{}])[0].get("impressions", 0) if prev_imp_resp.get("rows") else 0
+
+        curr_pos = imp_resp.get("rows", [{}])[0].get("position", 0) if imp_resp.get("rows") else 0
+        prev_pos = prev_imp_resp.get("rows", [{}])[0].get("position", 0) if prev_imp_resp.get("rows") else 0
+
+        diagnosis["our_position_now"] = round(curr_pos, 1)
+        diagnosis["our_position_prev"] = round(prev_pos, 1)
+
+        if prev_imp > 0:
+            imp_change_pct = (curr_imp - prev_imp) / prev_imp
+            if imp_change_pct < -0.30:
+                diagnosis["impressions_signal"] = "collapse"  # indexing or major ranking loss
+            elif imp_change_pct < -0.10:
+                diagnosis["impressions_signal"] = "drop"      # ranking loss
+            elif imp_change_pct > -0.05:
+                diagnosis["impressions_signal"] = "stable"    # CTR problem or SERP feature
+            else:
+                diagnosis["impressions_signal"] = "slight_drop"
+    except Exception as e:
+        log.warning(f"  Impressions check failed: {e}")
+
+    # ── Step 3: Semrush competitor movement ──────────────────────────────────
+    if diagnosis["primary_keyword"]:
+        competitors = fetch_semrush_competitors(diagnosis["primary_keyword"])
+        diagnosis["competitors"] = competitors
+
+    # ── Step 4: Root cause verdict + recommended action ──────────────────────
+    pos_now = diagnosis["our_position_now"]
+    pos_prev = diagnosis["our_position_prev"]
+    imp_signal = diagnosis["impressions_signal"]
+    competitors = diagnosis["competitors"]
+
+    # Find if we are in the top 5 and who overtook us
+    our_domain = "redpoints.com"
+    our_serp_pos = next((c["position"] for c in competitors if our_domain in c["url"]), None)
+    overtakers = [c for c in competitors if our_domain not in c["url"]
+                  and c["position"] < (our_serp_pos or 99)]
+
+    if imp_signal == "collapse":
+        diagnosis["root_cause"] = "indexing_issue"
+        diagnosis["verdict"] = (
+            "Impressions collapsed — possible indexing or crawl issue. "
+            "This pattern is abnormal for a ranking shift and may indicate "
+            "a noindex tag, robots.txt block, or redirect chain introduced during recent site changes."
+        )
+        diagnosis["recommended_action"] = (
+            "Check GSC Coverage report for this URL immediately. Verify the page is not blocked "
+            "by robots.txt or a noindex tag. Submit for reindex if needed."
+        )
+    elif imp_signal in ("drop", "slight_drop") and pos_now and pos_prev and pos_now > pos_prev + 1.5:
+        if overtakers:
+            top_overtaker = overtakers[0]
+            diagnosis["root_cause"] = "competitor_displacement"
+            diagnosis["verdict"] = (
+                f"Ranking loss — {top_overtaker['domain']} has moved above us on "
+                f"'{diagnosis['primary_keyword']}'. Position dropped from "
+                f"{pos_prev} → {pos_now}. Impressions fell alongside clicks, "
+                "confirming this is a ranking problem, not a CTR problem."
+            )
+            diagnosis["recommended_action"] = (
+                f"Review {top_overtaker['url']} — compare their structure, word count, "
+                "and sub-topics vs. ours. Add any missing sections, update screenshots, "
+                f"and target reclaiming position {int(pos_prev)} within 6 weeks."
+            )
+        else:
+            diagnosis["root_cause"] = "algorithm_quality_signal"
+            diagnosis["verdict"] = (
+                f"Ranking loss — position dropped from {pos_prev} → {pos_now} "
+                f"on '{diagnosis['primary_keyword']}'. No single competitor moved "
+                "significantly — likely a content quality or freshness signal from Google."
+            )
+            diagnosis["recommended_action"] = (
+                "Refresh the content — update statistics, screenshots, and examples. "
+                "Strengthen the introduction and ensure the post directly answers the "
+                "primary search intent in the first 150 words."
+            )
+    elif imp_signal == "stable":
+        diagnosis["root_cause"] = "ctr_problem"
+        diagnosis["verdict"] = (
+            "CTR problem — impressions are stable but clicks fell. "
+            "This means we still rank in the same position but fewer people are clicking. "
+            "Likely cause: a SERP feature (AI Overview, featured snippet, or knowledge panel) "
+            "now appears above organic results and is absorbing clicks."
+        )
+        diagnosis["recommended_action"] = (
+            "Search the primary keyword in Google and check what SERP features appear. "
+            "If an AI Overview is present, reformat the post intro as a direct, concise answer "
+            "to the query. Update the title tag and meta description to be more click-worthy."
+        )
+    else:
+        diagnosis["root_cause"] = "unknown"
+        diagnosis["verdict"] = (
+            "Traffic dropped but the pattern is unclear — impressions and position data "
+            "are insufficient to confirm a single root cause this week. "
+            "Monitor for a second consecutive week before taking action."
+        )
+        diagnosis["recommended_action"] = (
+            "Watch this post next Monday. If it drops again, run a manual GSC check "
+            "and compare against competitor rankings on the primary keyword."
+        )
+
+    return diagnosis
+
+
+def generate_content_brief(
+    post_title: str,
+    post_url: str,
+    primary_keyword: str,
+    our_content: str,
+    competitor_url: str,
+    competitor_content: str,
+    diagnosis: dict,
+) -> str:
+    """
+    Calls Claude API to generate a structured content brief comparing
+    our post vs the top-ranking competitor. Returns HTML-formatted brief.
+    """
+    if not ANTHROPIC_API_KEY:
+        return "<p>Content brief unavailable — ANTHROPIC_API_KEY not set.</p>"
+    if not our_content or not competitor_content:
+        return "<p>Content brief unavailable — could not fetch post content.</p>"
+
+    prompt = f"""You are a senior SEO and LLM content strategist at Red Points, the AI Brand Protection Company. Red Points offers a fully managed brand protection service with IP-Ops specialists handling enforcement on behalf of clients — this is the core differentiator vs. competitors who offer self-serve software.
+
+TARGET AUDIENCE: B2B brand protection teams at enterprise and mid-market companies. Buyers are evaluating vendors or looking for how-to guidance on brand protection problems.
+
+A blog post has lost organic traffic. Compare our post against the top-ranking competitor and produce a structured brief telling the writer exactly what to change. Apply BOTH SEO and LLM optimization principles.
+
+POST DETAILS:
+- Title: {post_title}
+- URL: {post_url}
+- Primary keyword: {primary_keyword}
+- Root cause: {diagnosis.get('root_cause', 'unknown')}
+- Diagnosis: {diagnosis.get('verdict', '')}
+
+OUR POST (first 3500 chars):
+{our_content[:3500]}
+
+TOP COMPETITOR ({competitor_url}):
+{competitor_content[:3500]}
+
+BRAND RULES — the brief must respect these:
+1. Red Points = "AI Brand Protection Company with fully managed service" — never just "software" or "tool"
+2. CTAs and product pitches belong AFTER the post has fully solved the user's problem — never in the intro or mid-content
+3. No first-person ("we", "our") in sections designed for LLM extraction — use "Red Points" as the subject
+4. Differentiators to use where relevant: unlimited enforcement, flat-fee pricing, IP-Ops specialists, 5,000+ marketplaces, 2.7B monthly data points
+5. Do not suggest removing the Red Points CTA — only reposition it
+
+LLM OPTIMIZATION RULES — apply these to every structural suggestion:
+1. First 50 words must be a factual, entity-grounding definition that can be cited standalone without the rest of the article
+2. FAQ answers must be 4+ self-contained sentences — no "see above" or "read more" answers — minimum 8 questions total
+3. Comparison tables must use text labels not symbols or icons
+4. Each section should open with a direct answer to its heading before adding context or evidence
+5. TL;DR or summary block should be present and independently citable
+6. Step-by-step sections should use HowTo schema-compatible structure (numbered, each step self-contained)
+
+SEO RULES:
+1. Search intent must be matched in the first paragraph — diagnose whether our post answers what users actually want vs what we offer, and flag the gap explicitly
+2. Primary keyword should appear naturally in H1, first 100 words, and at least one H2
+3. Internal links should point to cluster pillar pages where relevant
+4. If the post is a how-to guide, it should cover the manual steps fully before introducing Red Points as a more efficient solution
+
+Produce a content brief in this EXACT format (plain text, no markdown, no preamble):
+
+SEARCH_INTENT_VERDICT: [One sentence — what do users actually want when they search this keyword? Does our post answer it first?]
+
+WORD_COUNT_GAP: [Our estimated word count vs competitor. e.g. "Ours: ~800 words. Competitor: ~2,100 words."]
+
+LLM_EXTRACTABILITY_GAPS:
+1. [Specific LLM optimization missing — e.g. "Intro is not a standalone definition — rewrite first 50 words as a factual entity-grounding statement"]
+2. [Second LLM gap if present]
+
+TOP_3_CONTENT_GAPS:
+1. [Most important missing topic the competitor covers that we don't — be specific about what to add and why]
+2. [Second gap]
+3. [Third gap]
+
+STRUCTURE_CHANGES:
+1. [Specific structural change — e.g. "Move Red Points CTA to after the 5-step manual section"]
+2. [Second structural change if needed]
+
+SPECIFIC_EDITS:
+1. [Exact edit the writer can implement directly — reference actual content from both posts]
+2. [Second edit]
+3. [Third edit]
+4. [Fourth edit]
+5. [Fifth edit]
+
+TARGET_OUTCOME: [Realistic position and traffic recovery in 6 weeks if changes are made]
+
+WRITER_TIME: [Estimated hours to implement these changes]
+
+Every suggestion must reference actual content from both posts. No vague advice like "improve quality" or "add more detail". No suggestions that contradict the brand rules above. Every edit must be something the writer can implement directly."""
+
+    try:
+        resp = requests.post(
+            "https://api.anthropic.com/v1/messages",
+            headers={
+                "Content-Type": "application/json",
+                "x-api-key": ANTHROPIC_API_KEY,
+                "anthropic-version": "2023-06-01",
+            },
+            json={
+                "model": "claude-sonnet-4-20250514",
+                "max_tokens": 1000,
+                "messages": [{"role": "user", "content": prompt}],
+            },
+            timeout=45,
+        )
+        resp.raise_for_status()
+        text = "".join(b["text"] for b in resp.json().get("content", []) if b.get("type") == "text")
+        return _format_brief_as_html(text.strip(), competitor_url)
+    except Exception as e:
+        log.error(f"  Content brief generation failed: {e}")
+        return f"<p>Content brief unavailable — API error: {e}</p>"
+
+
+def _format_brief_as_html(raw_brief: str, competitor_url: str) -> str:
+    """Converts the plain-text Claude output into clean HTML for the email."""
+    import re
+    lines = raw_brief.split("\n")
+    sections = {}
+    current_key = None
+    current_items = []
+
+    for line in lines:
+        line = line.strip()
+        if not line:
+            continue
+        if ":" in line and line.split(":")[0].isupper() and "_" in line.split(":")[0]:
+            if current_key:
+                sections[current_key] = current_items
+            key = line.split(":")[0].strip()
+            val = line[len(key)+1:].strip()
+            current_key = key
+            current_items = [val] if val else []
+        elif re.match(r"^\d+\.", line):
+            current_items.append(re.sub(r"^\d+\.\s*", "", line))
+        else:
+            if current_items:
+                current_items[-1] += " " + line
+            elif current_key:
+                current_items.append(line)
+
+    if current_key:
+        sections[current_key] = current_items
+
+    html = f'<div style="background:#f8fafc;border-radius:8px;padding:16px;margin-top:10px;font-size:12px;">'
+    html += f'<div style="font-size:11px;color:#64748b;margin-bottom:10px;">Content brief · competitor: <a href="{competitor_url}" style="color:#2563eb;">{competitor_url[:60]}...</a></div>'
+
+    section_labels = {
+        "SEARCH_INTENT_VERDICT":    ("Search intent verdict",          "#7c3aed", "#f5f3ff"),
+        "WORD_COUNT_GAP":           ("Word count gap",                 "#d97706", "#fffbeb"),
+        "LLM_EXTRACTABILITY_GAPS":  ("LLM extractability gaps",        "#0f172a", "#f1f5f9"),
+        "TOP_3_CONTENT_GAPS":       ("Top content gaps vs competitor",  "#dc2626", "#fef2f2"),
+        "STRUCTURE_CHANGES":        ("Structure changes",              "#2563eb", "#eff6ff"),
+        "SPECIFIC_EDITS":           ("Specific edits for writer",      "#059669", "#f0fdf4"),
+        "TARGET_OUTCOME":           ("Target outcome (6 weeks)",       "#0f172a", "#f1f5f9"),
+        "WRITER_TIME":              ("Estimated writer time",           "#0f172a", "#f1f5f9"),
+    }
+
+    for key, (label, color, bg) in section_labels.items():
+        if key not in sections:
+            continue
+        items = [i for i in sections[key] if i]
+        if not items:
+            continue
+        html += f'<div style="margin-bottom:10px;padding:10px;background:{bg};border-radius:6px;border-left:3px solid {color};">'
+        html += f'<div style="font-size:10px;font-weight:500;color:{color};margin-bottom:5px;">{label.upper()}</div>'
+        if len(items) == 1:
+            html += f'<div style="color:#1e293b;line-height:1.6;">{items[0]}</div>'
+        else:
+            for i, item in enumerate(items, 1):
+                html += f'<div style="color:#1e293b;line-height:1.6;margin-bottom:3px;">{i}. {item}</div>'
+        html += "</div>"
+
+    html += "</div>"
+    return html
+
+
+def run_traffic_diagnosis(
+    flagged_posts: list[dict],
+    gsc_service,
+    week_start: str,
+    week_end: str,
+    prev_week_start: str,
+    prev_week_end: str,
+) -> list[dict]:
+    """
+    For every traffic-flagged post, runs full diagnosis and generates content brief.
+    Runs for ALL traffic drop posts regardless of tier.
+    Attaches diagnosis + brief to each flagged post's traffic flag dict.
+    """
+    for post in flagged_posts:
+        traffic_flags = [f for f in post["flags"] if f["type"] == "traffic"]
+        if not traffic_flags:
+            continue
+
+        log.info(f"Running Phase 2 diagnosis for: {post['title'][:50]}")
+        full_url = post["url"]
+        path = post["path"]
+
+        diagnosis = diagnose_traffic_drop(
+            path=path,
+            full_url=full_url,
+            gsc_current_clicks=post.get("gsc_clicks_this_week", 0),
+            gsc_avg_clicks=traffic_flags[0].get("baseline", 0),
+            gsc_service=gsc_service,
+            week_start=week_start,
+            week_end=week_end,
+            prev_week_start=prev_week_start,
+            prev_week_end=prev_week_end,
+        )
+
+        # Generate content brief — fetch our content + top competitor content
+        content_brief_html = ""
+        primary_keyword = diagnosis.get("primary_keyword", "")
+        competitors = diagnosis.get("competitors", [])
+        top_competitor = next(
+            (c for c in competitors if "redpoints.com" not in c.get("url", "")), None
+        )
+
+        if primary_keyword and top_competitor:
+            log.info(f"  Fetching content for brief: {full_url} vs {top_competitor['url']}")
+            our_content = fetch_post_content(full_url)
+            competitor_content = fetch_post_content(top_competitor["url"])
+            content_brief_html = generate_content_brief(
+                post_title=post["title"],
+                post_url=full_url,
+                primary_keyword=primary_keyword,
+                our_content=our_content,
+                competitor_url=top_competitor["url"],
+                competitor_content=competitor_content,
+                diagnosis=diagnosis,
+            )
+        else:
+            log.warning(f"  Skipping content brief for {path} — no keyword or competitor data")
+
+        # Attach diagnosis and brief to the traffic flag
+        for flag in traffic_flags:
+            flag["diagnosis"] = diagnosis
+            flag["content_brief_html"] = content_brief_html
+
+    return flagged_posts
 # Loaded from blog audit. Each entry: URL path → metadata
 # last_updated is used as fallback only — live date comes from WordPress API.
 # Add update_cooldown_until when forcing a manual cooldown override.
@@ -795,9 +1352,86 @@ def build_email_body(flagged: list[dict], week_end: str, summary: str, season: s
             badge_color = {"traffic": "#dc2626", "llm": "#d97706", "stale": "#2563eb"}.get(f["type"], "#64748b")
             badge_bg    = {"traffic": "#fef2f2",  "llm": "#fffbeb", "stale": "#eff6ff"}.get(f["type"], "#f8fafc")
             badge_label = {"traffic": "Traffic drop", "llm": "LLM drop", "stale": "Stale content"}.get(f["type"], f["type"])
+
+            # Diagnosis block for traffic flags
+            diagnosis_html = ""
+            brief_html = ""
+            if f["type"] == "traffic" and f.get("diagnosis"):
+                d = f["diagnosis"]
+                verdict = d.get("verdict", "")
+                action = d.get("recommended_action", "")
+                keyword = d.get("primary_keyword", "")
+                pos_now = d.get("our_position_now", "")
+                pos_prev = d.get("our_position_prev", "")
+                imp_signal = d.get("impressions_signal", "")
+
+                # Signal label
+                signal_map = {
+                    "collapse": ("Impressions collapsed — possible indexing issue", "#dc2626"),
+                    "drop": ("Impressions dropped — ranking loss", "#d97706"),
+                    "stable": ("Impressions stable — CTR/SERP feature problem", "#2563eb"),
+                    "slight_drop": ("Slight impression drop — ranking softening", "#d97706"),
+                }
+                signal_label, signal_color = signal_map.get(imp_signal, ("Signal unclear", "#64748b"))
+
+                # Top query drops
+                query_rows = ""
+                for q in d.get("query_breakdown", [])[:3]:
+                    change = q.get("change", 0)
+                    change_str = f"{change}" if change >= 0 else f"{change}"
+                    change_color = "#16a34a" if change >= 0 else "#dc2626"
+                    query_rows += f"""
+                    <tr>
+                      <td style="padding:3px 6px 3px 0;font-size:11px;color:#334155;">{q['query'][:45]}</td>
+                      <td style="font-family:monospace;font-size:11px;text-align:right;padding:3px 6px;">{q['prev_clicks']}</td>
+                      <td style="font-family:monospace;font-size:11px;text-align:right;padding:3px 6px;">{q['curr_clicks']}</td>
+                      <td style="font-family:monospace;font-size:11px;text-align:right;color:{change_color};padding:3px 0;">{change_str}</td>
+                    </tr>"""
+
+                # Top competitors
+                comp_rows = ""
+                for c in d.get("competitors", [])[:3]:
+                    is_us = "redpoints.com" in c.get("url", "")
+                    row_bg = "#eff6ff" if is_us else ""
+                    comp_rows += f"""
+                    <tr style="background:{row_bg};">
+                      <td style="padding:3px 6px 3px 0;font-size:11px;color:{'#2563eb' if is_us else '#334155'};">{c['domain']}</td>
+                      <td style="font-family:monospace;font-size:11px;text-align:center;padding:3px 6px;">{c['position']}</td>
+                    </tr>"""
+
+                diagnosis_html = f"""
+                <div style="background:#f8fafc;border-radius:6px;padding:12px;margin-top:10px;">
+                  <div style="font-size:10px;font-weight:600;color:{signal_color};margin-bottom:8px;">{signal_label.upper()}</div>
+                  <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:10px;">
+                    <tr style="color:#64748b;">
+                      <td style="font-size:10px;padding:0 6px 4px 0;">Query</td>
+                      <td style="font-size:10px;text-align:right;padding:0 6px 4px;">4 wks ago</td>
+                      <td style="font-size:10px;text-align:right;padding:0 6px 4px;">this week</td>
+                      <td style="font-size:10px;text-align:right;padding:0 0 4px;">change</td>
+                    </tr>
+                    {query_rows}
+                  </table>
+                  {f'''<div style="margin-bottom:8px;">
+                  <div style="font-size:10px;font-weight:600;color:#166534;margin-bottom:4px;">SEMRUSH — TOP RESULTS FOR "{keyword[:40]}"</div>
+                  <table width="100%" cellpadding="0" cellspacing="0">
+                    <tr style="color:#64748b;"><td style="font-size:10px;padding:0 6px 4px 0;">Domain</td><td style="font-size:10px;text-align:center;padding:0 6px 4px;">Position</td></tr>
+                    {comp_rows}
+                  </table></div>''' if comp_rows else ''}
+                  <div style="background:#0f172a;border-radius:6px;padding:10px;">
+                    <div style="font-size:10px;color:#94a3b8;margin-bottom:4px;">ROOT CAUSE</div>
+                    <div style="font-size:11px;color:white;line-height:1.5;margin-bottom:6px;">{verdict}</div>
+                    <div style="border-top:1px solid #334155;padding-top:6px;">
+                      <div style="font-size:10px;color:#94a3b8;margin-bottom:3px;">RECOMMENDED ACTION</div>
+                      <div style="font-size:11px;color:#60a5fa;line-height:1.5;">{action}</div>
+                    </div>
+                  </div>
+                </div>"""
+
+                brief_html = f.get("content_brief_html", "")
+
             post_cards += f"""
             <tr>
-              <td style="padding:0 0 10px 0;">
+              <td style="padding:0 0 12px 0;">
                 <table width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #e2e8f0;border-radius:8px;overflow:hidden;">
                   <tr>
                     <td style="background:{badge_bg};padding:8px 14px;border-bottom:1px solid #e2e8f0;">
@@ -809,6 +1443,8 @@ def build_email_body(flagged: list[dict], week_end: str, summary: str, season: s
                     <td style="background:#ffffff;padding:10px 14px;">
                       <div style="font-size:13px;font-weight:600;color:#0f172a;margin-bottom:4px;">{p['title']}</div>
                       <div style="font-size:12px;color:#64748b;">{f['detail']}</div>
+                      {diagnosis_html}
+                      {brief_html}
                     </td>
                   </tr>
                 </table>
@@ -1301,6 +1937,17 @@ def main():
         history=history,
         baseline_weeks_available=baseline_weeks_available,
         wp_dates=wp_dates,
+    )
+
+    # ── Phase 2: Diagnosis + content brief for all traffic drop posts ─────────
+    prev_monday, prev_sunday = date_range_for_week_n(current_monday, 1)
+    flagged = run_traffic_diagnosis(
+        flagged_posts=flagged,
+        gsc_service=gsc_service,
+        week_start=week_start,
+        week_end=week_end,
+        prev_week_start=week_key(prev_monday),
+        prev_week_end=prev_sunday.strftime("%Y-%m-%d"),
     )
 
     # Generate executive summary
