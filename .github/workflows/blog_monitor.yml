@@ -80,9 +80,10 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git fetch origin main
+          git rebase origin/main
           git add data/ index.html
           git diff --staged --quiet || git commit -m "chore: update blog monitor [$(date '+%Y-%m-%d')]"
-          git pull --rebase origin main
           git push
 
       - name: Upload Pages artifact
