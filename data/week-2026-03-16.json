@@ -4,25 +4,6 @@
   "season": null,
   "flagged": [
     {
-      "path": "/blog/how-to-take-down-a-fake-website/",
-      "url": "https://www.redpoints.com/blog/how-to-take-down-a-fake-website/",
-      "title": "How to take down a fake website before it destroys your brand",
-      "cluster": "Website Takedown",
-      "score": 14,
-      "tier": "tier1",
-      "flags": [
-        {
-          "type": "stale",
-          "label": "\ud83d\udcc5 Stale Content",
-          "detail": "Not updated in 14 months (last updated: 2025-02-04, score 14/14)",
-          "months_since_update": 14.0,
-          "last_updated": "2025-02-04"
-        }
-      ],
-      "gsc_clicks_this_week": 2,
-      "llm_citations_this_week": 0
-    },
-    {
       "path": "/blog/report-infringement-amazon/",
       "url": "https://www.redpoints.com/blog/report-infringement-amazon/",
       "title": "How to report copyright and trademark infringement on Amazon",
@@ -33,28 +14,10 @@
         {
           "type": "stale",
           "label": "\ud83d\udcc5 Stale Content",
-          "detail": "Not updated in 14 months (last updated: 2025-02-06, score 14/14)",
+          "detail": "Not updated in 14 months (last updated: 2025-02-06 [WP], score 14/14)",
           "months_since_update": 13.9,
-          "last_updated": "2025-02-06"
-        }
-      ],
-      "gsc_clicks_this_week": 0,
-      "llm_citations_this_week": 0
-    },
-    {
-      "path": "/blog/unauthorized-sellers-on-walmart/",
-      "url": "https://www.redpoints.com/blog/unauthorized-sellers-on-walmart/",
-      "title": "How to remove unauthorized sellers on Walmart Marketplace",
-      "cluster": "Marketplace Protection",
-      "score": 14,
-      "tier": "tier1",
-      "flags": [
-        {
-          "type": "stale",
-          "label": "\ud83d\udcc5 Stale Content",
-          "detail": "Not updated in 37 months (last updated: 2023-03-27, score 14/14)",
-          "months_since_update": 36.6,
-          "last_updated": "2023-03-27"
+          "last_updated": "2025-02-06",
+          "last_updated_source": "WP"
         }
       ],
       "gsc_clicks_this_week": 0,
@@ -71,9 +34,10 @@
         {
           "type": "stale",
           "label": "\ud83d\udcc5 Stale Content",
-          "detail": "Not updated in 14 months (last updated: 2025-01-28, score 13/14)",
+          "detail": "Not updated in 14 months (last updated: 2025-01-28 [WP], score 13/14)",
           "months_since_update": 14.2,
-          "last_updated": "2025-01-28"
+          "last_updated": "2025-01-28",
+          "last_updated_source": "WP"
         }
       ],
       "gsc_clicks_this_week": 2,
@@ -93,7 +57,50 @@
           "detail": "Clicks dropped to 283 this week vs 440 12-week average (\u221236%, \u2212157 clicks)",
           "current": 283,
           "baseline": 440.0,
-          "drop_pct": 35.7
+          "drop_pct": 35.7,
+          "diagnosis": {
+            "query_breakdown": [
+              {
+                "query": "rastrear cuentas de instagram",
+                "prev_clicks": 3,
+                "curr_clicks": 0,
+                "change": -3
+              },
+              {
+                "query": "lacak akun ig",
+                "prev_clicks": 3,
+                "curr_clicks": 0,
+                "change": -3
+              },
+              {
+                "query": "rastrear cuenta de instagram",
+                "prev_clicks": 7,
+                "curr_clicks": 7,
+                "change": 0
+              },
+              {
+                "query": "fake id detector instagram",
+                "prev_clicks": 2,
+                "curr_clicks": 4,
+                "change": 2
+              },
+              {
+                "query": "cek akun ig fake",
+                "prev_clicks": 0,
+                "curr_clicks": 3,
+                "change": 3
+              }
+            ],
+            "primary_keyword": "rastrear cuentas de instagram",
+            "impressions_signal": "stable",
+            "competitors": [],
+            "our_position_now": 4.7,
+            "our_position_prev": 3.6,
+            "root_cause": "ctr_problem",
+            "verdict": "CTR problem \u2014 impressions are stable but clicks fell. This means we still rank in the same position but fewer people are clicking. Likely cause: a SERP feature (AI Overview, featured snippet, or knowledge panel) now appears above organic results and is absorbing clicks.",
+            "recommended_action": "Search the primary keyword in Google and check what SERP features appear. If an AI Overview is present, reformat the post intro as a direct, concise answer to the query. Update the title tag and meta description to be more click-worthy."
+          },
+          "content_brief_html": ""
         }
       ],
       "gsc_clicks_this_week": 283,
@@ -110,9 +117,10 @@
         {
           "type": "stale",
           "label": "\ud83d\udcc5 Stale Content",
-          "detail": "Not updated in 6 months (last updated: 2025-09-19, score 13/14)",
+          "detail": "Not updated in 6 months (last updated: 2025-09-19 [WP], score 13/14)",
           "months_since_update": 6.4,
-          "last_updated": "2025-09-19"
+          "last_updated": "2025-09-19",
+          "last_updated_source": "WP"
         }
       ],
       "gsc_clicks_this_week": 2,
@@ -129,9 +137,10 @@
         {
           "type": "stale",
           "label": "\ud83d\udcc5 Stale Content",
-          "detail": "Not updated in 16 months (last updated: 2024-11-21, score 13/14)",
+          "detail": "Not updated in 16 months (last updated: 2024-11-21 [WP], score 13/14)",
           "months_since_update": 16.5,
-          "last_updated": "2024-11-21"
+          "last_updated": "2024-11-21",
+          "last_updated_source": "WP"
         }
       ],
       "gsc_clicks_this_week": 1,
@@ -151,7 +160,50 @@
           "detail": "Clicks dropped to 56 this week vs 115 12-week average (\u221251%, \u221259 clicks)",
           "current": 56,
           "baseline": 115.3,
-          "drop_pct": 51.4
+          "drop_pct": 51.4,
+          "diagnosis": {
+            "query_breakdown": [
+              {
+                "query": "how to get tiktok video taken down",
+                "prev_clicks": 1,
+                "curr_clicks": 0,
+                "change": -1
+              },
+              {
+                "query": "how to get a tiktok video taken down",
+                "prev_clicks": 1,
+                "curr_clicks": 0,
+                "change": -1
+              },
+              {
+                "query": "como denunciar en tiktok",
+                "prev_clicks": 1,
+                "curr_clicks": 0,
+                "change": -1
+              },
+              {
+                "query": "como hacer que borren una cuenta de tik tok",
+                "prev_clicks": 1,
+                "curr_clicks": 0,
+                "change": -1
+              },
+              {
+                "query": "how to get a tiktok account banned fast",
+                "prev_clicks": 1,
+                "curr_clicks": 0,
+                "change": -1
+              }
+            ],
+            "primary_keyword": "how to get tiktok video taken down",
+            "impressions_signal": "stable",
+            "competitors": [],
+            "our_position_now": 5.4,
+            "our_position_prev": 4.2,
+            "root_cause": "ctr_problem",
+            "verdict": "CTR problem \u2014 impressions are stable but clicks fell. This means we still rank in the same position but fewer people are clicking. Likely cause: a SERP feature (AI Overview, featured snippet, or knowledge panel) now appears above organic results and is absorbing clicks.",
+            "recommended_action": "Search the primary keyword in Google and check what SERP features appear. If an AI Overview is present, reformat the post intro as a direct, concise answer to the query. Update the title tag and meta description to be more click-worthy."
+          },
+          "content_brief_html": ""
         }
       ],
       "gsc_clicks_this_week": 56,
@@ -168,9 +220,10 @@
         {
           "type": "stale",
           "label": "\ud83d\udcc5 Stale Content",
-          "detail": "Not updated in 11 months (last updated: 2025-05-08, score 12/14)",
+          "detail": "Not updated in 11 months (last updated: 2025-05-08 [WP], score 12/14)",
           "months_since_update": 10.9,
-          "last_updated": "2025-05-08"
+          "last_updated": "2025-05-08",
+          "last_updated_source": "WP"
         }
       ],
       "gsc_clicks_this_week": 1,
@@ -187,9 +240,10 @@
         {
           "type": "stale",
           "label": "\ud83d\udcc5 Stale Content",
-          "detail": "Not updated in 10 months (last updated: 2025-06-01, score 12/14)",
+          "detail": "Not updated in 10 months (last updated: 2025-06-01 [audit], score 12/14)",
           "months_since_update": 10.1,
-          "last_updated": "2025-06-01"
+          "last_updated": "2025-06-01",
+          "last_updated_source": "audit"
         }
       ],
       "gsc_clicks_this_week": 0,
@@ -206,9 +260,10 @@
         {
           "type": "stale",
           "label": "\ud83d\udcc5 Stale Content",
-          "detail": "Not updated in 12 months (last updated: 2025-04-15, score 12/14)",
-          "months_since_update": 11.6,
-          "last_updated": "2025-04-15"
+          "detail": "Not updated in 12 months (last updated: 2025-04-15 [audit], score 12/14)",
+          "months_since_update": 11.7,
+          "last_updated": "2025-04-15",
+          "last_updated_source": "audit"
         }
       ],
       "gsc_clicks_this_week": 0,
@@ -225,9 +280,10 @@
         {
           "type": "stale",
           "label": "\ud83d\udcc5 Stale Content",
-          "detail": "Not updated in 13 months (last updated: 2025-03-10, score 12/14)",
-          "months_since_update": 12.8,
-          "last_updated": "2025-03-10"
+          "detail": "Not updated in 13 months (last updated: 2025-03-10 [audit], score 12/14)",
+          "months_since_update": 12.9,
+          "last_updated": "2025-03-10",
+          "last_updated_source": "audit"
         }
       ],
       "gsc_clicks_this_week": 0,
@@ -244,9 +300,10 @@
         {
           "type": "stale",
           "label": "\ud83d\udcc5 Stale Content",
-          "detail": "Not updated in 15 months (last updated: 2025-01-15, score 12/14)",
-          "months_since_update": 14.6,
-          "last_updated": "2025-01-15"
+          "detail": "Not updated in 14 months (last updated: 2025-02-04 [WP], score 12/14)",
+          "months_since_update": 14.0,
+          "last_updated": "2025-02-04",
+          "last_updated_source": "WP"
         }
       ],
       "gsc_clicks_this_week": 0,
@@ -263,9 +320,10 @@
         {
           "type": "stale",
           "label": "\ud83d\udcc5 Stale Content",
-          "detail": "Not updated in 7 months (last updated: 2025-08-20, score 12/14)",
+          "detail": "Not updated in 7 months (last updated: 2025-08-20 [audit], score 12/14)",
           "months_since_update": 7.4,
-          "last_updated": "2025-08-20"
+          "last_updated": "2025-08-20",
+          "last_updated_source": "audit"
         }
       ],
       "gsc_clicks_this_week": 0,
@@ -282,9 +340,10 @@
         {
           "type": "stale",
           "label": "\ud83d\udcc5 Stale Content",
-          "detail": "Not updated in 14 months (last updated: 2025-02-01, score 12/14)",
-          "months_since_update": 14.1,
-          "last_updated": "2025-02-01"
+          "detail": "Not updated in 12 months (last updated: 2025-03-21 [WP], score 12/14)",
+          "months_since_update": 12.5,
+          "last_updated": "2025-03-21",
+          "last_updated_source": "WP"
         }
       ],
       "gsc_clicks_this_week": 21,
@@ -301,9 +360,10 @@
         {
           "type": "stale",
           "label": "\ud83d\udcc5 Stale Content",
-          "detail": "Not updated in 10 months (last updated: 2025-05-20, score 12/14)",
+          "detail": "Not updated in 11 months (last updated: 2025-05-19 [WP], score 12/14)",
           "months_since_update": 10.5,
-          "last_updated": "2025-05-20"
+          "last_updated": "2025-05-19",
+          "last_updated_source": "WP"
         }
       ],
       "gsc_clicks_this_week": 8,
@@ -320,16 +380,17 @@
         {
           "type": "stale",
           "label": "\ud83d\udcc5 Stale Content",
-          "detail": "Not updated in 13 months (last updated: 2025-03-01, score 12/14)",
-          "months_since_update": 13.1,
-          "last_updated": "2025-03-01"
+          "detail": "Not updated in 13 months (last updated: 2025-03-01 [audit], score 12/14)",
+          "months_since_update": 13.2,
+          "last_updated": "2025-03-01",
+          "last_updated_source": "audit"
         }
       ],
       "gsc_clicks_this_week": 0,
       "llm_citations_this_week": 0
     }
   ],
-  "summary": "\ud83d\udd34 Two social media takedown articles saw major traffic drops this week (Instagram tracking down 36%, TikTok takedown down 51%) which could signal algorithm changes or increased competition. Check if these topics need fresh content or SEO updates immediately.\n\n\ud83d\udcc5 Your top-performing takedown guides haven't been updated in over a year, with some marketplace protection content sitting unchanged for 3+ years. Refresh these high-value articles with current platform policies and new examples to maintain search rankings and user trust.\n\n\ud83d\udcc5 Nearly all flagged content focuses on takedown and protection processes, showing this topic cluster needs systematic content maintenance. Schedule monthly reviews for these evergreen guides since platform rules and legal processes change frequently.",
+  "summary": "\ud83d\udd34 Two social media takedown guides lost significant traffic this week (Instagram guide down 36%, TikTok guide down 51%) which suggests our content may be outdated or competitors are ranking better. Review and refresh these posts immediately to recapture lost organic traffic.\n\n\ud83d\udcc5 Six high-performing blog posts haven't been updated in 6-16 months, including popular Amazon and DMCA guides that could be missing important platform changes. Schedule content audits for these posts to ensure accuracy and maintain search rankings.\n\n\ud83d\udcc5 All flagged content focuses on takedown procedures and brand protection processes that change frequently as platforms update their policies. Create a quarterly review calendar for these technical guides to prevent them from becoming outdated and losing effectiveness.",
   "gsc_data": {
     "/blog/how-to-take-down-an-instagram-account/": 561,
     "/blog/how-to-track-a-fake-instagram-account/": 283,
@@ -1068,5 +1129,5 @@
     "/blog/brand-protection-enforcement": 1,
     "/blog/ai-brand-protection": 1
   },
-  "generated_at": "2026-03-30T11:37:58.321844"
+  "generated_at": "2026-03-31T12:04:55.889123"
 }
