@@ -82,7 +82,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/ index.html
           git diff --staged --quiet || git commit -m "chore: update blog monitor [$(date '+%Y-%m-%d')]"
-          git push --force-with-lease
+          git push --force
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
