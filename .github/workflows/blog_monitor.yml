@@ -80,7 +80,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/ index.html
+          git add data/ index.html dashboard_data.json
           git diff --staged --quiet || git commit -m "chore: update blog monitor [$(date '+%Y-%m-%d')]"
           git push --force
 

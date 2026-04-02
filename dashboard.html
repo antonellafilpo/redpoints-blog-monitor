@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Content tracker — Red Points</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:       #f5f4f1;
+    --surface:  #ffffff;
+    --border:   #e2e0da;
+    --text:     #1a1a18;
+    --muted:    #7a7870;
+    --hint:     #b0ae a7;
+    --blue:     #1a56db;
+    --blue-bg:  #eef3fd;
+    --blue-dim: #b8cef7;
+    --green:    #166534;
+    --green-bg: #dcfce7;
+    --amber:    #92400e;
+    --amber-bg: #fef3c7;
+    --red:      #991b1b;
+    --red-bg:   #fee2e2;
+    --radius:   10px;
+    --radius-lg: 16px;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    padding: 0;
+  }
+
+  /* ── Layout ── */
+  .shell {
+    max-width: 940px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+
+  /* ── Header ── */
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 36px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .wordmark {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .wordmark-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--blue);
+  }
+  .wordmark-text {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+    letter-spacing: .02em;
+    text-transform: uppercase;
+  }
+  .month-nav {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 4px;
+  }
+  .month-nav button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 28px; height: 28px;
+    border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--muted);
+    font-size: 14px;
+    transition: background .15s, color .15s;
+  }
+  .month-nav button:hover { background: var(--bg); color: var(--text); }
+  .month-nav button:disabled { opacity: .3; cursor: default; }
+  .month-nav-label {
+    font-size: 13px;
+    font-weight: 500;
+    min-width: 96px;
+    text-align: center;
+    color: var(--text);
+  }
+  .current-pill {
+    font-size: 11px;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 20px;
+    background: var(--blue-bg);
+    color: var(--blue);
+    letter-spacing: .02em;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 28px 32px;
+    margin-bottom: 16px;
+  }
+  .hero-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  .hero-count {
+    font-size: 64px;
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -.02em;
+    color: var(--text);
+    font-family: 'DM Mono', monospace;
+  }
+  .hero-count span {
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--muted);
+    margin-left: 8px;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .hero-meta {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+  .pace-badge {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+  .pace-ahead  { background: var(--green-bg); color: var(--green); }
+  .pace-behind { background: var(--red-bg);   color: var(--red); }
+  .pace-on     { background: var(--blue-bg);  color: var(--blue); }
+  .pace-done   { background: var(--green-bg); color: var(--green); }
+
+  /* Progress bar */
+  .progress-wrap { margin-bottom: 14px; }
+  .progress-track {
+    height: 6px;
+    background: var(--bg);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 8px;
+  }
+  .progress-fill {
+    height: 100%;
+    background: var(--blue);
+    border-radius: 3px;
+    transition: width .6s cubic-bezier(.4,0,.2,1);
+  }
+  .progress-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+  }
+
+  /* Milestones */
+  .milestones {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+  }
+  .ms {
+    font-size: 11px;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    transition: all .2s;
+  }
+  .ms.done { background: var(--green-bg); border-color: #86efac; color: var(--green); }
+
+  /* ── KPIs ── */
+  .kpis {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .kpi {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+  }
+  .kpi-label {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    margin-bottom: 8px;
+  }
+  .kpi-val {
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--text);
+    line-height: 1;
+    font-family: 'DM Mono', monospace;
+  }
+  .kpi-sub {
+    font-size: 12px;
+    margin-top: 6px;
+    color: var(--muted);
+  }
+  .up  { color: var(--green); }
+  .dn  { color: var(--red); }
+  .nt  { color: var(--muted); }
+
+  /* ── Chart ── */
+  .chart-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 22px 24px;
+    margin-bottom: 16px;
+  }
+  .card-title {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    margin-bottom: 18px;
+  }
+  .chart-legend {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .legend-dot {
+    width: 8px; height: 8px;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  /* ── Table ── */
+  .table-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .table-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    table-layout: fixed;
+  }
+  th {
+    padding: 10px 20px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    background: #faf9f7;
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+  }
+  td {
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+    vertical-align: middle;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: #faf9f7; }
+  .post-title { font-weight: 500; font-size: 13px; }
+  .post-url   { font-size: 11px; color: var(--muted); margin-top: 2px; }
+  .mono { font-family: 'DM Mono', monospace; font-size: 12px; }
+
+  /* ── Loading / error ── */
+  .state-msg {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--muted);
+    font-size: 14px;
+  }
+  .state-msg strong { display: block; font-size: 16px; color: var(--text); margin-bottom: 6px; }
+
+  /* ── Footer ── */
+  .footer {
+    text-align: center;
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 48px;
+    font-family: 'DM Mono', monospace;
+  }
+
+  @media (max-width: 600px) {
+    .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .hero-count { font-size: 48px; }
+    th:nth-child(n+4), td:nth-child(n+4) { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="wordmark">
+      <div class="wordmark-dot"></div>
+      <span class="wordmark-text">Content tracker</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;">
+      <span class="current-pill" id="current-pill" style="display:none">Current month</span>
+      <div class="month-nav">
+        <button id="btn-prev" onclick="shiftMonth(-1)" title="Previous month">&#8592;</button>
+        <span class="month-nav-label" id="month-label">—</span>
+        <button id="btn-next" onclick="shiftMonth(1)" title="Next month">&#8594;</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Loading state -->
+  <div id="loading" class="state-msg">
+    <strong>Loading</strong>Fetching latest data…
+  </div>
+
+  <!-- Error state -->
+  <div id="error" class="state-msg" style="display:none">
+    <strong>Could not load data</strong>
+    Make sure dashboard_data.json is in the same directory and the GitHub Action has run at least once.
+  </div>
+
+  <!-- Dashboard (hidden until data loads) -->
+  <div id="dash" style="display:none">
+
+    <!-- Hero -->
+    <div class="hero">
+      <div class="hero-row">
+        <div>
+          <div class="hero-count" id="hero-count">—<span>posts</span></div>
+          <div class="hero-meta" id="hero-meta">updated this month</div>
+        </div>
+        <span class="pace-badge" id="pace-badge"></span>
+      </div>
+      <div class="progress-wrap">
+        <div class="progress-track">
+          <div class="progress-fill" id="progress-fill" style="width:0%"></div>
+        </div>
+        <div class="progress-labels">
+          <span id="progress-pct">0%</span>
+          <span id="progress-goal">32 posts goal</span>
+        </div>
+      </div>
+      <div class="milestones" id="milestones"></div>
+    </div>
+
+    <!-- KPIs -->
+    <div class="kpis">
+      <div class="kpi">
+        <div class="kpi-label">This week</div>
+        <div class="kpi-val" id="kpi-week">—</div>
+        <div class="kpi-sub" id="kpi-week-sub"></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Weekly avg</div>
+        <div class="kpi-val" id="kpi-avg">—</div>
+        <div class="kpi-sub nt">posts / week</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label" id="kpi3-label">—</div>
+        <div class="kpi-val" id="kpi3-val">—</div>
+        <div class="kpi-sub" id="kpi3-sub"></div>
+      </div>
+    </div>
+
+    <!-- Chart -->
+    <div class="chart-card">
+      <div class="card-title" id="chart-title">Weekly breakdown</div>
+      <div class="chart-legend" id="chart-legend"></div>
+      <div style="position:relative;width:100%;height:180px;">
+        <canvas id="weekChart"></canvas>
+      </div>
+    </div>
+
+    <!-- Table -->
+    <div class="table-card">
+      <div class="table-header">
+        <span class="card-title" id="table-title" style="margin:0">Posts updated</span>
+        <span style="font-size:12px;color:var(--muted)" id="table-sub"></span>
+      </div>
+      <table>
+        <colgroup>
+          <col style="width:38%">
+          <col style="width:12%">
+          <col style="width:12%">
+          <col style="width:12%">
+          <col style="width:12%">
+          <col style="width:14%">
+        </colgroup>
+        <thead>
+          <tr>
+            <th>Post</th>
+            <th>Updated</th>
+            <th>Clicks</th>
+            <th>Impr.</th>
+            <th>CTR</th>
+            <th>Position</th>
+          </tr>
+        </thead>
+        <tbody id="post-table"></tbody>
+      </table>
+    </div>
+
+  </div><!-- /dash -->
+
+  <div class="footer" id="footer"></div>
+
+</div><!-- /shell -->
+
+<script>
+let DATA = null;
+let monthIdx = 0;
+let chartInst = null;
+
+async function loadData() {
+  try {
+    const r = await fetch('dashboard_data.json?t=' + Date.now());
+    if (!r.ok) throw new Error(r.status);
+    DATA = await r.json();
+    monthIdx = DATA.months.length - 1;
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('dash').style.display = 'block';
+    render();
+  } catch (e) {
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('error').style.display = 'block';
+    console.error('Dashboard load error:', e);
+  }
+}
+
+function shiftMonth(dir) {
+  monthIdx = Math.max(0, Math.min(DATA.months.length - 1, monthIdx + dir));
+  render();
+}
+
+function render() {
+  const m   = DATA.months[monthIdx];
+  const wg  = DATA.weekly_goal  || 8;
+  const mg  = DATA.monthly_goal || 32;
+  const prev = monthIdx > 0 ? DATA.months[monthIdx - 1] : null;
+
+  // Header
+  document.getElementById('month-label').textContent = m.name;
+  document.getElementById('btn-prev').disabled = monthIdx === 0;
+  document.getElementById('btn-next').disabled = monthIdx === DATA.months.length - 1;
+  const pill = document.getElementById('current-pill');
+  pill.style.display = m.is_current ? 'inline' : 'none';
+
+  // Hero
+  const pct  = Math.min(100, Math.round((m.updated / mg) * 100));
+  document.getElementById('hero-count').innerHTML = `${m.updated}<span>posts</span>`;
+  document.getElementById('hero-meta').textContent =
+    m.is_current ? 'updated so far this month' : 'updated this month';
+  document.getElementById('progress-fill').style.width = pct + '%';
+  document.getElementById('progress-pct').textContent = pct + '%';
+  document.getElementById('progress-goal').textContent = mg + ' posts goal';
+
+  // Pace badge
+  const pb = document.getElementById('pace-badge');
+  if (!m.is_current) {
+    const hit = m.updated >= mg;
+    pb.textContent   = hit ? 'Goal reached ✓' : `Finished at ${pct}%`;
+    pb.className     = 'pace-badge ' + (hit ? 'pace-done' : 'pace-behind');
+  } else {
+    const daysTotal   = m.days_total || 30;
+    const today       = new Date().getDate();
+    const expected    = Math.round((today / daysTotal) * mg);
+    const diff        = m.updated - expected;
+    if (diff > 1)       { pb.textContent = 'Ahead of pace';  pb.className = 'pace-badge pace-ahead'; }
+    else if (diff < -1) { pb.textContent = 'Behind pace';    pb.className = 'pace-badge pace-behind'; }
+    else                { pb.textContent = 'On pace';        pb.className = 'pace-badge pace-on'; }
+  }
+
+  // Milestones
+  const msVals   = [Math.round(mg*0.25), Math.round(mg*0.5), Math.round(mg*0.75), mg];
+  const msLabels = msVals.map((v, i) => i < 3 ? `${v} posts` : `${v} (goal)`);
+  document.getElementById('milestones').innerHTML = msVals.map((v, i) =>
+    `<span class="ms${m.updated >= v ? ' done' : ''}">${msLabels[i]}</span>`
+  ).join('');
+
+  // KPIs
+  const completedWeeks = m.weeks.filter(w => w.posts !== null);
+  const avg = completedWeeks.length
+    ? (completedWeeks.reduce((s, w) => s + w.posts, 0) / completedWeeks.length)
+    : 0;
+  const currentWeekPosts = (m.weeks.find(w => w.is_current) || {}).posts || 0;
+  const paceClass = currentWeekPosts >= wg ? 'up' : currentWeekPosts >= wg * 0.7 ? 'nt' : 'dn';
+
+  document.getElementById('kpi-week').textContent = currentWeekPosts;
+  document.getElementById('kpi-week-sub').innerHTML =
+    `<span class="${paceClass}">goal: ${wg} / week</span>`;
+  document.getElementById('kpi-avg').textContent = avg.toFixed(1);
+
+  if (m.is_current) {
+    const nullWeeks = m.weeks.filter(w => w.posts === null).length;
+    const needed    = mg - m.updated;
+    document.getElementById('kpi3-label').textContent = 'Still needed';
+    document.getElementById('kpi3-val').textContent   = Math.max(0, needed);
+    document.getElementById('kpi3-sub').innerHTML     = needed > 0
+      ? `<span class="${(needed / Math.max(nullWeeks, 1)) > wg ? 'dn' : 'nt'}">${nullWeeks} week${nullWeeks !== 1 ? 's' : ''} left</span>`
+      : `<span class="up">Goal reached!</span>`;
+  } else {
+    const diff = prev ? m.updated - prev.updated : null;
+    document.getElementById('kpi3-label').textContent = 'vs prev month';
+    document.getElementById('kpi3-val').textContent   = diff !== null ? (diff >= 0 ? '+' : '') + diff : '—';
+    document.getElementById('kpi3-sub').innerHTML     = diff !== null
+      ? `<span class="${diff >= 0 ? 'up' : 'dn'}">${diff >= 0 ? 'more' : 'fewer'} than ${prev.name.split(' ')[0]}</span>`
+      : '';
+  }
+
+  // Chart
+  renderChart(m, wg);
+
+  // Table
+  const isCurrent = m.is_current;
+  document.getElementById('table-title').textContent =
+    isCurrent ? 'Posts updated this week' : 'Posts updated this month';
+  document.getElementById('table-sub').textContent =
+    `${(m.posts || []).length} post${(m.posts || []).length !== 1 ? 's' : ''}`;
+  renderTable(m.posts || []);
+
+  // Footer
+  const gen = DATA.generated_at ? new Date(DATA.generated_at) : null;
+  document.getElementById('footer').textContent = gen
+    ? `Last updated ${gen.toLocaleDateString('en-GB', { day:'numeric', month:'short', year:'numeric' })} at ${gen.toLocaleTimeString('en-GB', { hour:'2-digit', minute:'2-digit' })} UTC`
+    : '';
+}
+
+function renderChart(m, wg) {
+  const labels  = m.weeks.map(w => w.label);
+  const actuals = m.weeks.map(w => w.posts);
+  const colors  = m.weeks.map(w =>
+    w.is_current ? '#1a56db' : w.posts !== null ? '#b8cef7' : '#eef3fd'
+  );
+
+  // Goal line data
+  const goalLine = m.weeks.map(() => wg);
+
+  // Legend
+  document.getElementById('chart-legend').innerHTML = `
+    <span class="legend-item"><span class="legend-dot" style="background:#1a56db"></span>Current week</span>
+    <span class="legend-item"><span class="legend-dot" style="background:#b8cef7"></span>Completed weeks</span>
+    ${m.is_current ? '<span class="legend-item"><span class="legend-dot" style="background:#eef3fd;border:1px solid #b8cef7"></span>Upcoming</span>' : ''}
+    <span class="legend-item"><span class="legend-dot" style="background:none;border-top:2px dashed #e2e0da;width:14px;height:2px;border-radius:0"></span>Weekly goal (${wg})</span>
+  `;
+
+  document.getElementById('chart-title').textContent =
+    `Weekly breakdown — ${m.name}`;
+
+  if (chartInst) { chartInst.destroy(); chartInst = null; }
+
+  chartInst = new Chart(document.getElementById('weekChart'), {
+    data: {
+      labels,
+      datasets: [
+        {
+          type: 'bar',
+          label: 'Posts updated',
+          data: actuals,
+          backgroundColor: colors,
+          borderRadius: 5,
+          borderSkipped: false,
+          order: 2,
+        },
+        {
+          type: 'line',
+          label: 'Weekly goal',
+          data: goalLine,
+          borderColor: '#e2e0da',
+          borderWidth: 2,
+          borderDash: [4, 4],
+          pointRadius: 0,
+          fill: false,
+          tension: 0,
+          order: 1,
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: ctx => ctx.dataset.type === 'line'
+              ? ` Goal: ${ctx.raw} posts`
+              : ` ${ctx.raw ?? 0} posts updated`
+          }
+        }
+      },
+      scales: {
+        x: {
+          grid: { display: false },
+          ticks: { font: { size: 11, family: 'DM Sans' }, color: '#7a7870', autoSkip: false }
+        },
+        y: {
+          grid: { color: 'rgba(0,0,0,0.04)' },
+          ticks: { font: { size: 11, family: 'DM Mono' }, color: '#7a7870', stepSize: 2 },
+          beginAtZero: true,
+          suggestedMax: Math.max(wg + 4, 12)
+        }
+      }
+    }
+  });
+}
+
+function renderTable(posts) {
+  const tbody = document.getElementById('post-table');
+  if (!posts.length) {
+    tbody.innerHTML = `<tr><td colspan="6" style="text-align:center;color:var(--muted);padding:32px">No posts recorded yet for this period.</td></tr>`;
+    return;
+  }
+  tbody.innerHTML = posts.map(p => {
+    const diff  = p.prev_position && p.position ? p.prev_position - p.position : 0;
+    const cls   = diff > 0.5 ? 'up' : diff < -0.5 ? 'dn' : 'nt';
+    const arrow = diff > 0.5 ? '▲' : diff < -0.5 ? '▼' : '—';
+    const modDate = p.modified ? new Date(p.modified).toLocaleDateString('en-GB', { day:'numeric', month:'short' }) : '—';
+    const posText = p.position ? p.position.toFixed(1) : '—';
+    const prevText = diff !== 0 && p.prev_position ? Math.abs(diff).toFixed(1) : '';
+    return `<tr>
+      <td>
+        <div class="post-title">${p.title || '—'}</div>
+        <div class="post-url">${p.url || ''}</div>
+      </td>
+      <td class="mono" style="color:var(--muted)">${modDate}</td>
+      <td class="mono">${(p.clicks || 0).toLocaleString()}</td>
+      <td class="mono">${(p.impressions || 0).toLocaleString()}</td>
+      <td class="mono">${p.ctr ? p.ctr.toFixed(1) + '%' : '—'}</td>
+      <td class="mono"><span class="${cls}">${arrow}${prevText ? ' ' + prevText : ''}</span> ${posText}</td>
+    </tr>`;
+  }).join('');
+}
+
+loadData();
+</script>
+</body>
+</html>

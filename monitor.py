@@ -52,6 +52,7 @@ from google.oauth2 import service_account
 from googleapiclient.discovery import build
 import asana
 from asana.rest import ApiException
+from monitor_dashboard_addition import write_dashboard_data
 
 load_dotenv()
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
@@ -1923,6 +1924,7 @@ def main():
 
     # Fetch GSC data
     gsc_service = build_gsc_service()
+    write_dashboard_data(gsc_service)
     gsc_current = fetch_gsc_clicks(
         gsc_service, week_start, week_end
     )
