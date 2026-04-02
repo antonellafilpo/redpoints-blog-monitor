@@ -1,0 +1,43 @@
+{
+  "months": [
+    {
+      "name": "April 2026",
+      "year": 2026,
+      "month": 4,
+      "is_current": true,
+      "days_total": 30,
+      "updated": 0,
+      "weeks": [
+        {
+          "label": "Apr w1",
+          "posts": null,
+          "is_current": false
+        },
+        {
+          "label": "Apr w2",
+          "posts": null,
+          "is_current": false
+        },
+        {
+          "label": "Apr w3",
+          "posts": null,
+          "is_current": false
+        },
+        {
+          "label": "Apr w4",
+          "posts": null,
+          "is_current": false
+        },
+        {
+          "label": "Apr w5",
+          "posts": null,
+          "is_current": false
+        }
+      ],
+      "posts": []
+    }
+  ],
+  "generated_at": "2026-04-02T16:24:43.674932",
+  "weekly_goal": 8,
+  "monthly_goal": 32
+}
