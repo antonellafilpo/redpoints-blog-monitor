@@ -7,8 +7,11 @@ Requires no new dependencies - uses google-auth and requests already installed.
 """
 
 import json
+import logging
 import calendar
 from datetime import datetime, timedelta, date
+
+log = logging.getLogger(__name__)
 
 WEEKLY_GOAL = 8
 MONTHLY_GOAL = 32
