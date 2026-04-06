@@ -4,26 +4,6 @@
   "season": null,
   "flagged": [
     {
-      "path": "/blog/report-infringement-amazon/",
-      "url": "https://www.redpoints.com/blog/report-infringement-amazon/",
-      "title": "How to report copyright and trademark infringement on Amazon",
-      "cluster": "Marketplace Protection",
-      "score": 14,
-      "tier": "tier1",
-      "flags": [
-        {
-          "type": "stale",
-          "label": "\ud83d\udcc5 Stale Content",
-          "detail": "Not updated in 14 months (last updated: 2025-02-06 [WP], score 14/14)",
-          "months_since_update": 14.0,
-          "last_updated": "2025-02-06",
-          "last_updated_source": "WP"
-        }
-      ],
-      "gsc_clicks_this_week": 2,
-      "llm_citations_this_week": 0
-    },
-    {
       "path": "/blog/cloudflare-dmca-takedown/",
       "url": "https://www.redpoints.com/blog/cloudflare-dmca-takedown/",
       "title": "How to effectively submit DMCA takedown request to Cloudflare",
@@ -35,7 +15,7 @@
           "type": "stale",
           "label": "\ud83d\udcc5 Stale Content",
           "detail": "Not updated in 14 months (last updated: 2025-01-28 [WP], score 13/14)",
-          "months_since_update": 14.3,
+          "months_since_update": 14.4,
           "last_updated": "2025-01-28",
           "last_updated_source": "WP"
         }
@@ -67,13 +47,13 @@
                 "change": -7
               },
               {
-                "query": "cara melacak akun instagram fake",
+                "query": "fake id detector instagram",
                 "prev_clicks": 4,
                 "curr_clicks": 0,
                 "change": -4
               },
               {
-                "query": "fake id detector instagram",
+                "query": "cara melacak akun instagram fake",
                 "prev_clicks": 4,
                 "curr_clicks": 0,
                 "change": -4
@@ -117,8 +97,8 @@
         {
           "type": "stale",
           "label": "\ud83d\udcc5 Stale Content",
-          "detail": "Not updated in 6 months (last updated: 2025-09-19 [WP], score 13/14)",
-          "months_since_update": 6.5,
+          "detail": "Not updated in 7 months (last updated: 2025-09-19 [WP], score 13/14)",
+          "months_since_update": 6.6,
           "last_updated": "2025-09-19",
           "last_updated_source": "WP"
         }
@@ -138,7 +118,7 @@
           "type": "stale",
           "label": "\ud83d\udcc5 Stale Content",
           "detail": "Not updated in 17 months (last updated: 2024-11-21 [WP], score 13/14)",
-          "months_since_update": 16.6,
+          "months_since_update": 16.7,
           "last_updated": "2024-11-21",
           "last_updated_source": "WP"
         }
@@ -158,7 +138,7 @@
           "type": "stale",
           "label": "\ud83d\udcc5 Stale Content",
           "detail": "Not updated in 11 months (last updated: 2025-05-08 [WP], score 12/14)",
-          "months_since_update": 11.0,
+          "months_since_update": 11.1,
           "last_updated": "2025-05-08",
           "last_updated_source": "WP"
         }
@@ -178,7 +158,7 @@
           "type": "stale",
           "label": "\ud83d\udcc5 Stale Content",
           "detail": "Not updated in 10 months (last updated: 2025-06-01 [audit], score 12/14)",
-          "months_since_update": 10.2,
+          "months_since_update": 10.3,
           "last_updated": "2025-06-01",
           "last_updated_source": "audit"
         }
@@ -198,7 +178,7 @@
           "type": "stale",
           "label": "\ud83d\udcc5 Stale Content",
           "detail": "Not updated in 12 months (last updated: 2025-04-15 [audit], score 12/14)",
-          "months_since_update": 11.7,
+          "months_since_update": 11.9,
           "last_updated": "2025-04-15",
           "last_updated_source": "audit"
         }
@@ -218,7 +198,7 @@
           "type": "stale",
           "label": "\ud83d\udcc5 Stale Content",
           "detail": "Not updated in 13 months (last updated: 2025-03-10 [audit], score 12/14)",
-          "months_since_update": 12.9,
+          "months_since_update": 13.1,
           "last_updated": "2025-03-10",
           "last_updated_source": "audit"
         }
@@ -238,7 +218,7 @@
           "type": "stale",
           "label": "\ud83d\udcc5 Stale Content",
           "detail": "Not updated in 14 months (last updated: 2025-02-04 [WP], score 12/14)",
-          "months_since_update": 14.1,
+          "months_since_update": 14.2,
           "last_updated": "2025-02-04",
           "last_updated_source": "WP"
         }
@@ -258,7 +238,7 @@
           "type": "stale",
           "label": "\ud83d\udcc5 Stale Content",
           "detail": "Not updated in 8 months (last updated: 2025-08-20 [audit], score 12/14)",
-          "months_since_update": 7.5,
+          "months_since_update": 7.6,
           "last_updated": "2025-08-20",
           "last_updated_source": "audit"
         }
@@ -278,7 +258,7 @@
           "type": "stale",
           "label": "\ud83d\udcc5 Stale Content",
           "detail": "Not updated in 13 months (last updated: 2025-03-21 [WP], score 12/14)",
-          "months_since_update": 12.6,
+          "months_since_update": 12.7,
           "last_updated": "2025-03-21",
           "last_updated_source": "WP"
         }
@@ -298,7 +278,7 @@
           "type": "stale",
           "label": "\ud83d\udcc5 Stale Content",
           "detail": "Not updated in 11 months (last updated: 2025-05-19 [WP], score 12/14)",
-          "months_since_update": 10.6,
+          "months_since_update": 10.7,
           "last_updated": "2025-05-19",
           "last_updated_source": "WP"
         }
@@ -318,7 +298,7 @@
           "type": "stale",
           "label": "\ud83d\udcc5 Stale Content",
           "detail": "Not updated in 13 months (last updated: 2025-03-01 [audit], score 12/14)",
-          "months_since_update": 13.2,
+          "months_since_update": 13.4,
           "last_updated": "2025-03-01",
           "last_updated_source": "audit"
         }
@@ -327,7 +307,7 @@
       "llm_citations_this_week": 0
     }
   ],
-  "summary": "\ud83d\udd34 Our Instagram fake account tracking post lost 44% of its traffic this week (187 fewer clicks), which could hurt lead generation from social media protection searches \u2014 investigate what's causing the drop and fix it immediately.\n\n\ud83d\udcc5 Ten high-performing blog posts haven't been updated in 6-17 months, making them look outdated to readers and search engines \u2014 prioritize refreshing the Amazon and Cloudflare posts first since they score highest and get good traffic.\n\n\ud83d\udcc5 All our how-to guides on platform takedowns (TikTok, Google, Telegram) are getting stale and may lose search rankings \u2014 schedule quarterly updates for these posts since platform policies change frequently and fresh content ranks better.",
+  "summary": "\ud83d\udd34 Our Instagram fake account tracking guide lost nearly half its traffic this week (44% drop), which matters because it shows readers aren't finding the help they need on this popular topic. Check if the content needs updating or if there's a technical issue affecting the page.\n\n\ud83d\udcc5 Nine of our top-performing guides haven't been updated in 7-17 months, including our most valuable DMCA and takedown content. This hurts our search rankings and makes us look outdated to potential customers who need current legal advice.\n\n\ud83d\udcc5 Priority refresh needed for the counterfeit goods protection guide (17 months old) and Cloudflare DMCA guide (14 months old) since these have the highest scores. Update these first to maintain our authority on brand protection topics.",
   "gsc_data": {
     "/blog/how-to-take-down-an-instagram-account/": 706,
     "/blog/how-to-track-a-fake-instagram-account/": 239,
@@ -1001,8 +981,8 @@
     "/blog/red-points-vs-opsec": 12,
     "/blog/best-marqvision-alternatives-and-competitors": 12,
     "/blog/revenue-recovery-for-world-largest-brands": 8,
-    "/blog/ai-brand-protection": 7,
     "/blog/counterfeit-lawsuit": 7,
+    "/blog/ai-brand-protection": 7,
     "/blog/brand-protection-strategies-for-businesses-of-all-sizes": 5,
     "/blog/bii-gray-market-sellers": 2,
     "/blog/enforcing-unauthorized-seller-with-test-purchase": 2,
@@ -1018,5 +998,5 @@
     "/blog/ebay-vero-program": 1,
     "/blog/category/china": 1
   },
-  "generated_at": "2026-04-02T16:24:53.350296"
+  "generated_at": "2026-04-06T09:56:08.709256"
 }

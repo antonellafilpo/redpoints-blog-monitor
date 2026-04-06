@@ -10,8 +10,8 @@
       "weeks": [
         {
           "label": "Apr w1",
-          "posts": null,
-          "is_current": false
+          "posts": 0,
+          "is_current": true
         },
         {
           "label": "Apr w2",
@@ -37,7 +37,7 @@
       "posts": []
     }
   ],
-  "generated_at": "2026-04-02T16:24:43.674932",
+  "generated_at": "2026-04-06T09:55:58.732230",
   "weekly_goal": 8,
   "monthly_goal": 32
 }
