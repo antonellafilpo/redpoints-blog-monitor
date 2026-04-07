@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-07T11:34:06.776635",
+  "generated_at": "2026-04-07T13:35:27.905260",
   "weekly_goal": 8,
   "monthly_goal": 32,
   "months": [
@@ -1152,7 +1152,48 @@
           "is_current": false
         }
       ],
-      "posts": []
+      "posts": [
+        {
+          "title": "How to report copyright, trademark, and patent infringement on Amazon (2026 guide)",
+          "url": "/blog/report-infringement-amazon",
+          "modified": "2026-04-02",
+          "clicks": 0,
+          "impressions": 0,
+          "ctr": 0.0,
+          "position": 0.0,
+          "prev_position": 0.0
+        },
+        {
+          "title": "Counterfeit removal on online marketplaces: Complete guide (2026)",
+          "url": "/blog/online-marketplaces-complete-guide",
+          "modified": "2026-03-31",
+          "clicks": 0,
+          "impressions": 0,
+          "ctr": 0.0,
+          "position": 0.0,
+          "prev_position": 0.0
+        },
+        {
+          "title": "Counterfeiting: What It Is, Economic Impact, Consumer Psychology &amp; Why It\u2019s Illegal (2026 Guide)",
+          "url": "/blog/counterfeiting-complete-guide",
+          "modified": "2026-04-02",
+          "clicks": 0,
+          "impressions": 0,
+          "ctr": 0.0,
+          "position": 0.0,
+          "prev_position": 0.0
+        },
+        {
+          "title": "Brand identity protection: The complete legal guide to protect your logo, name &amp; business idea (2026)",
+          "url": "/blog/how-to-legally-protect-a-business-idea",
+          "modified": "2026-03-30",
+          "clicks": 0,
+          "impressions": 0,
+          "ctr": 0.0,
+          "position": 0.0,
+          "prev_position": 0.0
+        }
+      ]
     }
   ]
 }
