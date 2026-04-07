@@ -269,10 +269,12 @@ def write_dashboard_data(gsc_service) -> None:
         })
 
     # Load existing data and update
+    # Use week_end to determine the month — handles weeks that span month boundaries
+    # e.g. Mar 30–Apr 5: week_end=Apr 5, so posts land in April not March
     data = load_existing_dashboard()
-    year, month = today.year, today.month
+    year, month = week_end.year, week_end.month
     _, days_in_month = calendar.monthrange(year, month)
-    week_lbl = week_label_in_month(week_start)
+    week_lbl = week_label_in_month(week_end)
     all_week_labels = weeks_in_month(year, month)
 
     idx = month_index(data, year, month)
