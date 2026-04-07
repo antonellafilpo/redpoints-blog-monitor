@@ -6,6 +6,7 @@ at the end of main() just before the Slack notification.
 Requires no new dependencies - uses google-auth and requests already installed.
 """
 
+import os
 import json
 import logging
 import calendar
@@ -115,7 +116,6 @@ def fetch_gsc_metrics_for_urls(gsc_service, urls: list[str], start: str, end: st
     Fetch clicks, impressions, ctr, position from GSC for a list of URLs.
     Returns dict keyed by URL path.
     """
-    import os
     if not urls:
         return {}
 
