@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-07T11:06:23.535772",
+  "generated_at": "2026-04-07T11:34:06.776635",
   "weekly_goal": 8,
   "monthly_goal": 32,
   "months": [
@@ -1129,7 +1129,7 @@
         {
           "label": "Apr w1",
           "posts": 0,
-          "is_current": true
+          "is_current": false
         },
         {
           "label": "Apr w2",
