@@ -182,15 +182,17 @@ def month_index(data: dict, year: int, month: int) -> int | None:
 
 def write_dashboard_data(gsc_service) -> None:
     """
-    Called from main() once per week. Fetches this week's WordPress updates
+    Called from main() once per week. Fetches the LAST COMPLETE week's WordPress updates
     + GSC metrics and writes/updates dashboard_data.json.
+    Uses the same week logic as monitor.py — always last complete Mon–Sun.
     """
     log.info("=== Writing dashboard data ===")
 
     today = date.today()
-    # Current week: Mon–Sun
-    week_start = today - timedelta(days=today.weekday())
-    week_end   = week_start + timedelta(days=6)
+    # Last complete Mon–Sun week (same logic as monitor.py)
+    days_since_monday = today.weekday()  # Mon=0, Sun=6
+    week_end   = today - timedelta(days=days_since_monday + 1)  # last Sunday
+    week_start = week_end - timedelta(days=6)                   # last Monday
 
     # Pull WordPress updates for current week
     wp_posts = fetch_wordpress_updates(
