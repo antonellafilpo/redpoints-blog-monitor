@@ -22,47 +22,91 @@ DASHBOARD_JSON_PATH = "dashboard_data.json"
 # WordPress helpers
 # ──────────────────────────────────────────────
 
-def fetch_wordpress_updates(start_iso: str, end_iso: str) -> list[dict]:
+def fetch_wordpress_by_slug(slug: str) -> tuple:
     """
-    Pull all posts modified between start_iso and end_iso from WordPress.
-    Returns list of {slug, title, url, modified}.
-    Uses the public REST API - no auth needed for published posts.
+    Query WordPress by slug — same approach as monitor.py which works on this site.
+    Returns (modified_date_str, title, url_path) or (None, None, None).
     """
     import requests
+    try:
+        r = requests.get(
+            "https://www.redpoints.com/wp-json/wp/v2/posts",
+            params={"slug": slug, "_fields": "slug,title,link,modified"},
+            timeout=15,
+        )
+        r.raise_for_status()
+        data = r.json()
+        if data:
+            p = data[0]
+            url = "/" + p["link"].replace("https://www.redpoints.com/", "").strip("/")
+            return p["modified"][:10], p["title"]["rendered"], url
+    except Exception as e:
+        log.debug(f"WP slug error ({slug}): {e}")
+    return None, None, None
 
-    base = "https://www.redpoints.com/wp-json/wp/v2/posts"
-    params = {
-        "modified_after": start_iso,
-        "modified_before": end_iso,
-        "per_page": 100,
-        "_fields": "slug,title,link,modified",
-        "status": "publish",
+
+def fetch_wordpress_updates_via_gsc(gsc_service, week_start: date, week_end: date) -> list[dict]:
+    """
+    Uses GSC to get blog post URLs for the week, then queries WordPress
+    per slug to find which ones were modified in that date range.
+    This bypasses the WP listing endpoint which is restricted on this site.
+    """
+    import os, requests
+
+    site_url = os.environ.get("GSC_SITE_URL", "https://www.redpoints.com/")
+
+    # Get all blog URLs that had impressions this week from GSC
+    body = {
+        "startDate": week_start.isoformat(),
+        "endDate":   week_end.isoformat(),
+        "dimensions": ["page"],
+        "rowLimit": 5000,
+        "dimensionFilterGroups": [{"filters": [{
+            "dimension": "page",
+            "operator":  "contains",
+            "expression": "/blog/",
+        }]}],
     }
+    try:
+        resp = gsc_service.searchanalytics().query(siteUrl=site_url, body=body).execute()
+    except Exception as e:
+        log.warning(f"GSC blog URL fetch error: {e}")
+        return []
+
+    # Filter to actual post slugs only (no pagination, categories, etc.)
+    def is_post_url(u: str) -> bool:
+        u = u.rstrip("/")
+        after = u.split("/blog/")[-1].strip("/") if "/blog/" in u else ""
+        if not after or "/" in after:
+            return False
+        if any(x in after for x in ("page", "category", "tag", "author", "?")):
+            return False
+        return len(after) > 3
+
+    gsc_urls = [row["keys"][0] for row in resp.get("rows", [])]
+    blog_urls = list({u.rstrip("/").split("/")[-1]: u for u in gsc_urls if is_post_url(u)}.values())
+    log.info(f"Dashboard: checking {len(blog_urls)} blog slugs against WordPress")
 
     posts = []
-    page = 1
-    while True:
-        params["page"] = page
+    for url in blog_urls:
+        slug = url.rstrip("/").split("/")[-1]
+        modified_str, title, wp_url = fetch_wordpress_by_slug(slug)
+        if not modified_str:
+            continue
         try:
-            r = requests.get(base, params=params, timeout=15)
-            r.raise_for_status()
-            batch = r.json()
-            if not batch:
-                break
-            for p in batch:
-                posts.append({
-                    "slug": p["slug"],
-                    "title": p["title"]["rendered"],
-                    "url": p["link"].replace("https://www.redpoints.com", ""),
-                    "modified": p["modified"][:10],
-                })
-            if len(batch) < 100:
-                break
-            page += 1
-        except Exception as e:
-            log.warning(f"WordPress API error (page {page}): {e}")
-            break
+            modified_date = date.fromisoformat(modified_str)
+        except Exception:
+            continue
+        if week_start <= modified_date <= week_end:
+            path = wp_url or ("/" + url.replace("https://www.redpoints.com/", "").strip("/"))
+            posts.append({
+                "slug":     slug,
+                "title":    title or slug,
+                "url":      path,
+                "modified": modified_str,
+            })
 
+    log.info(f"WordPress {week_start} – {week_end}: {len(posts)} posts updated")
     return posts
 
 
@@ -194,12 +238,9 @@ def write_dashboard_data(gsc_service) -> None:
     week_end   = today - timedelta(days=days_since_monday + 1)  # last Sunday
     week_start = week_end - timedelta(days=6)                   # last Monday
 
-    # Pull WordPress updates for current week
-    wp_posts = fetch_wordpress_updates(
-        week_start.isoformat() + "T00:00:00",
-        week_end.isoformat()   + "T23:59:59",
-    )
-    log.info(f"WordPress: {len(wp_posts)} posts updated this week")
+    # Pull WordPress updates using GSC URLs (listing endpoint is restricted on this site)
+    wp_posts = fetch_wordpress_updates_via_gsc(gsc_service, week_start, week_end)
+    log.info(f"WordPress: {len(wp_posts)} posts updated last week")
 
     # Pull GSC metrics for updated URLs
     urls = [p["url"] for p in wp_posts]
