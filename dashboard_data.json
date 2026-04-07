@@ -10,11 +10,11 @@
       "is_current": false,
       "days_total": 30,
       "days_passed": 30,
-      "updated": 0,
+      "updated": 29,
       "weeks": [
         {
           "label": "Nov w1",
-          "posts": 0,
+          "posts": 29,
           "is_current": false
         },
         {
@@ -38,7 +38,298 @@
           "is_current": false
         }
       ],
-      "posts": []
+      "posts": [
+        {
+          "title": "A step-by-step guide to banning fake Instagram accounts permanently",
+          "url": "/blog/how-to-take-down-an-instagram-account",
+          "modified": "2025-11-03",
+          "clicks": 5071,
+          "impressions": 145644,
+          "ctr": 3.5,
+          "position": 6.4,
+          "prev_position": 6.8
+        },
+        {
+          "title": "Smart way to track a fake Instagram account",
+          "url": "/blog/how-to-track-a-fake-instagram-account",
+          "modified": "2025-11-03",
+          "clicks": 3117,
+          "impressions": 115833,
+          "ctr": 2.7,
+          "position": 4.6,
+          "prev_position": 5.1
+        },
+        {
+          "title": "How to get someone else\u2019s TikTok video taken down",
+          "url": "/blog/how-to-get-someones-tiktok-video-taken-down",
+          "modified": "2025-11-03",
+          "clicks": 1086,
+          "impressions": 51114,
+          "ctr": 2.1,
+          "position": 5.2,
+          "prev_position": 6.1
+        },
+        {
+          "title": "How to report a scammer on Telegram",
+          "url": "/blog/how-to-report-scam-on-telegram",
+          "modified": "2025-11-03",
+          "clicks": 1070,
+          "impressions": 90966,
+          "ctr": 1.2,
+          "position": 8.3,
+          "prev_position": 7.1
+        },
+        {
+          "title": "How to report a website for scamming to Google in 6 steps",
+          "url": "/blog/how-to-report-a-site-on-google",
+          "modified": "2025-11-03",
+          "clicks": 181,
+          "impressions": 24602,
+          "ctr": 0.7,
+          "position": 11.5,
+          "prev_position": 11.3
+        },
+        {
+          "title": "How to do a DMCA takedown on Instagram for immediate results",
+          "url": "/blog/how-to-do-a-dmca-takedown-on-instagram",
+          "modified": "2025-11-03",
+          "clicks": 56,
+          "impressions": 14219,
+          "ctr": 0.4,
+          "position": 6.9,
+          "prev_position": 7.5
+        },
+        {
+          "title": "How to report a seller on Mercari in 6 steps",
+          "url": "/blog/how-to-report-a-seller-on-mercari",
+          "modified": "2025-11-03",
+          "clicks": 52,
+          "impressions": 9599,
+          "ctr": 0.5,
+          "position": 5.8,
+          "prev_position": 5.0
+        },
+        {
+          "title": "Facebook DMCA takedown made easy",
+          "url": "/blog/facebook-dmca-takedown",
+          "modified": "2025-11-03",
+          "clicks": 50,
+          "impressions": 4524,
+          "ctr": 1.1,
+          "position": 5.9,
+          "prev_position": 6.7
+        },
+        {
+          "title": "How to report and take down a fraud website: a step-by-step guide",
+          "url": "/blog/report-fraud-website",
+          "modified": "2025-11-03",
+          "clicks": 38,
+          "impressions": 4607,
+          "ctr": 0.8,
+          "position": 21.3,
+          "prev_position": 19.0
+        },
+        {
+          "title": "What can I do against a website impersonating my business?",
+          "url": "/blog/website-impersonation",
+          "modified": "2025-11-03",
+          "clicks": 38,
+          "impressions": 2486,
+          "ctr": 1.5,
+          "position": 8.5,
+          "prev_position": 7.9
+        },
+        {
+          "title": "What is online impersonation and how to prevent it",
+          "url": "/blog/online-impersonation",
+          "modified": "2025-11-03",
+          "clicks": 37,
+          "impressions": 5690,
+          "ctr": 0.7,
+          "position": 11.5,
+          "prev_position": 10.6
+        },
+        {
+          "title": "How to report eBay copyright infringement",
+          "url": "/blog/how-report-ebay-copyright-infringement",
+          "modified": "2025-11-03",
+          "clicks": 35,
+          "impressions": 4415,
+          "ctr": 0.8,
+          "position": 8.3,
+          "prev_position": 8.1
+        },
+        {
+          "title": "How to effectively report a website to Cloudflare",
+          "url": "/blog/how-to-report-a-website-to-cloudflare",
+          "modified": "2025-11-03",
+          "clicks": 21,
+          "impressions": 8519,
+          "ctr": 0.2,
+          "position": 5.9,
+          "prev_position": 7.4
+        },
+        {
+          "title": "How to identify and stop unauthorized sellers and resellers in 3 steps",
+          "url": "/blog/identify-and-stop-unauthorized-sellers",
+          "modified": "2025-11-03",
+          "clicks": 20,
+          "impressions": 4401,
+          "ctr": 0.5,
+          "position": 7.3,
+          "prev_position": 6.4
+        },
+        {
+          "title": "How to report fake Google ads that pretend to be your brand",
+          "url": "/blog/report-fake-google-ads",
+          "modified": "2025-11-03",
+          "clicks": 15,
+          "impressions": 3649,
+          "ctr": 0.4,
+          "position": 11.2,
+          "prev_position": 9.7
+        },
+        {
+          "title": "How to report and take down illegal sites impersonating yours",
+          "url": "/blog/reporting-illegal-sites",
+          "modified": "2025-11-03",
+          "clicks": 15,
+          "impressions": 1586,
+          "ctr": 0.9,
+          "position": 13.1,
+          "prev_position": 7.1
+        },
+        {
+          "title": "How to report fraud and theft on Temu",
+          "url": "/blog/how-to-report-a-seller-on-temu",
+          "modified": "2025-11-03",
+          "clicks": 14,
+          "impressions": 2350,
+          "ctr": 0.6,
+          "position": 8.9,
+          "prev_position": 8.6
+        },
+        {
+          "title": "How to report copyright infringement to Google\u00a0",
+          "url": "/blog/how-to-report-copyright-infringement-to-google",
+          "modified": "2025-11-03",
+          "clicks": 10,
+          "impressions": 7487,
+          "ctr": 0.1,
+          "position": 11.6,
+          "prev_position": 10.3
+        },
+        {
+          "title": "How to mitigate software piracy in 2026",
+          "url": "/blog/how-to-stop-software-piracy",
+          "modified": "2025-11-06",
+          "clicks": 9,
+          "impressions": 4309,
+          "ctr": 0.2,
+          "position": 17.0,
+          "prev_position": 11.1
+        },
+        {
+          "title": "Business name trademark infringement explained",
+          "url": "/blog/business-name-trademark-infringement",
+          "modified": "2025-11-03",
+          "clicks": 8,
+          "impressions": 1964,
+          "ctr": 0.4,
+          "position": 10.4,
+          "prev_position": 9.2
+        },
+        {
+          "title": "How to file a successful DMCA takedown with Bing",
+          "url": "/blog/dmca-takedown-bing",
+          "modified": "2025-11-03",
+          "clicks": 7,
+          "impressions": 1668,
+          "ctr": 0.4,
+          "position": 7.7,
+          "prev_position": 7.0
+        },
+        {
+          "title": "Best SaaS affiliate programs to join in 2026",
+          "url": "/blog/best-saas-affiliate-programs",
+          "modified": "2025-11-06",
+          "clicks": 4,
+          "impressions": 8126,
+          "ctr": 0.0,
+          "position": 13.0,
+          "prev_position": 12.2
+        },
+        {
+          "title": "How to report a Weebly website",
+          "url": "/blog/how-to-report-a-weebly-website",
+          "modified": "2025-11-03",
+          "clicks": 4,
+          "impressions": 990,
+          "ctr": 0.4,
+          "position": 8.9,
+          "prev_position": 7.0
+        },
+        {
+          "title": "The ultimate guide to online marketplace monitoring for brands",
+          "url": "/blog/online-marketplace-monitoring",
+          "modified": "2025-11-03",
+          "clicks": 4,
+          "impressions": 1909,
+          "ctr": 0.2,
+          "position": 7.0,
+          "prev_position": 7.0
+        },
+        {
+          "title": "Domain management: What is it? Why should you care?",
+          "url": "/blog/what-is-domain-management",
+          "modified": "2025-11-03",
+          "clicks": 4,
+          "impressions": 6815,
+          "ctr": 0.1,
+          "position": 29.6,
+          "prev_position": 24.2
+        },
+        {
+          "title": "How to choose a Brand Protection vendor in 2026",
+          "url": "/blog/choose-brand-protection-solution",
+          "modified": "2025-11-03",
+          "clicks": 2,
+          "impressions": 1441,
+          "ctr": 0.1,
+          "position": 31.8,
+          "prev_position": 32.3
+        },
+        {
+          "title": "How to deal with patent infringement",
+          "url": "/blog/how-to-deal-with-patent-infringement",
+          "modified": "2025-11-03",
+          "clicks": 1,
+          "impressions": 231,
+          "ctr": 0.4,
+          "position": 19.8,
+          "prev_position": 21.3
+        },
+        {
+          "title": "How to prevent and protect from typosquatting",
+          "url": "/blog/prevent-typosquatting",
+          "modified": "2025-11-03",
+          "clicks": 0,
+          "impressions": 274,
+          "ctr": 0,
+          "position": 32.1,
+          "prev_position": 30.2
+        },
+        {
+          "title": "4 proven steps to report replica clothing websites",
+          "url": "/blog/replica-site-clothing",
+          "modified": "2025-11-03",
+          "clicks": 0,
+          "impressions": 489,
+          "ctr": 0,
+          "position": 7.1,
+          "prev_position": 5.1
+        }
+      ]
     },
     {
       "name": "December 2025",
@@ -84,7 +375,7 @@
       "is_current": false,
       "days_total": 31,
       "days_passed": 31,
-      "updated": 0,
+      "updated": 1,
       "weeks": [
         {
           "label": "Jan w1",
@@ -98,7 +389,7 @@
         },
         {
           "label": "Jan w3",
-          "posts": 0,
+          "posts": 1,
           "is_current": false
         },
         {
@@ -112,7 +403,18 @@
           "is_current": false
         }
       ],
-      "posts": []
+      "posts": [
+        {
+          "title": "How one of the biggest online graphic design platforms stopped account sharing",
+          "url": "/blog/stop-account-sharing-software-piracy",
+          "modified": "2026-01-21",
+          "clicks": 1,
+          "impressions": 23,
+          "ctr": 4.3,
+          "position": 7.5,
+          "prev_position": 0.0
+        }
+      ]
     },
     {
       "name": "February 2026",
@@ -121,16 +423,16 @@
       "is_current": false,
       "days_total": 28,
       "days_passed": 28,
-      "updated": 0,
+      "updated": 52,
       "weeks": [
         {
           "label": "Feb w1",
-          "posts": 0,
+          "posts": 3,
           "is_current": false
         },
         {
           "label": "Feb w2",
-          "posts": 0,
+          "posts": 6,
           "is_current": false
         },
         {
@@ -140,11 +442,532 @@
         },
         {
           "label": "Feb w4",
-          "posts": 0,
+          "posts": 43,
           "is_current": false
         }
       ],
-      "posts": []
+      "posts": [
+        {
+          "title": "How to report a fake TikTok account",
+          "url": "/blog/report-fake-accounts-on-tiktok",
+          "modified": "2026-02-27",
+          "clicks": 71,
+          "impressions": 8689,
+          "ctr": 0.8,
+          "position": 8.5,
+          "prev_position": 7.8
+        },
+        {
+          "title": "How do I report copyright infringement on Facebook?",
+          "url": "/blog/how-to-report-copyright-infringement-facebook",
+          "modified": "2026-02-26",
+          "clicks": 10,
+          "impressions": 9916,
+          "ctr": 0.1,
+          "position": 9.7,
+          "prev_position": 9.8
+        },
+        {
+          "title": "6 Best Corsearch Alternatives and Competitors in 2026",
+          "url": "/blog/best-corsearch-alternatives-and-competitors",
+          "modified": "2026-02-09",
+          "clicks": 9,
+          "impressions": 6787,
+          "ctr": 0.1,
+          "position": 7.7,
+          "prev_position": 8.2
+        },
+        {
+          "title": "7 Best Brand Protection Tools for 2026: Ranked &amp; reviewed",
+          "url": "/blog/best-brand-protection-software",
+          "modified": "2026-02-25",
+          "clicks": 8,
+          "impressions": 13879,
+          "ctr": 0.1,
+          "position": 24.0,
+          "prev_position": 17.8
+        },
+        {
+          "title": "6 Best Marqvision Alternatives and Competitors in 2026",
+          "url": "/blog/best-marqvision-alternatives-and-competitors",
+          "modified": "2026-02-09",
+          "clicks": 8,
+          "impressions": 4401,
+          "ctr": 0.2,
+          "position": 6.3,
+          "prev_position": 6.1
+        },
+        {
+          "title": "How to file a GoDaddy DMCA takedown to protect your rights",
+          "url": "/blog/godaddy-dmca-takedown",
+          "modified": "2026-02-26",
+          "clicks": 8,
+          "impressions": 1551,
+          "ctr": 0.5,
+          "position": 8.5,
+          "prev_position": 6.0
+        },
+        {
+          "title": "6 Best BrandShield alternatives and competitors in 2026",
+          "url": "/blog/best-brandshield-alternatives-and-competitors",
+          "modified": "2026-02-09",
+          "clicks": 7,
+          "impressions": 13377,
+          "ctr": 0.1,
+          "position": 5.6,
+          "prev_position": 5.9
+        },
+        {
+          "title": "A guide to copyrighting your T-shirt designs",
+          "url": "/blog/how-to-copyright-a-design-for-t-shirts",
+          "modified": "2026-02-27",
+          "clicks": 5,
+          "impressions": 1000,
+          "ctr": 0.5,
+          "position": 15.9,
+          "prev_position": 10.2
+        },
+        {
+          "title": "How to remove a counterfeit from JD.com",
+          "url": "/blog/how-to-remove-a-counterfeit-from-jd",
+          "modified": "2026-02-26",
+          "clicks": 5,
+          "impressions": 326,
+          "ctr": 1.5,
+          "position": 10.7,
+          "prev_position": 7.7
+        },
+        {
+          "title": "Fake alcohol found in authentic bottles",
+          "url": "/blog/illegal-alcohol-authentic-bottles",
+          "modified": "2026-02-26",
+          "clicks": 5,
+          "impressions": 936,
+          "ctr": 0.5,
+          "position": 10.3,
+          "prev_position": 9.9
+        },
+        {
+          "title": "eBay brand protection: A step-by-step guide to removing counterfeits (2026 edition)",
+          "url": "/blog/ebay-brand-protection",
+          "modified": "2026-02-12",
+          "clicks": 4,
+          "impressions": 343,
+          "ctr": 1.2,
+          "position": 7.4,
+          "prev_position": 9.6
+        },
+        {
+          "title": "How to protect your brand on Amazon in 2026 (Manual vs. AI-based enforcement)",
+          "url": "/blog/how-to-protect-your-brand-on-amazon",
+          "modified": "2026-02-12",
+          "clicks": 4,
+          "impressions": 1041,
+          "ctr": 0.4,
+          "position": 28.6,
+          "prev_position": 55.6
+        },
+        {
+          "title": "What is game cracking and how can brands prevent it?",
+          "url": "/blog/what-is-game-cracking",
+          "modified": "2026-02-26",
+          "clicks": 4,
+          "impressions": 2858,
+          "ctr": 0.1,
+          "position": 13.9,
+          "prev_position": 16.7
+        },
+        {
+          "title": "AI-driven infringements are here to stay: Is your brand protection strategy ready?",
+          "url": "/blog/ai-driven-infringements",
+          "modified": "2026-02-26",
+          "clicks": 3,
+          "impressions": 243,
+          "ctr": 1.2,
+          "position": 12.7,
+          "prev_position": 18.8
+        },
+        {
+          "title": "How to report &amp; automate trademark infringement in 2026",
+          "url": "/blog/how-to-report-trademark-infringement",
+          "modified": "2026-02-24",
+          "clicks": 3,
+          "impressions": 1043,
+          "ctr": 0.3,
+          "position": 19.6,
+          "prev_position": 19.9
+        },
+        {
+          "title": "How to serve a cease and desist letter to uphold your rights",
+          "url": "/blog/how-to-serve-a-cease-and-desist-letter",
+          "modified": "2026-02-26",
+          "clicks": 3,
+          "impressions": 1141,
+          "ctr": 0.3,
+          "position": 25.7,
+          "prev_position": 29.1
+        },
+        {
+          "title": "The complete guide to logo misuse detection: Protecting revenue &#038; trust in 2026",
+          "url": "/blog/logo-misuse-detection",
+          "modified": "2026-02-03",
+          "clicks": 3,
+          "impressions": 1477,
+          "ctr": 0.2,
+          "position": 6.2,
+          "prev_position": 0.0
+        },
+        {
+          "title": "How to remove unauthorized sellers on Walmart Marketplace",
+          "url": "/blog/unauthorized-sellers-on-walmart",
+          "modified": "2026-02-27",
+          "clicks": 3,
+          "impressions": 528,
+          "ctr": 0.6,
+          "position": 17.0,
+          "prev_position": 15.9
+        },
+        {
+          "title": "Amazon MAP violation: how to have Amazon enforce your prices",
+          "url": "/blog/amazon-map-violation",
+          "modified": "2026-02-27",
+          "clicks": 2,
+          "impressions": 194,
+          "ctr": 1.0,
+          "position": 47.1,
+          "prev_position": 36.8
+        },
+        {
+          "title": "How to file a Pinterest DMCA takedown request in 3 simple steps",
+          "url": "/blog/pinterest-dmca-takedown",
+          "modified": "2026-02-26",
+          "clicks": 2,
+          "impressions": 1142,
+          "ctr": 0.2,
+          "position": 6.2,
+          "prev_position": 6.8
+        },
+        {
+          "title": "9 examples of social media phishing schemes and how to avoid it",
+          "url": "/blog/social-media-phishing",
+          "modified": "2026-02-26",
+          "clicks": 2,
+          "impressions": 405,
+          "ctr": 0.5,
+          "position": 39.1,
+          "prev_position": 24.9
+        },
+        {
+          "title": "Turkey: The counterfeiters on Europe&#8217;s doorstep",
+          "url": "/blog/turkey-the-counterfeiters-on-europes-doorstep",
+          "modified": "2026-02-26",
+          "clicks": 2,
+          "impressions": 310,
+          "ctr": 0.6,
+          "position": 10.6,
+          "prev_position": 11.2
+        },
+        {
+          "title": "Digital art copyright: How to go about it?",
+          "url": "/blog/digital-art-copyright",
+          "modified": "2026-02-27",
+          "clicks": 1,
+          "impressions": 268,
+          "ctr": 0.4,
+          "position": 17.9,
+          "prev_position": 20.7
+        },
+        {
+          "title": "The simplest way to file DMCA takedown notices for software piracy",
+          "url": "/blog/dmca-takedown-notices-for-software-piracy",
+          "modified": "2026-02-26",
+          "clicks": 1,
+          "impressions": 1934,
+          "ctr": 0.1,
+          "position": 7.4,
+          "prev_position": 8.0
+        },
+        {
+          "title": "What is a DMCA takedown?",
+          "url": "/blog/dmca-takedown",
+          "modified": "2026-02-26",
+          "clicks": 1,
+          "impressions": 1503,
+          "ctr": 0.1,
+          "position": 54.9,
+          "prev_position": 46.6
+        },
+        {
+          "title": "How to report a counterfeit in TikTok Shop",
+          "url": "/blog/how-to-report-a-counterfeit-in-tiktok-shop",
+          "modified": "2026-02-26",
+          "clicks": 1,
+          "impressions": 571,
+          "ctr": 0.2,
+          "position": 5.6,
+          "prev_position": 7.8
+        },
+        {
+          "title": "How do I report a website for illegal content?",
+          "url": "/blog/how-to-report-a-website-for-illegal-content",
+          "modified": "2026-02-26",
+          "clicks": 1,
+          "impressions": 1286,
+          "ctr": 0.1,
+          "position": 14.4,
+          "prev_position": 13.9
+        },
+        {
+          "title": "How to report fake merchandise online",
+          "url": "/blog/how-to-report-fake-merchandise",
+          "modified": "2026-02-06",
+          "clicks": 1,
+          "impressions": 981,
+          "ctr": 0.1,
+          "position": 23.9,
+          "prev_position": 21.4
+        },
+        {
+          "title": "Marketplace brand protection in 2026: 3 AI-driven strategies to stop counterfeits",
+          "url": "/blog/marketplace-protection",
+          "modified": "2026-02-11",
+          "clicks": 1,
+          "impressions": 223,
+          "ctr": 0.4,
+          "position": 10.0,
+          "prev_position": 17.3
+        },
+        {
+          "title": "How to report unauthorized sellers on Amazon (Guide)",
+          "url": "/blog/report-unauthorized-seller-amazon",
+          "modified": "2026-02-26",
+          "clicks": 1,
+          "impressions": 936,
+          "ctr": 0.1,
+          "position": 22.1,
+          "prev_position": 14.2
+        },
+        {
+          "title": "5 simple steps to prevent software theft",
+          "url": "/blog/what-is-software-theft",
+          "modified": "2026-02-27",
+          "clicks": 1,
+          "impressions": 260,
+          "ctr": 0.4,
+          "position": 12.6,
+          "prev_position": 28.1
+        },
+        {
+          "title": "Ultimate Guide to American Utility Patents",
+          "url": "/blog/american-utility-patents-guide",
+          "modified": "2026-02-26",
+          "clicks": 0,
+          "impressions": 280,
+          "ctr": 0,
+          "position": 34.1,
+          "prev_position": 25.1
+        },
+        {
+          "title": "5 strategies to combat brand fraud",
+          "url": "/blog/brand-fraud",
+          "modified": "2026-02-26",
+          "clicks": 0,
+          "impressions": 103,
+          "ctr": 0,
+          "position": 12.9,
+          "prev_position": 13.9
+        },
+        {
+          "title": "How to detect and take down copycat clothing brands",
+          "url": "/blog/copycat-clothing-brands",
+          "modified": "2026-02-27",
+          "clicks": 0,
+          "impressions": 185,
+          "ctr": 0,
+          "position": 7.0,
+          "prev_position": 10.5
+        },
+        {
+          "title": "7 Dangerous counterfeit products you should never buy",
+          "url": "/blog/dangerous-counterfeits",
+          "modified": "2026-02-26",
+          "clicks": 0,
+          "impressions": 272,
+          "ctr": 0,
+          "position": 11.1,
+          "prev_position": 9.6
+        },
+        {
+          "title": "Fake car parts driving consumers into trouble",
+          "url": "/blog/fake-car-parts",
+          "modified": "2026-02-26",
+          "clicks": 0,
+          "impressions": 129,
+          "ctr": 0,
+          "position": 13.4,
+          "prev_position": 26.2
+        },
+        {
+          "title": "The gray market watch industry: what you need to know",
+          "url": "/blog/gray-market-watches",
+          "modified": "2026-02-26",
+          "clicks": 0,
+          "impressions": 413,
+          "ctr": 0,
+          "position": 16.6,
+          "prev_position": 20.1
+        },
+        {
+          "title": "How counterfeiters stifle research and innovation",
+          "url": "/blog/how-counterfeiters-stifle-research-innovation",
+          "modified": "2026-02-26",
+          "clicks": 0,
+          "impressions": 72,
+          "ctr": 0,
+          "position": 8.7,
+          "prev_position": 7.8
+        },
+        {
+          "title": "How to protect your brand identity in 5 easy ways",
+          "url": "/blog/how-to-protect-your-brand-identity",
+          "modified": "2026-02-27",
+          "clicks": 0,
+          "impressions": 181,
+          "ctr": 0,
+          "position": 48.4,
+          "prev_position": 37.5
+        },
+        {
+          "title": "How to spot a fake in 5 steps",
+          "url": "/blog/how-to-spot-a-fake-in-5-steps",
+          "modified": "2026-02-26",
+          "clicks": 0,
+          "impressions": 2204,
+          "ctr": 0,
+          "position": 7.1,
+          "prev_position": 14.3
+        },
+        {
+          "title": "How to take down YouTube videos",
+          "url": "/blog/how-to-take-down-youtube-videos",
+          "modified": "2026-02-26",
+          "clicks": 0,
+          "impressions": 276,
+          "ctr": 0,
+          "position": 11.8,
+          "prev_position": 16.8
+        },
+        {
+          "title": "Why brands should keep an eye on the piracy challenge on these marketplaces",
+          "url": "/blog/piracy-challenge",
+          "modified": "2026-02-26",
+          "clicks": 0,
+          "impressions": 237,
+          "ctr": 0,
+          "position": 8.1,
+          "prev_position": 10.5
+        },
+        {
+          "title": "What actually happens when you buy pirated software for the price of a coffee",
+          "url": "/blog/pirated-software-subscriptions-global-investigation",
+          "modified": "2026-02-06",
+          "clicks": 0,
+          "impressions": 115,
+          "ctr": 0,
+          "position": 7.4,
+          "prev_position": 0.0
+        },
+        {
+          "title": "How to protect your images on Etsy\u00a0",
+          "url": "/blog/protect-images-on-etsy",
+          "modified": "2026-02-26",
+          "clicks": 0,
+          "impressions": 254,
+          "ctr": 0,
+          "position": 9.5,
+          "prev_position": 14.1
+        },
+        {
+          "title": "How to protect your brand on X (Twitter): take back your content and revenue",
+          "url": "/blog/protect-your-brand-on-twitter",
+          "modified": "2026-02-27",
+          "clicks": 0,
+          "impressions": 321,
+          "ctr": 0,
+          "position": 10.0,
+          "prev_position": 10.1
+        },
+        {
+          "title": "Red Points vs. Marqvision: Best Brand Protection platform in 2026",
+          "url": "/blog/red-points-vs-marqvision",
+          "modified": "2026-02-26",
+          "clicks": 0,
+          "impressions": 340,
+          "ctr": 0,
+          "position": 6.0,
+          "prev_position": 0.0
+        },
+        {
+          "title": "How should your business deal with spoofing attacks?",
+          "url": "/blog/spoofing-attacks",
+          "modified": "2026-02-26",
+          "clicks": 0,
+          "impressions": 148,
+          "ctr": 0,
+          "position": 15.0,
+          "prev_position": 28.9
+        },
+        {
+          "title": "A complete guide to trademark infringement in the fashion industry",
+          "url": "/blog/trademark-infringement-in-fashion-industry",
+          "modified": "2026-02-26",
+          "clicks": 0,
+          "impressions": 500,
+          "ctr": 0,
+          "position": 6.4,
+          "prev_position": 9.2
+        },
+        {
+          "title": "Everything you should know about trademark litigation",
+          "url": "/blog/trademark-litigation",
+          "modified": "2026-02-26",
+          "clicks": 0,
+          "impressions": 815,
+          "ctr": 0,
+          "position": 42.5,
+          "prev_position": 38.1
+        },
+        {
+          "title": "Trademark squatting: what is it and how to prevent it?",
+          "url": "/blog/trademark-squatting",
+          "modified": "2026-02-26",
+          "clicks": 0,
+          "impressions": 357,
+          "ctr": 0,
+          "position": 25.8,
+          "prev_position": 11.6
+        },
+        {
+          "title": "Trademark theft: everything you need to know",
+          "url": "/blog/trademark-theft",
+          "modified": "2026-02-26",
+          "clicks": 0,
+          "impressions": 337,
+          "ctr": 0,
+          "position": 10.9,
+          "prev_position": 10.2
+        },
+        {
+          "title": "What is Brand Registry on Amazon?",
+          "url": "/blog/why-you-need-amazon-brand-registry",
+          "modified": "2026-02-26",
+          "clicks": 0,
+          "impressions": 51,
+          "ctr": 0,
+          "position": 24.4,
+          "prev_position": 33.1
+        }
+      ]
     },
     {
       "name": "March 2026",
@@ -153,35 +976,146 @@
       "is_current": false,
       "days_total": 31,
       "days_passed": 31,
-      "updated": 0,
+      "updated": 11,
       "weeks": [
         {
           "label": "Mar w1",
-          "posts": 0,
+          "posts": 1,
           "is_current": false
         },
         {
           "label": "Mar w2",
-          "posts": 0,
+          "posts": 2,
           "is_current": false
         },
         {
           "label": "Mar w3",
-          "posts": 0,
+          "posts": 3,
           "is_current": false
         },
         {
           "label": "Mar w4",
-          "posts": 0,
+          "posts": 3,
           "is_current": false
         },
         {
           "label": "Mar w5",
-          "posts": 0,
+          "posts": 2,
           "is_current": false
         }
       ],
-      "posts": []
+      "posts": [
+        {
+          "title": "How to take down a fake website before it destroys your brand",
+          "url": "/blog/how-to-take-down-a-fake-website",
+          "modified": "2026-03-27",
+          "clicks": 10,
+          "impressions": 3040,
+          "ctr": 0.3,
+          "position": 30.7,
+          "prev_position": 19.4
+        },
+        {
+          "title": "The Complete Guide to Brand Protection (2026): Strategy, Costs, KPIs &amp; AI Companies",
+          "url": "/blog/the-ultimate-guide-to-brand-protection",
+          "modified": "2026-03-19",
+          "clicks": 7,
+          "impressions": 12344,
+          "ctr": 0.1,
+          "position": 32.9,
+          "prev_position": 33.5
+        },
+        {
+          "title": "Red Points vs BrandShield: Best Brand Protection platform in 2026",
+          "url": "/blog/red-points-vs-brandshield",
+          "modified": "2026-03-10",
+          "clicks": 3,
+          "impressions": 5435,
+          "ctr": 0.1,
+          "position": 6.1,
+          "prev_position": 0.0
+        },
+        {
+          "title": "Red Points vs. Corsearch: Best Brand Protection Platform in 2026",
+          "url": "/blog/red-points-vs-corsearch",
+          "modified": "2026-03-10",
+          "clicks": 3,
+          "impressions": 7567,
+          "ctr": 0.0,
+          "position": 4.8,
+          "prev_position": 0.0
+        },
+        {
+          "title": "12 Brand Protection strategies for 2026 (with real-world examples)",
+          "url": "/blog/brand-protection-strategies-for-businesses-of-all-sizes",
+          "modified": "2026-03-23",
+          "clicks": 1,
+          "impressions": 2797,
+          "ctr": 0.0,
+          "position": 37.2,
+          "prev_position": 24.2
+        },
+        {
+          "title": "Brand identity protection: The complete legal guide to protect your logo, name &amp; business idea (2026)",
+          "url": "/blog/how-to-legally-protect-a-business-idea",
+          "modified": "2026-03-30",
+          "clicks": 1,
+          "impressions": 1165,
+          "ctr": 0.1,
+          "position": 55.9,
+          "prev_position": 41.5
+        },
+        {
+          "title": "Counterfeit removal on online marketplaces: Complete guide (2026)",
+          "url": "/blog/online-marketplaces-complete-guide",
+          "modified": "2026-03-31",
+          "clicks": 1,
+          "impressions": 24,
+          "ctr": 4.2,
+          "position": 5.5,
+          "prev_position": 0.0
+        },
+        {
+          "title": "Red Points vs OpSec: Best Brand Protection platform in 2026",
+          "url": "/blog/red-points-vs-opsec",
+          "modified": "2026-03-18",
+          "clicks": 1,
+          "impressions": 1001,
+          "ctr": 0.1,
+          "position": 5.9,
+          "prev_position": 0.0
+        },
+        {
+          "title": "How to report &#038; remove fake ads impersonating your brand (2026 Guide)",
+          "url": "/blog/report-fake-ads-complete-guide",
+          "modified": "2026-03-20",
+          "clicks": 1,
+          "impressions": 849,
+          "ctr": 0.1,
+          "position": 9.1,
+          "prev_position": 0.0
+        },
+        {
+          "title": "BII: Online &#038; offline anti-counterfeiting investigations",
+          "url": "/blog/bii-online-offline-anti-counterfeiting-investigations",
+          "modified": "2026-03-05",
+          "clicks": 0,
+          "impressions": 32,
+          "ctr": 0,
+          "position": 17.4,
+          "prev_position": 26.8
+        },
+        {
+          "title": "Chinese Marketplace Brand Protection: Complete Guide to Removing Counterfeits (2026)",
+          "url": "/blog/chinese-marketplaces-complete-guide",
+          "modified": "2026-03-27",
+          "clicks": 0,
+          "impressions": 75,
+          "ctr": 0,
+          "position": 3.8,
+          "prev_position": 0.0
+        }
+      ]
     },
     {
       "name": "April 2026",
@@ -190,11 +1124,11 @@
       "is_current": true,
       "days_total": 30,
       "days_passed": 7,
-      "updated": 0,
+      "updated": 2,
       "weeks": [
         {
           "label": "Apr w1",
-          "posts": 0,
+          "posts": 2,
           "is_current": true
         },
         {
@@ -218,7 +1152,28 @@
           "is_current": false
         }
       ],
-      "posts": []
+      "posts": [
+        {
+          "title": "How to report copyright, trademark, and patent infringement on Amazon (2026 guide)",
+          "url": "/blog/report-infringement-amazon",
+          "modified": "2026-04-02",
+          "clicks": 1,
+          "impressions": 474,
+          "ctr": 0.2,
+          "position": 26.7,
+          "prev_position": 22.0
+        },
+        {
+          "title": "Counterfeiting: What It Is, Economic Impact, Consumer Psychology &amp; Why It\u2019s Illegal (2026 Guide)",
+          "url": "/blog/counterfeiting-complete-guide",
+          "modified": "2026-04-02",
+          "clicks": 0,
+          "impressions": 82,
+          "ctr": 0,
+          "position": 16.6,
+          "prev_position": 0.0
+        }
+      ]
     }
   ]
 }
