@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-07",
+  "generated_at": "2026-04-07T11:06:23.535772",
   "weekly_goal": 8,
   "monthly_goal": 32,
   "months": [
@@ -1124,11 +1124,11 @@
       "is_current": true,
       "days_total": 30,
       "days_passed": 7,
-      "updated": 2,
+      "updated": 0,
       "weeks": [
         {
           "label": "Apr w1",
-          "posts": 2,
+          "posts": 0,
           "is_current": true
         },
         {
@@ -1152,28 +1152,7 @@
           "is_current": false
         }
       ],
-      "posts": [
-        {
-          "title": "How to report copyright, trademark, and patent infringement on Amazon (2026 guide)",
-          "url": "/blog/report-infringement-amazon",
-          "modified": "2026-04-02",
-          "clicks": 1,
-          "impressions": 474,
-          "ctr": 0.2,
-          "position": 26.7,
-          "prev_position": 22.0
-        },
-        {
-          "title": "Counterfeiting: What It Is, Economic Impact, Consumer Psychology &amp; Why It\u2019s Illegal (2026 Guide)",
-          "url": "/blog/counterfeiting-complete-guide",
-          "modified": "2026-04-02",
-          "clicks": 0,
-          "impressions": 82,
-          "ctr": 0,
-          "position": 16.6,
-          "prev_position": 0.0
-        }
-      ]
+      "posts": []
     }
   ]
 }
