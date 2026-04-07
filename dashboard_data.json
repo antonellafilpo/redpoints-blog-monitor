@@ -1,11 +1,195 @@
 {
+  "generated_at": "2026-04-07",
+  "weekly_goal": 8,
+  "monthly_goal": 32,
   "months": [
+    {
+      "name": "November 2025",
+      "year": 2025,
+      "month": 11,
+      "is_current": false,
+      "days_total": 30,
+      "days_passed": 30,
+      "updated": 0,
+      "weeks": [
+        {
+          "label": "Nov w1",
+          "posts": 0,
+          "is_current": false
+        },
+        {
+          "label": "Nov w2",
+          "posts": 0,
+          "is_current": false
+        },
+        {
+          "label": "Nov w3",
+          "posts": 0,
+          "is_current": false
+        },
+        {
+          "label": "Nov w4",
+          "posts": 0,
+          "is_current": false
+        },
+        {
+          "label": "Nov w5",
+          "posts": 0,
+          "is_current": false
+        }
+      ],
+      "posts": []
+    },
+    {
+      "name": "December 2025",
+      "year": 2025,
+      "month": 12,
+      "is_current": false,
+      "days_total": 31,
+      "days_passed": 31,
+      "updated": 0,
+      "weeks": [
+        {
+          "label": "Dec w1",
+          "posts": 0,
+          "is_current": false
+        },
+        {
+          "label": "Dec w2",
+          "posts": 0,
+          "is_current": false
+        },
+        {
+          "label": "Dec w3",
+          "posts": 0,
+          "is_current": false
+        },
+        {
+          "label": "Dec w4",
+          "posts": 0,
+          "is_current": false
+        },
+        {
+          "label": "Dec w5",
+          "posts": 0,
+          "is_current": false
+        }
+      ],
+      "posts": []
+    },
+    {
+      "name": "January 2026",
+      "year": 2026,
+      "month": 1,
+      "is_current": false,
+      "days_total": 31,
+      "days_passed": 31,
+      "updated": 0,
+      "weeks": [
+        {
+          "label": "Jan w1",
+          "posts": 0,
+          "is_current": false
+        },
+        {
+          "label": "Jan w2",
+          "posts": 0,
+          "is_current": false
+        },
+        {
+          "label": "Jan w3",
+          "posts": 0,
+          "is_current": false
+        },
+        {
+          "label": "Jan w4",
+          "posts": 0,
+          "is_current": false
+        },
+        {
+          "label": "Jan w5",
+          "posts": 0,
+          "is_current": false
+        }
+      ],
+      "posts": []
+    },
+    {
+      "name": "February 2026",
+      "year": 2026,
+      "month": 2,
+      "is_current": false,
+      "days_total": 28,
+      "days_passed": 28,
+      "updated": 0,
+      "weeks": [
+        {
+          "label": "Feb w1",
+          "posts": 0,
+          "is_current": false
+        },
+        {
+          "label": "Feb w2",
+          "posts": 0,
+          "is_current": false
+        },
+        {
+          "label": "Feb w3",
+          "posts": 0,
+          "is_current": false
+        },
+        {
+          "label": "Feb w4",
+          "posts": 0,
+          "is_current": false
+        }
+      ],
+      "posts": []
+    },
+    {
+      "name": "March 2026",
+      "year": 2026,
+      "month": 3,
+      "is_current": false,
+      "days_total": 31,
+      "days_passed": 31,
+      "updated": 0,
+      "weeks": [
+        {
+          "label": "Mar w1",
+          "posts": 0,
+          "is_current": false
+        },
+        {
+          "label": "Mar w2",
+          "posts": 0,
+          "is_current": false
+        },
+        {
+          "label": "Mar w3",
+          "posts": 0,
+          "is_current": false
+        },
+        {
+          "label": "Mar w4",
+          "posts": 0,
+          "is_current": false
+        },
+        {
+          "label": "Mar w5",
+          "posts": 0,
+          "is_current": false
+        }
+      ],
+      "posts": []
+    },
     {
       "name": "April 2026",
       "year": 2026,
       "month": 4,
       "is_current": true,
       "days_total": 30,
+      "days_passed": 7,
       "updated": 0,
       "weeks": [
         {
@@ -36,8 +220,5 @@
       ],
       "posts": []
     }
-  ],
-  "generated_at": "2026-04-06T09:55:58.732230",
-  "weekly_goal": 8,
-  "monthly_goal": 32
+  ]
 }
