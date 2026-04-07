@@ -1174,16 +1174,6 @@
           "prev_position": 0.0
         },
         {
-          "title": "How to report copyright, trademark, and patent infringement on Amazon (2026 guide)",
-          "url": "/blog/report-infringement-amazon",
-          "modified": "2026-04-02",
-          "clicks": 4,
-          "impressions": 1956,
-          "ctr": 0.2,
-          "position": 24.5,
-          "prev_position": 16.8
-        },
-        {
           "title": "Counterfeit removal on online marketplaces: Complete guide (2026)",
           "url": "/blog/online-marketplaces-complete-guide",
           "modified": "2026-03-31",
@@ -1191,16 +1181,6 @@
           "impressions": 282,
           "ctr": 0.4,
           "position": 5.1,
-          "prev_position": 0.0
-        },
-        {
-          "title": "Counterfeiting: What It Is, Economic Impact, Consumer Psychology &amp; Why It\u2019s Illegal (2026 Guide)",
-          "url": "/blog/counterfeiting-complete-guide",
-          "modified": "2026-04-02",
-          "clicks": 0,
-          "impressions": 121,
-          "ctr": 0,
-          "position": 20.8,
           "prev_position": 0.0
         },
         {
@@ -1212,6 +1192,28 @@
           "ctr": 0.2,
           "position": 49.3,
           "prev_position": 44.6
+        },
+        {
+          "title": "How to report copyright, trademark, and patent infringement on Amazon (2026 guide)",
+          "url": "/blog/report-infringement-amazon",
+          "modified": "2026-04-02",
+          "type": "new",
+          "clicks": 4,
+          "impressions": 1956,
+          "ctr": 0.2,
+          "position": 24.5,
+          "prev_position": 16.8
+        },
+        {
+          "title": "Counterfeiting: What It Is, Economic Impact, Consumer Psychology &amp; Why It\u2019s Illegal (2026 Guide)",
+          "url": "/blog/counterfeiting-complete-guide",
+          "modified": "2026-04-02",
+          "type": "new",
+          "clicks": 0,
+          "impressions": 121,
+          "ctr": 0,
+          "position": 20.8,
+          "prev_position": 0.0
         }
       ]
     }
