@@ -437,17 +437,19 @@
       </div>
       <table>
         <colgroup>
-          <col style="width:38%">
-          <col style="width:12%">
-          <col style="width:12%">
-          <col style="width:12%">
-          <col style="width:12%">
-          <col style="width:14%">
+          <col style="width:34%">
+          <col style="width:10%">
+          <col style="width:10%">
+          <col style="width:11%">
+          <col style="width:11%">
+          <col style="width:11%">
+          <col style="width:13%">
         </colgroup>
         <thead>
           <tr>
             <th>Post</th>
             <th>Updated</th>
+            <th>Type</th>
             <th>Clicks</th>
             <th>Impr.</th>
             <th>CTR</th>
@@ -681,6 +683,7 @@ function renderTable(posts) {
         <div class="post-url">${p.url || ''}</div>
       </td>
       <td class="mono" style="color:var(--muted)">${modDate}</td>
+      <td><span style="font-size:11px;font-weight:500;padding:2px 8px;border-radius:20px;background:${p.type==='new'?'#EAF3DE':'#E6F1FB'};color:${p.type==='new'?'#27500A':'#0C447C'}">${p.type==='new'?'New':'Update'}</span></td>
       <td class="mono">${(p.clicks || 0).toLocaleString()}</td>
       <td class="mono">${(p.impressions || 0).toLocaleString()}</td>
       <td class="mono">${p.ctr ? p.ctr.toFixed(1) + '%' : '—'}</td>

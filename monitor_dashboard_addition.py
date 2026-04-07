@@ -49,16 +49,16 @@ def month_name(year, month):
 
 def wp_fetch_by_slug(slug):
     try:
-        r = requests.get(WP_BASE, params={"slug": slug, "_fields": "slug,title,link,modified"}, timeout=15)
+        r = requests.get(WP_BASE, params={"slug": slug, "_fields": "slug,title,link,modified,date"}, timeout=15)
         r.raise_for_status()
         data = r.json()
         if data:
             p    = data[0]
             path = "/" + p["link"].replace("https://www.redpoints.com/", "").strip("/")
-            return p["modified"][:10], p["title"]["rendered"], path
+            return p["modified"][:10], p["title"]["rendered"], path, p.get("date", "")[:10]
     except Exception as e:
         log.debug(f"WP slug error ({slug}): {e}")
-    return None, None, None
+    return None, None, None, None
 
 
 def fetch_wp_updates(gsc_service, week_start, week_end):
@@ -89,7 +89,7 @@ def fetch_wp_updates(gsc_service, week_start, week_end):
 
     posts = []
     for slug, gsc_url in slug_to_url.items():
-        modified_str, title, wp_path = wp_fetch_by_slug(slug)
+        modified_str, title, wp_path, created_str = wp_fetch_by_slug(slug)
         if not modified_str:
             continue
         try:
@@ -97,10 +97,19 @@ def fetch_wp_updates(gsc_service, week_start, week_end):
         except Exception:
             continue
         if week_start <= modified_date <= week_end:
+            # Determine if new post or update
+            try:
+                created_date = date.fromisoformat(created_str) if created_str else None
+                days_old = (modified_date - created_date).days if created_date else 999
+                post_type = "new" if days_old <= 7 else "update"
+            except Exception:
+                post_type = "update"
+
             posts.append({
                 "slug": slug, "title": title or slug,
                 "url": wp_path or gsc_url.replace("https://www.redpoints.com", ""),
                 "modified": modified_str,
+                "type": post_type,
             })
 
     log.info(f"WordPress {week_start} - {week_end}: {len(posts)} posts updated")
@@ -161,8 +170,17 @@ def write_dashboard_data(gsc_service):
     for p in wp_posts:
         url = p["url"]
         g   = gsc_now.get(url, {})
+        # Only include posts actually modified in the target month
+        try:
+            mod_month = date.fromisoformat(p["modified"]).month
+            mod_year  = date.fromisoformat(p["modified"]).year
+        except Exception:
+            mod_month, mod_year = 0, 0
+        if mod_year != week_end.year or mod_month != week_end.month:
+            continue
         enriched.append({
             "title": p["title"], "url": url, "modified": p["modified"],
+            "type": p.get("type", "update"),
             "clicks": g.get("clicks", 0), "impressions": g.get("impressions", 0),
             "ctr": g.get("ctr", 0.0), "position": g.get("position", 0.0),
             "prev_position": gsc_prev_pos.get(url, 0.0),
