@@ -88,7 +88,10 @@ def fetch_wp_updates(gsc_service, week_start, week_end):
     log.info(f"Dashboard: checking {len(slug_to_url)} blog slugs against WordPress")
 
     posts = []
+    seen_slugs = set()
     for slug, gsc_url in slug_to_url.items():
+        if slug in seen_slugs:
+            continue
         modified_str, title, wp_path, created_str = wp_fetch_by_slug(slug)
         if not modified_str:
             continue
@@ -97,7 +100,7 @@ def fetch_wp_updates(gsc_service, week_start, week_end):
         except Exception:
             continue
         if week_start <= modified_date <= week_end:
-            # Determine if new post or update
+            seen_slugs.add(slug)
             try:
                 created_date = date.fromisoformat(created_str) if created_str else None
                 days_old = (modified_date - created_date).days if created_date else 999
@@ -167,17 +170,20 @@ def write_dashboard_data(gsc_service):
     gsc_prev_pos = {u: v["position"] for u, v in gsc_prev.items()}
 
     enriched = []
+    seen_urls = set()
     for p in wp_posts:
         url = p["url"]
-        g   = gsc_now.get(url, {})
+        if url in seen_urls:
+            continue
         # Only include posts actually modified in the target month
         try:
-            mod_month = date.fromisoformat(p["modified"]).month
-            mod_year  = date.fromisoformat(p["modified"]).year
+            mod_date = date.fromisoformat(p["modified"])
         except Exception:
-            mod_month, mod_year = 0, 0
-        if mod_year != week_end.year or mod_month != week_end.month:
             continue
+        if mod_date.year != week_end.year or mod_date.month != week_end.month:
+            continue
+        seen_urls.add(url)
+        g = gsc_now.get(url, {})
         enriched.append({
             "title": p["title"], "url": url, "modified": p["modified"],
             "type": p.get("type", "update"),
@@ -210,7 +216,9 @@ def write_dashboard_data(gsc_service):
             if w["label"] == lbl:
                 w["posts"] = len(wp_posts)
         m["updated"] = sum(w["posts"] for w in m["weeks"] if w["posts"] is not None)
-        other    = [p for p in m.get("posts", []) if week_label(date.fromisoformat(p["modified"])) != lbl]
+        other    = [p for p in m.get("posts", [])
+                    if p["url"] not in seen_urls and
+                    week_label(date.fromisoformat(p["modified"])) != lbl]
         m["posts"] = other + enriched
 
     for m in data["months"]:
