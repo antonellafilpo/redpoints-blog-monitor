@@ -14,8 +14,8 @@
         {
           "type": "stale",
           "label": "\ud83d\udcc5 Stale Content",
-          "detail": "Not updated in 14 months (last updated: 2025-01-28 [WP], score 13/14)",
-          "months_since_update": 14.5,
+          "detail": "Not updated in 15 months (last updated: 2025-01-28 [WP], score 13/14)",
+          "months_since_update": 14.7,
           "last_updated": "2025-01-28",
           "last_updated_source": "WP"
         }
@@ -98,32 +98,12 @@
           "type": "stale",
           "label": "\ud83d\udcc5 Stale Content",
           "detail": "Not updated in 7 months (last updated: 2025-09-19 [WP], score 13/14)",
-          "months_since_update": 6.7,
+          "months_since_update": 6.9,
           "last_updated": "2025-09-19",
           "last_updated_source": "WP"
         }
       ],
       "gsc_clicks_this_week": 15,
-      "llm_citations_this_week": 0
-    },
-    {
-      "path": "/blog/legal-action-against-counterfeit-goods/",
-      "url": "https://www.redpoints.com/blog/legal-action-against-counterfeit-goods/",
-      "title": "How to take legal action against counterfeit goods' sellers",
-      "cluster": "Counterfeit Goods Protection",
-      "score": 13,
-      "tier": "tier1",
-      "flags": [
-        {
-          "type": "stale",
-          "label": "\ud83d\udcc5 Stale Content",
-          "detail": "Not updated in 17 months (last updated: 2024-11-21 [WP], score 13/14)",
-          "months_since_update": 16.8,
-          "last_updated": "2024-11-21",
-          "last_updated_source": "WP"
-        }
-      ],
-      "gsc_clicks_this_week": 0,
       "llm_citations_this_week": 0
     },
     {
@@ -138,7 +118,7 @@
           "type": "stale",
           "label": "\ud83d\udcc5 Stale Content",
           "detail": "Not updated in 11 months (last updated: 2025-05-08 [WP], score 12/14)",
-          "months_since_update": 11.2,
+          "months_since_update": 11.3,
           "last_updated": "2025-05-08",
           "last_updated_source": "WP"
         }
@@ -157,8 +137,8 @@
         {
           "type": "stale",
           "label": "\ud83d\udcc5 Stale Content",
-          "detail": "Not updated in 10 months (last updated: 2025-06-01 [audit], score 12/14)",
-          "months_since_update": 10.4,
+          "detail": "Not updated in 11 months (last updated: 2025-06-01 [audit], score 12/14)",
+          "months_since_update": 10.5,
           "last_updated": "2025-06-01",
           "last_updated_source": "audit"
         }
@@ -178,7 +158,7 @@
           "type": "stale",
           "label": "\ud83d\udcc5 Stale Content",
           "detail": "Not updated in 12 months (last updated: 2025-04-15 [audit], score 12/14)",
-          "months_since_update": 11.9,
+          "months_since_update": 12.1,
           "last_updated": "2025-04-15",
           "last_updated_source": "audit"
         }
@@ -198,7 +178,7 @@
           "type": "stale",
           "label": "\ud83d\udcc5 Stale Content",
           "detail": "Not updated in 13 months (last updated: 2025-03-10 [audit], score 12/14)",
-          "months_since_update": 13.1,
+          "months_since_update": 13.3,
           "last_updated": "2025-03-10",
           "last_updated_source": "audit"
         }
@@ -218,7 +198,7 @@
           "type": "stale",
           "label": "\ud83d\udcc5 Stale Content",
           "detail": "Not updated in 14 months (last updated: 2025-02-04 [WP], score 12/14)",
-          "months_since_update": 14.3,
+          "months_since_update": 14.4,
           "last_updated": "2025-02-04",
           "last_updated_source": "WP"
         }
@@ -238,7 +218,7 @@
           "type": "stale",
           "label": "\ud83d\udcc5 Stale Content",
           "detail": "Not updated in 8 months (last updated: 2025-08-20 [audit], score 12/14)",
-          "months_since_update": 7.7,
+          "months_since_update": 7.9,
           "last_updated": "2025-08-20",
           "last_updated_source": "audit"
         }
@@ -258,32 +238,12 @@
           "type": "stale",
           "label": "\ud83d\udcc5 Stale Content",
           "detail": "Not updated in 13 months (last updated: 2025-03-21 [WP], score 12/14)",
-          "months_since_update": 12.8,
+          "months_since_update": 12.9,
           "last_updated": "2025-03-21",
           "last_updated_source": "WP"
         }
       ],
       "gsc_clicks_this_week": 5,
-      "llm_citations_this_week": 0
-    },
-    {
-      "path": "/blog/how-to-take-down-a-tiktok-account/",
-      "url": "https://www.redpoints.com/blog/how-to-take-down-a-tiktok-account/",
-      "title": "How to take down a TikTok account",
-      "cluster": "Social Media Takedown",
-      "score": 12,
-      "tier": "tier1",
-      "flags": [
-        {
-          "type": "stale",
-          "label": "\ud83d\udcc5 Stale Content",
-          "detail": "Not updated in 11 months (last updated: 2025-05-19 [WP], score 12/14)",
-          "months_since_update": 10.8,
-          "last_updated": "2025-05-19",
-          "last_updated_source": "WP"
-        }
-      ],
-      "gsc_clicks_this_week": 6,
       "llm_citations_this_week": 0
     },
     {
@@ -297,8 +257,8 @@
         {
           "type": "stale",
           "label": "\ud83d\udcc5 Stale Content",
-          "detail": "Not updated in 13 months (last updated: 2025-03-01 [audit], score 12/14)",
-          "months_since_update": 13.4,
+          "detail": "Not updated in 14 months (last updated: 2025-03-01 [audit], score 12/14)",
+          "months_since_update": 13.6,
           "last_updated": "2025-03-01",
           "last_updated_source": "audit"
         }
@@ -307,7 +267,7 @@
       "llm_citations_this_week": 0
     }
   ],
-  "summary": "\ud83d\udd34 Our Instagram fake account tracking post lost nearly half its visitors this week (221 vs usual 410), signaling a major drop in search rankings \u2014 immediately check what competitors are doing and refresh the content.\n\n\ud83d\udcc5 Ten high-performing posts haven't been updated in 7-17 months, making them stale and likely to lose search visibility soon \u2014 schedule content refreshes for all posts older than 6 months starting with the highest traffic ones.\n\n\ud83d\udcc5 Most outdated content covers core topics like DMCA takedowns and social media protection that drive leads \u2014 prioritize updating these evergreen guides to maintain our authority and search rankings.",
+  "summary": "\ud83d\udd34 Our Instagram fake account tracking guide lost nearly half its traffic this week (221 clicks vs 410 average), signaling a major performance issue that needs immediate investigation and optimization.\n\n\ud83d\udcc5 Eight high-performing guides haven't been updated in 7-15 months and risk becoming outdated, which could hurt search rankings and user trust - schedule content refreshes starting with the oldest posts.\n\n\ud83d\udcc5 All flagged content focuses on takedown procedures and scam prevention, suggesting these topics need regular maintenance due to changing platform policies and legal requirements.",
   "gsc_data": {
     "/blog/how-to-take-down-an-instagram-account/": 634,
     "/blog/how-to-track-a-fake-instagram-account/": 221,
@@ -920,8 +880,8 @@
     "/blog/dmca-takedowns-on-social-media": 4,
     "/blog/counterfeit-lawsuit": 3,
     "/blog/chinese-marketplaces-complete-guide": 3,
-    "/blog/identify-and-stop-unauthorized-sellers": 1,
     "/blog/how-to-report-trademark-infringement": 2,
+    "/blog/identify-and-stop-unauthorized-sellers": 1,
     "/blog/brand-protection-roi": 2,
     "/blog/aliexpress-hidden-links": 1,
     "/blog/gray-market-cameras": 1,
@@ -933,15 +893,15 @@
     "/blog/brand-impersonation": 1,
     "/blog/piracy-challenge": 1,
     "/blog/how-to-take-down-a-malicious-website": 1,
-    "/blog/report-shopify-store": 1,
     "/blog/winning-online-brand-protection-strategy": 1,
-    "/blog/social-media-scams": 1,
+    "/blog/report-shopify-store": 1,
     "/blog/risk-of-third-party-app-stores": 1,
+    "/blog/how-to-detect-fake-social-media-account": 1,
+    "/blog/bii-gray-market-sellers": 1,
+    "/blog/social-media-scams": 1,
     "/blog/protect-social-media-accounts-for-businesses": 1,
     "/blog/how-to-protect-intellectual-property-on-social-media": 1,
-    "/blog/how-to-detect-fake-social-media-account": 1,
     "/blog/fake-watches": 1,
-    "/blog/bii-gray-market-sellers": 1,
     "/blog/trademark-monitoring": 1,
     "/blog/ip-offices": 1,
     "/blog/how-to-protect-your-brand-on-amazon": 1,
@@ -950,5 +910,5 @@
     "/blog/enforcing-unauthorized-seller-with-test-purchase": 1,
     "/blog/category/china": 1
   },
-  "generated_at": "2026-04-08T13:59:19.806418"
+  "generated_at": "2026-04-13T11:07:34.050503"
 }
