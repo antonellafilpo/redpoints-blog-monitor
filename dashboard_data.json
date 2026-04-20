@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-13",
+  "generated_at": "2026-04-20",
   "weekly_goal": 8,
   "monthly_goal": 32,
   "months": [
@@ -1124,7 +1124,7 @@
       "is_current": true,
       "days_total": 30,
       "days_passed": 7,
-      "updated": 10,
+      "updated": 20,
       "weeks": [
         {
           "label": "Apr w1",
@@ -1134,12 +1134,12 @@
         {
           "label": "Apr w2",
           "posts": 6,
-          "is_current": true
+          "is_current": false
         },
         {
           "label": "Apr w3",
-          "posts": null,
-          "is_current": false
+          "posts": 10,
+          "is_current": true
         },
         {
           "label": "Apr w4",
@@ -1216,17 +1216,6 @@
           "prev_position": 0.0
         },
         {
-          "title": "How to report a scammer on Telegram",
-          "url": "/blog/how-to-report-scam-on-telegram",
-          "modified": "2026-04-08",
-          "type": "update",
-          "clicks": 123,
-          "impressions": 16505,
-          "ctr": 0.7,
-          "position": 9.5,
-          "prev_position": 9.4
-        },
-        {
           "title": "How to take down a TikTok account (Updated 2026 steps)",
           "url": "/blog/how-to-take-down-a-tiktok-account",
           "modified": "2026-04-08",
@@ -1279,6 +1268,116 @@
           "impressions": 21,
           "ctr": 0,
           "position": 4.5,
+          "prev_position": 0.0
+        },
+        {
+          "title": "How to report a scammer on Telegram (2026 guide)",
+          "url": "/blog/how-to-report-scam-on-telegram",
+          "modified": "2026-04-15",
+          "type": "new",
+          "clicks": 171,
+          "impressions": 20756,
+          "ctr": 0.8,
+          "position": 8.8,
+          "prev_position": 9.0
+        },
+        {
+          "title": "How to get someone else\u2019s TikTok video taken down (2026 guide)",
+          "url": "/blog/how-to-get-someones-tiktok-video-taken-down",
+          "modified": "2026-04-13",
+          "type": "new",
+          "clicks": 118,
+          "impressions": 7231,
+          "ctr": 1.6,
+          "position": 4.3,
+          "prev_position": 4.3
+        },
+        {
+          "title": "How to legally take down a website: The full process for copyright, trademark, and fraud cases",
+          "url": "/blog/how-to-legally-take-down-a-website",
+          "modified": "2026-04-15",
+          "type": "new",
+          "clicks": 25,
+          "impressions": 1845,
+          "ctr": 1.4,
+          "position": 15.6,
+          "prev_position": 11.7
+        },
+        {
+          "title": "Alibaba scams: types, warning signs, and how to protect your brand (2026)",
+          "url": "/blog/alibaba-scams",
+          "modified": "2026-04-17",
+          "type": "new",
+          "clicks": 9,
+          "impressions": 6691,
+          "ctr": 0.1,
+          "position": 11.3,
+          "prev_position": 4.5
+        },
+        {
+          "title": "Social media DMCA takedown guide: Facebook, Instagram, X, TikTok &amp; Pinterest (2026)",
+          "url": "/blog/dmca-takedowns-on-social-media",
+          "modified": "2026-04-13",
+          "type": "new",
+          "clicks": 4,
+          "impressions": 2791,
+          "ctr": 0.1,
+          "position": 9.1,
+          "prev_position": 6.6
+        },
+        {
+          "title": "How to take down a fake website: 2026 brand impersonation guide",
+          "url": "/blog/how-to-take-down-a-fake-website",
+          "modified": "2026-04-13",
+          "type": "new",
+          "clicks": 7,
+          "impressions": 1158,
+          "ctr": 0.6,
+          "position": 28.9,
+          "prev_position": 32.0
+        },
+        {
+          "title": "DMCA takedowns on Google and Bing: The complete filing guide (2026)",
+          "url": "/blog/dmca-takedown-google",
+          "modified": "2026-04-13",
+          "type": "new",
+          "clicks": 2,
+          "impressions": 1298,
+          "ctr": 0.2,
+          "position": 20.3,
+          "prev_position": 28.1
+        },
+        {
+          "title": "How to file a GoDaddy DMCA takedown: copyright &amp; trademark guide (2026)",
+          "url": "/blog/godaddy-dmca-takedown",
+          "modified": "2026-04-13",
+          "type": "new",
+          "clicks": 5,
+          "impressions": 444,
+          "ctr": 1.1,
+          "position": 13.0,
+          "prev_position": 19.5
+        },
+        {
+          "title": "How to take legal action against counterfeit goods\u2019 sellers (2026 Guide)",
+          "url": "/blog/legal-action-against-counterfeit-goods",
+          "modified": "2026-04-13",
+          "type": "new",
+          "clicks": 2,
+          "impressions": 308,
+          "ctr": 0.6,
+          "position": 19.9,
+          "prev_position": 15.3
+        },
+        {
+          "title": "Domain management protection: How to protect, claim, dispute and manage your domains (2026 complete guide)",
+          "url": "/blog/domain-management-protection-full-guide",
+          "modified": "2026-04-15",
+          "type": "new",
+          "clicks": 0,
+          "impressions": 33,
+          "ctr": 0,
+          "position": 7.3,
           "prev_position": 0.0
         }
       ]
