@@ -789,6 +789,11 @@ KEEP_POSTS = {
         "cluster": "Marketplace Protection", "score": 14,
         "last_updated": "2023-03-27", "update_cooldown_until": None, "merge_cooldown_until": None,
     },
+    "/blog/remove-a-counterfeit-from-alibaba/": {
+        "title": "How to remove a counterfeit from Alibaba",
+        "cluster": "Marketplace Protection", "score": 13,
+        "last_updated": "2025-10-02", "update_cooldown_until": None, "merge_cooldown_until": None,
+    },
     "/blog/cloudflare-dmca-takedown/": {
         "title": "How to effectively submit DMCA takedown request to Cloudflare",
         "cluster": "Copyright Infringement", "score": 13,
@@ -819,52 +824,126 @@ KEEP_POSTS = {
         "cluster": "Copyright Infringement", "score": 12,
         "last_updated": "2025-05-08", "update_cooldown_until": None, "merge_cooldown_until": None,
     },
-    "/blog/how-to-report-a-scammer-on-telegram/": {
+    "/blog/how-to-report-scam-on-telegram/": {
         "title": "How to report a scammer on Telegram",
         "cluster": "Platform Scams", "score": 12,
-        "last_updated": "2025-06-01", "update_cooldown_until": None, "merge_cooldown_until": None,
+        "last_updated": "2025-11-03", "update_cooldown_until": None, "merge_cooldown_until": None,
     },
-    "/blog/how-to-report-copyright-infringement-on-tiktok/": {
+    "/blog/copyright-infringement-tiktok/": {
         "title": "How to report a copyright infringement on TikTok",
         "cluster": "Social Media Takedown", "score": 12,
-        "last_updated": "2025-04-15", "update_cooldown_until": None, "merge_cooldown_until": None,
+        "last_updated": "2025-07-08", "update_cooldown_until": None, "merge_cooldown_until": None,
     },
-    "/blog/how-to-file-a-dmca-takedown-notice/": {
+    "/blog/dmca-takedown-google/": {
         "title": "How to file a DMCA takedown notice to Google to stop copyright infringement",
         "cluster": "Copyright Infringement", "score": 12,
-        "last_updated": "2025-03-10", "update_cooldown_until": None, "merge_cooldown_until": None,
+        "last_updated": "2025-01-22", "update_cooldown_until": None, "merge_cooldown_until": None,
+    },
+    "/blog/how-to-remove-a-counterfeit-from-aliexpress/": {
+        "title": "How to remove a counterfeit from AliExpress",
+        "cluster": "Marketplace Protection", "score": 12,
+        "last_updated": "2024-12-27", "update_cooldown_until": None, "merge_cooldown_until": None,
     },
     "/blog/website-cloning/": {
         "title": "Website cloning: How to identify, prevent, and respond",
         "cluster": "Website Takedown", "score": 12,
-        "last_updated": "2025-01-15", "update_cooldown_until": None, "merge_cooldown_until": None,
+        "last_updated": "2025-02-04", "update_cooldown_until": None, "merge_cooldown_until": None,
     },
-    "/blog/ban-fake-instagram-accounts/": {
+    "/blog/how-to-take-down-an-instagram-account/": {
         "title": "A step-by-step guide to banning fake Instagram accounts permanently",
         "cluster": "Social Media Takedown", "score": 12,
-        "last_updated": "2025-08-20", "update_cooldown_until": None, "merge_cooldown_until": None,
+        "last_updated": "2025-11-03", "update_cooldown_until": None, "merge_cooldown_until": None,
     },
     "/blog/alibaba-scams/": {
         "title": "9 tips to avoid Alibaba scams",
         "cluster": "Marketplace Protection", "score": 12,
-        "last_updated": "2025-02-01", "update_cooldown_until": None, "merge_cooldown_until": None,
+        "last_updated": "2025-03-21", "update_cooldown_until": None, "merge_cooldown_until": None,
     },
     "/blog/how-to-take-down-a-tiktok-account/": {
         "title": "How to take down a TikTok account",
         "cluster": "Social Media Takedown", "score": 12,
-        "last_updated": "2025-05-20", "update_cooldown_until": None, "merge_cooldown_until": None,
+        "last_updated": "2025-05-19", "update_cooldown_until": None, "merge_cooldown_until": None,
     },
-    "/blog/how-to-report-and-take-down-a-fraud-website/": {
+    "/blog/report-fraud-website/": {
         "title": "How to report and take down a fraud website: a step-by-step guide",
         "cluster": "Website Takedown", "score": 12,
-        "last_updated": "2025-03-01", "update_cooldown_until": None, "merge_cooldown_until": None,
+        "last_updated": "2025-11-03", "update_cooldown_until": None, "merge_cooldown_until": None,
+    },
+    "/blog/best-corsearch-alternatives-and-competitors/": {
+        "title": "Best Corsearch alternatives and competitors",
+        "cluster": "Brand Protection", "score": 11,
+        "last_updated": "2026-02-09", "update_cooldown_until": None, "merge_cooldown_until": None,
+    },
+    "/blog/godaddy-dmca-takedown/": {
+        "title": "How to file a GoDaddy DMCA takedown",
+        "cluster": "Copyright Infringement", "score": 11,
+        "last_updated": "2025-02-11", "update_cooldown_until": None, "merge_cooldown_until": None,
     },
     "/blog/best-brand-protection-software/": {
         "title": "7 Best Brand Protection Tools for 2026: Ranked & reviewed",
         "cluster": "Brand Protection", "score": 10,
-        "last_updated": "2026-01-15", "update_cooldown_until": None, "merge_cooldown_until": None,
+        "last_updated": "2026-02-18", "update_cooldown_until": None, "merge_cooldown_until": None,
     },
-    # Add remaining KEEP posts here following the same pattern
+    "/blog/best-marqvision-alternatives-and-competitors/": {
+        "title": "Best MarqVision alternatives and competitors",
+        "cluster": "Brand Protection", "score": 9,
+        "last_updated": "2026-02-09", "update_cooldown_until": None, "merge_cooldown_until": None,
+    },
+    "/blog/best-brandshield-alternatives-and-competitors/": {
+        "title": "Best BrandShield alternatives and competitors",
+        "cluster": "Brand Protection", "score": 8,
+        "last_updated": "2026-02-09", "update_cooldown_until": None, "merge_cooldown_until": None,
+    },
+    "/blog/best-saas-affiliate-programs/": {
+        "title": "Best SaaS affiliate programs",
+        "cluster": "Brand Protection", "score": 8,
+        "last_updated": "2025-11-06", "update_cooldown_until": None, "merge_cooldown_until": None,
+    },
+    "/blog/how-to-report-trademark-infringement/": {
+        "title": "How to report trademark infringement",
+        "cluster": "Copyright Infringement", "score": 7,
+        "last_updated": "2026-02-12", "update_cooldown_until": None, "merge_cooldown_until": None,
+    },
+    "/blog/pirated-software-subscriptions-global-investigation/": {
+        "title": "Pirated software subscriptions: global investigation",
+        "cluster": "Brand Protection", "score": 7,
+        "last_updated": "2026-02-06", "update_cooldown_until": None, "merge_cooldown_until": None,
+    },
+    "/blog/ebay-brand-protection/": {
+        "title": "eBay brand protection: A step-by-step guide to removing counterfeits",
+        "cluster": "Marketplace Protection", "score": 6,
+        "last_updated": "2026-02-12", "update_cooldown_until": None, "merge_cooldown_until": None,
+    },
+    "/blog/the-ultimate-guide-to-brand-protection/": {
+        "title": "The ultimate guide to brand protection",
+        "cluster": "Brand Protection", "score": 6,
+        "last_updated": "2026-02-06", "update_cooldown_until": None, "merge_cooldown_until": None,
+    },
+    "/blog/how-to-protect-your-brand-on-amazon/": {
+        "title": "How to protect your brand on Amazon",
+        "cluster": "Marketplace Protection", "score": 5,
+        "last_updated": "2026-02-12", "update_cooldown_until": None, "merge_cooldown_until": None,
+    },
+    "/blog/stop-account-sharing-software-piracy/": {
+        "title": "How to stop account sharing and software piracy",
+        "cluster": "Brand Protection", "score": 5,
+        "last_updated": "2026-01-21", "update_cooldown_until": None, "merge_cooldown_until": None,
+    },
+    "/blog/marketplace-protection/": {
+        "title": "Marketplace protection: strategies to stop counterfeits",
+        "cluster": "Marketplace Protection", "score": 4,
+        "last_updated": "2026-02-11", "update_cooldown_until": None, "merge_cooldown_until": None,
+    },
+    "/blog/choose-brand-protection-solution/": {
+        "title": "How to choose a brand protection solution",
+        "cluster": "Brand Protection", "score": 4,
+        "last_updated": "2025-11-03", "update_cooldown_until": None, "merge_cooldown_until": None,
+    },
+    "/blog/patent-protection/": {
+        "title": "Patent protection: what brands need to know",
+        "cluster": "Brand Protection", "score": 4,
+        "last_updated": "2024-03-28", "update_cooldown_until": None, "merge_cooldown_until": None,
+    },
 }
 
 # Cluster → Asana assignee GID mapping
