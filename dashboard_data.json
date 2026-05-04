@@ -1,336 +1,8 @@
 {
-  "generated_at": "2026-04-27",
+  "generated_at": "2026-05-04",
   "weekly_goal": 8,
   "monthly_goal": 32,
   "months": [
-    {
-      "name": "November 2025",
-      "year": 2025,
-      "month": 11,
-      "is_current": false,
-      "days_total": 30,
-      "days_passed": 30,
-      "updated": 29,
-      "weeks": [
-        {
-          "label": "Nov w1",
-          "posts": 29,
-          "is_current": false
-        },
-        {
-          "label": "Nov w2",
-          "posts": 0,
-          "is_current": false
-        },
-        {
-          "label": "Nov w3",
-          "posts": 0,
-          "is_current": false
-        },
-        {
-          "label": "Nov w4",
-          "posts": 0,
-          "is_current": false
-        },
-        {
-          "label": "Nov w5",
-          "posts": 0,
-          "is_current": false
-        }
-      ],
-      "posts": [
-        {
-          "title": "A step-by-step guide to banning fake Instagram accounts permanently",
-          "url": "/blog/how-to-take-down-an-instagram-account",
-          "modified": "2025-11-03",
-          "clicks": 5071,
-          "impressions": 145644,
-          "ctr": 3.5,
-          "position": 6.4,
-          "prev_position": 6.8
-        },
-        {
-          "title": "Smart way to track a fake Instagram account",
-          "url": "/blog/how-to-track-a-fake-instagram-account",
-          "modified": "2025-11-03",
-          "clicks": 3117,
-          "impressions": 115833,
-          "ctr": 2.7,
-          "position": 4.6,
-          "prev_position": 5.1
-        },
-        {
-          "title": "How to get someone else\u2019s TikTok video taken down",
-          "url": "/blog/how-to-get-someones-tiktok-video-taken-down",
-          "modified": "2025-11-03",
-          "clicks": 1086,
-          "impressions": 51114,
-          "ctr": 2.1,
-          "position": 5.2,
-          "prev_position": 6.1
-        },
-        {
-          "title": "How to report a scammer on Telegram",
-          "url": "/blog/how-to-report-scam-on-telegram",
-          "modified": "2025-11-03",
-          "clicks": 1070,
-          "impressions": 90966,
-          "ctr": 1.2,
-          "position": 8.3,
-          "prev_position": 7.1
-        },
-        {
-          "title": "How to report a website for scamming to Google in 6 steps",
-          "url": "/blog/how-to-report-a-site-on-google",
-          "modified": "2025-11-03",
-          "clicks": 181,
-          "impressions": 24602,
-          "ctr": 0.7,
-          "position": 11.5,
-          "prev_position": 11.3
-        },
-        {
-          "title": "How to do a DMCA takedown on Instagram for immediate results",
-          "url": "/blog/how-to-do-a-dmca-takedown-on-instagram",
-          "modified": "2025-11-03",
-          "clicks": 56,
-          "impressions": 14219,
-          "ctr": 0.4,
-          "position": 6.9,
-          "prev_position": 7.5
-        },
-        {
-          "title": "How to report a seller on Mercari in 6 steps",
-          "url": "/blog/how-to-report-a-seller-on-mercari",
-          "modified": "2025-11-03",
-          "clicks": 52,
-          "impressions": 9599,
-          "ctr": 0.5,
-          "position": 5.8,
-          "prev_position": 5.0
-        },
-        {
-          "title": "Facebook DMCA takedown made easy",
-          "url": "/blog/facebook-dmca-takedown",
-          "modified": "2025-11-03",
-          "clicks": 50,
-          "impressions": 4524,
-          "ctr": 1.1,
-          "position": 5.9,
-          "prev_position": 6.7
-        },
-        {
-          "title": "How to report and take down a fraud website: a step-by-step guide",
-          "url": "/blog/report-fraud-website",
-          "modified": "2025-11-03",
-          "clicks": 38,
-          "impressions": 4607,
-          "ctr": 0.8,
-          "position": 21.3,
-          "prev_position": 19.0
-        },
-        {
-          "title": "What can I do against a website impersonating my business?",
-          "url": "/blog/website-impersonation",
-          "modified": "2025-11-03",
-          "clicks": 38,
-          "impressions": 2486,
-          "ctr": 1.5,
-          "position": 8.5,
-          "prev_position": 7.9
-        },
-        {
-          "title": "What is online impersonation and how to prevent it",
-          "url": "/blog/online-impersonation",
-          "modified": "2025-11-03",
-          "clicks": 37,
-          "impressions": 5690,
-          "ctr": 0.7,
-          "position": 11.5,
-          "prev_position": 10.6
-        },
-        {
-          "title": "How to report eBay copyright infringement",
-          "url": "/blog/how-report-ebay-copyright-infringement",
-          "modified": "2025-11-03",
-          "clicks": 35,
-          "impressions": 4415,
-          "ctr": 0.8,
-          "position": 8.3,
-          "prev_position": 8.1
-        },
-        {
-          "title": "How to effectively report a website to Cloudflare",
-          "url": "/blog/how-to-report-a-website-to-cloudflare",
-          "modified": "2025-11-03",
-          "clicks": 21,
-          "impressions": 8519,
-          "ctr": 0.2,
-          "position": 5.9,
-          "prev_position": 7.4
-        },
-        {
-          "title": "How to identify and stop unauthorized sellers and resellers in 3 steps",
-          "url": "/blog/identify-and-stop-unauthorized-sellers",
-          "modified": "2025-11-03",
-          "clicks": 20,
-          "impressions": 4401,
-          "ctr": 0.5,
-          "position": 7.3,
-          "prev_position": 6.4
-        },
-        {
-          "title": "How to report fake Google ads that pretend to be your brand",
-          "url": "/blog/report-fake-google-ads",
-          "modified": "2025-11-03",
-          "clicks": 15,
-          "impressions": 3649,
-          "ctr": 0.4,
-          "position": 11.2,
-          "prev_position": 9.7
-        },
-        {
-          "title": "How to report and take down illegal sites impersonating yours",
-          "url": "/blog/reporting-illegal-sites",
-          "modified": "2025-11-03",
-          "clicks": 15,
-          "impressions": 1586,
-          "ctr": 0.9,
-          "position": 13.1,
-          "prev_position": 7.1
-        },
-        {
-          "title": "How to report fraud and theft on Temu",
-          "url": "/blog/how-to-report-a-seller-on-temu",
-          "modified": "2025-11-03",
-          "clicks": 14,
-          "impressions": 2350,
-          "ctr": 0.6,
-          "position": 8.9,
-          "prev_position": 8.6
-        },
-        {
-          "title": "How to report copyright infringement to Google\u00a0",
-          "url": "/blog/how-to-report-copyright-infringement-to-google",
-          "modified": "2025-11-03",
-          "clicks": 10,
-          "impressions": 7487,
-          "ctr": 0.1,
-          "position": 11.6,
-          "prev_position": 10.3
-        },
-        {
-          "title": "How to mitigate software piracy in 2026",
-          "url": "/blog/how-to-stop-software-piracy",
-          "modified": "2025-11-06",
-          "clicks": 9,
-          "impressions": 4309,
-          "ctr": 0.2,
-          "position": 17.0,
-          "prev_position": 11.1
-        },
-        {
-          "title": "Business name trademark infringement explained",
-          "url": "/blog/business-name-trademark-infringement",
-          "modified": "2025-11-03",
-          "clicks": 8,
-          "impressions": 1964,
-          "ctr": 0.4,
-          "position": 10.4,
-          "prev_position": 9.2
-        },
-        {
-          "title": "How to file a successful DMCA takedown with Bing",
-          "url": "/blog/dmca-takedown-bing",
-          "modified": "2025-11-03",
-          "clicks": 7,
-          "impressions": 1668,
-          "ctr": 0.4,
-          "position": 7.7,
-          "prev_position": 7.0
-        },
-        {
-          "title": "Best SaaS affiliate programs to join in 2026",
-          "url": "/blog/best-saas-affiliate-programs",
-          "modified": "2025-11-06",
-          "clicks": 4,
-          "impressions": 8126,
-          "ctr": 0.0,
-          "position": 13.0,
-          "prev_position": 12.2
-        },
-        {
-          "title": "How to report a Weebly website",
-          "url": "/blog/how-to-report-a-weebly-website",
-          "modified": "2025-11-03",
-          "clicks": 4,
-          "impressions": 990,
-          "ctr": 0.4,
-          "position": 8.9,
-          "prev_position": 7.0
-        },
-        {
-          "title": "The ultimate guide to online marketplace monitoring for brands",
-          "url": "/blog/online-marketplace-monitoring",
-          "modified": "2025-11-03",
-          "clicks": 4,
-          "impressions": 1909,
-          "ctr": 0.2,
-          "position": 7.0,
-          "prev_position": 7.0
-        },
-        {
-          "title": "Domain management: What is it? Why should you care?",
-          "url": "/blog/what-is-domain-management",
-          "modified": "2025-11-03",
-          "clicks": 4,
-          "impressions": 6815,
-          "ctr": 0.1,
-          "position": 29.6,
-          "prev_position": 24.2
-        },
-        {
-          "title": "How to choose a Brand Protection vendor in 2026",
-          "url": "/blog/choose-brand-protection-solution",
-          "modified": "2025-11-03",
-          "clicks": 2,
-          "impressions": 1441,
-          "ctr": 0.1,
-          "position": 31.8,
-          "prev_position": 32.3
-        },
-        {
-          "title": "How to deal with patent infringement",
-          "url": "/blog/how-to-deal-with-patent-infringement",
-          "modified": "2025-11-03",
-          "clicks": 1,
-          "impressions": 231,
-          "ctr": 0.4,
-          "position": 19.8,
-          "prev_position": 21.3
-        },
-        {
-          "title": "How to prevent and protect from typosquatting",
-          "url": "/blog/prevent-typosquatting",
-          "modified": "2025-11-03",
-          "clicks": 0,
-          "impressions": 274,
-          "ctr": 0,
-          "position": 32.1,
-          "prev_position": 30.2
-        },
-        {
-          "title": "4 proven steps to report replica clothing websites",
-          "url": "/blog/replica-site-clothing",
-          "modified": "2025-11-03",
-          "clicks": 0,
-          "impressions": 489,
-          "ctr": 0,
-          "position": 7.1,
-          "prev_position": 5.1
-        }
-      ]
-    },
     {
       "name": "December 2025",
       "year": 2025,
@@ -1121,7 +793,7 @@
       "name": "April 2026",
       "year": 2026,
       "month": 4,
-      "is_current": true,
+      "is_current": false,
       "days_total": 30,
       "days_passed": 7,
       "updated": 20,
@@ -1381,6 +1053,42 @@
           "prev_position": 0.0
         }
       ]
+    },
+    {
+      "name": "May 2026",
+      "year": 2026,
+      "month": 5,
+      "is_current": true,
+      "days_total": 31,
+      "updated": 3,
+      "weeks": [
+        {
+          "label": "May w1",
+          "posts": null,
+          "is_current": false
+        },
+        {
+          "label": "May w2",
+          "posts": null,
+          "is_current": false
+        },
+        {
+          "label": "May w3",
+          "posts": null,
+          "is_current": false
+        },
+        {
+          "label": "May w4",
+          "posts": null,
+          "is_current": false
+        },
+        {
+          "label": "May w5",
+          "posts": null,
+          "is_current": false
+        }
+      ],
+      "posts": []
     }
   ]
 }
