@@ -21,15 +21,15 @@
           "diagnosis": {
             "query_breakdown": [
               {
-                "query": "cara melacak akun fake ig",
-                "prev_clicks": 5,
-                "curr_clicks": 0,
-                "change": -5
-              },
-              {
                 "query": "melacak ig fake",
                 "prev_clicks": 10,
                 "curr_clicks": 5,
+                "change": -5
+              },
+              {
+                "query": "cara melacak akun fake ig",
+                "prev_clicks": 5,
+                "curr_clicks": 0,
                 "change": -5
               },
               {
@@ -51,7 +51,7 @@
                 "change": 1
               }
             ],
-            "primary_keyword": "cara melacak akun fake ig",
+            "primary_keyword": "melacak ig fake",
             "impressions_signal": "drop",
             "competitors": [],
             "our_position_now": 6.3,
@@ -67,7 +67,7 @@
       "llm_citations_this_week": 0
     }
   ],
-  "summary": "\ud83d\udd34 Our blog post about tracking fake Instagram accounts saw clicks drop by 31% this week, losing 90 clicks compared to our usual performance. This suggests either reduced interest in the topic or potential SEO issues, so we should review the post's search rankings and consider refreshing the content.\n\n\ud83d\udfe1 The significant traffic decline on our social media takedown content could indicate competitors are outranking us for these important keywords. Research what competitors are publishing on fake account detection and update our post with newer tactics and examples.\n\n\ud83d\udcc5 Consider creating follow-up content or refreshing this post since social media fraud protection is a core topic for our audience. Schedule a content audit for next week to identify if other related posts are also declining in performance.",
+  "summary": "\ud83d\udd34 Our blog post about tracking fake Instagram accounts lost 31% of its traffic this week compared to normal, dropping from 292 to just 202 clicks. This suggests people might be finding answers elsewhere or the topic is becoming less relevant, so we should refresh the content with new examples or promote it more actively on social media.\n\n\ud83d\udfe1 Only one blog post showed unusual activity this week, which could mean our other content is performing steadily or we're not getting enough visibility overall. Review our publishing schedule and consider creating more timely content around current brand protection issues to generate more engagement.\n\n\ud83d\udcc5 The traffic drop happened on our social media takedown content specifically, indicating this topic needs more attention. Plan to create follow-up posts or update existing content about fake account detection to recapture lost audience interest.",
   "gsc_data": {
     "/blog/how-to-take-down-an-instagram-account/": 934,
     "/blog/how-to-track-a-fake-instagram-account/": 202,
@@ -619,5 +619,5 @@
     "/blog/best-saas-affiliate-programs": 1,
     "/blog/alibaba-scams": 1
   },
-  "generated_at": "2026-05-11T09:33:52.891804"
+  "generated_at": "2026-05-11T09:56:24.099987"
 }
