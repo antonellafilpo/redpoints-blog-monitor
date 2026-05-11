@@ -4,6 +4,26 @@
   "season": null,
   "flagged": [
     {
+      "path": "/blog/remove-a-counterfeit-from-alibaba/",
+      "url": "https://www.redpoints.com/blog/remove-a-counterfeit-from-alibaba/",
+      "title": "How to remove a counterfeit from Alibaba",
+      "cluster": "Marketplace Protection",
+      "score": 13,
+      "tier": "tier1",
+      "flags": [
+        {
+          "type": "stale",
+          "label": "\ud83d\udcc5 Stale Content",
+          "detail": "Not updated in 7 months (last updated: 2025-10-02 [WP], score 13/14)",
+          "months_since_update": 7.1,
+          "last_updated": "2025-10-02",
+          "last_updated_source": "WP"
+        }
+      ],
+      "gsc_clicks_this_week": 0,
+      "llm_citations_this_week": 0
+    },
+    {
       "path": "/blog/tiktok-dmca-takedown/",
       "url": "https://www.redpoints.com/blog/tiktok-dmca-takedown/",
       "title": "How to successfully remove stolen content from TikTok with a DMCA takedown",
@@ -24,88 +44,28 @@
       "llm_citations_this_week": 0
     },
     {
-      "path": "/blog/how-to-report-a-scammer-on-telegram/",
-      "url": "https://www.redpoints.com/blog/how-to-report-a-scammer-on-telegram/",
-      "title": "How to report a scammer on Telegram",
-      "cluster": "Platform Scams",
+      "path": "/blog/how-to-remove-a-counterfeit-from-aliexpress/",
+      "url": "https://www.redpoints.com/blog/how-to-remove-a-counterfeit-from-aliexpress/",
+      "title": "How to remove a counterfeit from AliExpress",
+      "cluster": "Marketplace Protection",
       "score": 12,
       "tier": "tier1",
       "flags": [
         {
           "type": "stale",
           "label": "\ud83d\udcc5 Stale Content",
-          "detail": "Not updated in 11 months (last updated: 2025-06-01 [audit], score 12/14)",
-          "months_since_update": 11.2,
-          "last_updated": "2025-06-01",
-          "last_updated_source": "audit"
+          "detail": "Not updated in 16 months (last updated: 2024-12-27 [WP], score 12/14)",
+          "months_since_update": 16.4,
+          "last_updated": "2024-12-27",
+          "last_updated_source": "WP"
         }
       ],
-      "gsc_clicks_this_week": 0,
+      "gsc_clicks_this_week": 1,
       "llm_citations_this_week": 0
     },
     {
-      "path": "/blog/how-to-report-copyright-infringement-on-tiktok/",
-      "url": "https://www.redpoints.com/blog/how-to-report-copyright-infringement-on-tiktok/",
-      "title": "How to report a copyright infringement on TikTok",
-      "cluster": "Social Media Takedown",
-      "score": 12,
-      "tier": "tier1",
-      "flags": [
-        {
-          "type": "stale",
-          "label": "\ud83d\udcc5 Stale Content",
-          "detail": "Not updated in 13 months (last updated: 2025-04-15 [audit], score 12/14)",
-          "months_since_update": 12.8,
-          "last_updated": "2025-04-15",
-          "last_updated_source": "audit"
-        }
-      ],
-      "gsc_clicks_this_week": 0,
-      "llm_citations_this_week": 0
-    },
-    {
-      "path": "/blog/how-to-file-a-dmca-takedown-notice/",
-      "url": "https://www.redpoints.com/blog/how-to-file-a-dmca-takedown-notice/",
-      "title": "How to file a DMCA takedown notice to Google to stop copyright infringement",
-      "cluster": "Copyright Infringement",
-      "score": 12,
-      "tier": "tier1",
-      "flags": [
-        {
-          "type": "stale",
-          "label": "\ud83d\udcc5 Stale Content",
-          "detail": "Not updated in 14 months (last updated: 2025-03-10 [audit], score 12/14)",
-          "months_since_update": 14.0,
-          "last_updated": "2025-03-10",
-          "last_updated_source": "audit"
-        }
-      ],
-      "gsc_clicks_this_week": 0,
-      "llm_citations_this_week": 0
-    },
-    {
-      "path": "/blog/ban-fake-instagram-accounts/",
-      "url": "https://www.redpoints.com/blog/ban-fake-instagram-accounts/",
-      "title": "A step-by-step guide to banning fake Instagram accounts permanently",
-      "cluster": "Social Media Takedown",
-      "score": 12,
-      "tier": "tier1",
-      "flags": [
-        {
-          "type": "stale",
-          "label": "\ud83d\udcc5 Stale Content",
-          "detail": "Not updated in 9 months (last updated: 2025-08-20 [audit], score 12/14)",
-          "months_since_update": 8.6,
-          "last_updated": "2025-08-20",
-          "last_updated_source": "audit"
-        }
-      ],
-      "gsc_clicks_this_week": 0,
-      "llm_citations_this_week": 0
-    },
-    {
-      "path": "/blog/how-to-report-and-take-down-a-fraud-website/",
-      "url": "https://www.redpoints.com/blog/how-to-report-and-take-down-a-fraud-website/",
+      "path": "/blog/report-fraud-website/",
+      "url": "https://www.redpoints.com/blog/report-fraud-website/",
       "title": "How to report and take down a fraud website: a step-by-step guide",
       "cluster": "Website Takedown",
       "score": 12,
@@ -114,17 +74,17 @@
         {
           "type": "stale",
           "label": "\ud83d\udcc5 Stale Content",
-          "detail": "Not updated in 14 months (last updated: 2025-03-01 [audit], score 12/14)",
-          "months_since_update": 14.3,
-          "last_updated": "2025-03-01",
-          "last_updated_source": "audit"
+          "detail": "Not updated in 6 months (last updated: 2025-11-03 [WP], score 12/14)",
+          "months_since_update": 6.1,
+          "last_updated": "2025-11-03",
+          "last_updated_source": "WP"
         }
       ],
       "gsc_clicks_this_week": 0,
       "llm_citations_this_week": 0
     }
   ],
-  "summary": "\ud83d\udcc5 Six high-performing how-to guides haven't been updated in 9-14 months, risking outdated platform procedures and lower search rankings. Schedule content audits and updates for these guides within the next month to maintain their strong performance scores.\n\n\ud83d\udfe1 All flagged content focuses on takedown procedures for major platforms like TikTok, Instagram, and Google, indicating these are valuable topics for our audience. Prioritize these updates since they likely drive significant traffic and leads for our brand protection services.\n\n\ud83d\udcc5 The oldest content (Google DMCA and fraud website guides) dates back 14 months and needs immediate attention. Create a quarterly review schedule to prevent future content from becoming this stale and potentially hurting our expertise reputation.",
+  "summary": "\ud83d\udcc5 Four popular how-to guides haven't been updated in 6-16 months, with some marketplace protection content becoming seriously outdated. These high-performing posts (scoring 12-13/14) drive significant traffic but may contain incorrect steps that frustrate users. Schedule immediate content audits and updates for all four guides.\n\n\ud83d\udfe1 The AliExpress removal guide is the most critical, sitting untouched for 16 months while marketplace policies constantly evolve. Outdated takedown instructions could waste customers' time and damage our reputation as experts. Prioritize this guide for a complete refresh within two weeks.\n\n\ud83d\udd34 All flagged content focuses on step-by-step processes that change frequently as platforms update their policies. Implement a quarterly review system for all procedural guides to prevent future outdated content issues. Set up automatic reminders for the content team to check platform policy changes.",
   "gsc_data": {
     "/blog/how-to-take-down-an-instagram-account/": 1043,
     "/blog/how-to-track-a-fake-instagram-account/": 261,
@@ -674,5 +634,5 @@
     "/blog/amazons-neutral-evaluation-program": 1,
     "/blog/shein-trademark-infringement": 1
   },
-  "generated_at": "2026-05-04T08:41:06.456922"
+  "generated_at": "2026-05-04T09:51:51.907092"
 }

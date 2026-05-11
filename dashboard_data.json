@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-04",
+  "generated_at": "2026-05-11",
   "weekly_goal": 8,
   "monthly_goal": 32,
   "months": [
@@ -1060,7 +1060,7 @@
       "month": 5,
       "is_current": true,
       "days_total": 31,
-      "updated": 3,
+      "updated": 8,
       "weeks": [
         {
           "label": "May w1",
@@ -1069,8 +1069,8 @@
         },
         {
           "label": "May w2",
-          "posts": null,
-          "is_current": false
+          "posts": 8,
+          "is_current": true
         },
         {
           "label": "May w3",
@@ -1088,7 +1088,96 @@
           "is_current": false
         }
       ],
-      "posts": []
+      "posts": [
+        {
+          "title": "How to remove a counterfeit from Alibaba: 2026 step-by-step guide",
+          "url": "/blog/remove-a-counterfeit-from-alibaba",
+          "modified": "2026-05-08",
+          "type": "new",
+          "clicks": 3,
+          "impressions": 585,
+          "ctr": 0.5,
+          "position": 11.2,
+          "prev_position": 10.0
+        },
+        {
+          "title": "7 Best Brand Protection Tools for 2026: Ranked &amp; reviewed",
+          "url": "/blog/best-brand-protection-software",
+          "modified": "2026-05-07",
+          "type": "new",
+          "clicks": 3,
+          "impressions": 6135,
+          "ctr": 0.0,
+          "position": 20.9,
+          "prev_position": 14.3
+        },
+        {
+          "title": "The simplest way to file DMCA takedown notices for software piracy",
+          "url": "/blog/dmca-takedown-notices-for-software-piracy",
+          "modified": "2026-05-06",
+          "type": "new",
+          "clicks": 1,
+          "impressions": 337,
+          "ctr": 0.3,
+          "position": 11.3,
+          "prev_position": 8.2
+        },
+        {
+          "title": "How to remove a counterfeit from AliExpress: Report and takedown guide (2026)",
+          "url": "/blog/how-to-remove-a-counterfeit-from-aliexpress",
+          "modified": "2026-05-07",
+          "type": "new",
+          "clicks": 3,
+          "impressions": 940,
+          "ctr": 0.3,
+          "position": 8.6,
+          "prev_position": 7.3
+        },
+        {
+          "title": "Fraud websites: How to identify the scam, assess the risk, and respond before customers lose money",
+          "url": "/blog/report-fraud-website",
+          "modified": "2026-05-07",
+          "type": "new",
+          "clicks": 2,
+          "impressions": 221,
+          "ctr": 0.9,
+          "position": 61.8,
+          "prev_position": 48.2
+        },
+        {
+          "title": "What is the gray market, and is it legal?",
+          "url": "/blog/what-is-grey-market",
+          "modified": "2026-05-08",
+          "type": "new",
+          "clicks": 2,
+          "impressions": 1533,
+          "ctr": 0.1,
+          "position": 24.7,
+          "prev_position": 26.5
+        },
+        {
+          "title": "What is brand impersonation? The complete guide to detection, prevention and removal",
+          "url": "/blog/online-impersonation",
+          "modified": "2026-05-08",
+          "type": "new",
+          "clicks": 0,
+          "impressions": 318,
+          "ctr": 0,
+          "position": 47.0,
+          "prev_position": 34.7
+        },
+        {
+          "title": "TikTok DMCA takedown: How to remove stolen content (2026 guide)\u00a0",
+          "url": "/blog/tiktok-dmca-takedown",
+          "modified": "2026-05-08",
+          "type": "new",
+          "clicks": 2,
+          "impressions": 767,
+          "ctr": 0.3,
+          "position": 10.1,
+          "prev_position": 5.9
+        }
+      ]
     }
   ]
 }
