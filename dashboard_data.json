@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-11",
+  "generated_at": "2026-05-18",
   "weekly_goal": 8,
   "monthly_goal": 32,
   "months": [
@@ -1060,7 +1060,7 @@
       "month": 5,
       "is_current": true,
       "days_total": 31,
-      "updated": 8,
+      "updated": 11,
       "weeks": [
         {
           "label": "May w1",
@@ -1070,12 +1070,12 @@
         {
           "label": "May w2",
           "posts": 8,
-          "is_current": true
+          "is_current": false
         },
         {
           "label": "May w3",
-          "posts": null,
-          "is_current": false
+          "posts": 3,
+          "is_current": true
         },
         {
           "label": "May w4",
@@ -1176,6 +1176,39 @@
           "ctr": 0.3,
           "position": 10.1,
           "prev_position": 5.9
+        },
+        {
+          "title": "How to protect your domain name: a step-by-step guide (2026)",
+          "url": "/blog/how-to-protect-domain-name",
+          "modified": "2026-05-13",
+          "type": "new",
+          "clicks": 0,
+          "impressions": 46,
+          "ctr": 0,
+          "position": 70.7,
+          "prev_position": 74.1
+        },
+        {
+          "title": "How to remove a seller from your Amazon listing: Full 2026 guide",
+          "url": "/blog/how-to-remove-a-seller-from-your-amazon-listing",
+          "modified": "2026-05-15",
+          "type": "new",
+          "clicks": 0,
+          "impressions": 36,
+          "ctr": 0,
+          "position": 29.5,
+          "prev_position": 24.4
+        },
+        {
+          "title": "Counterfeit removal on online marketplaces: Complete guide (2026)",
+          "url": "/blog/online-marketplaces-complete-guide",
+          "modified": "2026-05-13",
+          "type": "update",
+          "clicks": 1,
+          "impressions": 822,
+          "ctr": 0.1,
+          "position": 8.0,
+          "prev_position": 7.7
         }
       ]
     }
