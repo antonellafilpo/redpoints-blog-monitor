@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-18",
+  "generated_at": "2026-05-28",
   "weekly_goal": 8,
   "monthly_goal": 32,
   "months": [
@@ -1060,7 +1060,7 @@
       "month": 5,
       "is_current": true,
       "days_total": 31,
-      "updated": 11,
+      "updated": 17,
       "weeks": [
         {
           "label": "May w1",
@@ -1075,12 +1075,12 @@
         {
           "label": "May w3",
           "posts": 3,
-          "is_current": true
+          "is_current": false
         },
         {
           "label": "May w4",
-          "posts": null,
-          "is_current": false
+          "posts": 6,
+          "is_current": true
         },
         {
           "label": "May w5",
@@ -1099,17 +1099,6 @@
           "ctr": 0.5,
           "position": 11.2,
           "prev_position": 10.0
-        },
-        {
-          "title": "7 Best Brand Protection Tools for 2026: Ranked &amp; reviewed",
-          "url": "/blog/best-brand-protection-software",
-          "modified": "2026-05-07",
-          "type": "new",
-          "clicks": 3,
-          "impressions": 6135,
-          "ctr": 0.0,
-          "position": 20.9,
-          "prev_position": 14.3
         },
         {
           "title": "The simplest way to file DMCA takedown notices for software piracy",
@@ -1209,6 +1198,72 @@
           "ctr": 0.1,
           "position": 8.0,
           "prev_position": 7.7
+        },
+        {
+          "title": "Hidden links on AliExpress and DHGate: how brands detect and remove counterfeit listings",
+          "url": "/blog/aliexpress-hidden-links",
+          "modified": "2026-05-19",
+          "type": "new",
+          "clicks": 15,
+          "impressions": 1086,
+          "ctr": 1.4,
+          "position": 13.9,
+          "prev_position": 14.7
+        },
+        {
+          "title": "How to report fraud on Facebook: the complete guide for brand owners",
+          "url": "/blog/how-to-report-fraud-on-facebook",
+          "modified": "2026-05-19",
+          "type": "new",
+          "clicks": 13,
+          "impressions": 2315,
+          "ctr": 0.6,
+          "position": 20.4,
+          "prev_position": 21.4
+        },
+        {
+          "title": "7 Best Brand Protection Tools for 2026: Ranked &amp; reviewed",
+          "url": "/blog/best-brand-protection-software",
+          "modified": "2026-05-21",
+          "type": "update",
+          "clicks": 1,
+          "impressions": 5622,
+          "ctr": 0.0,
+          "position": 27.6,
+          "prev_position": 17.3
+        },
+        {
+          "title": "How to protect your brand and intellectual property on SHEIN in 2026",
+          "url": "/blog/shein-copyright-infringement",
+          "modified": "2026-05-22",
+          "type": "new",
+          "clicks": 1,
+          "impressions": 231,
+          "ctr": 0.4,
+          "position": 9.9,
+          "prev_position": 8.6
+        },
+        {
+          "title": "How to protect your brand and intellectual property on Lazada (2026 guide)",
+          "url": "/blog/lazada-report-scammer",
+          "modified": "2026-05-22",
+          "type": "new",
+          "clicks": 0,
+          "impressions": 581,
+          "ctr": 0,
+          "position": 11.3,
+          "prev_position": 10.8
+        },
+        {
+          "title": "How to report an Etsy intellectual property infringement: Full 2026 guide",
+          "url": "/blog/report-infringements-on-etsy",
+          "modified": "2026-05-18",
+          "type": "new",
+          "clicks": 0,
+          "impressions": 1279,
+          "ctr": 0,
+          "position": 11.6,
+          "prev_position": 13.9
         }
       ]
     }
