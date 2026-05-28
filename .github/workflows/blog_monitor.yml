@@ -65,7 +65,7 @@ jobs:
           TRAFFIC_DROP_PCT:         "0.30"
           TRAFFIC_DROP_ABS:         "50"
           LLM_DROP_ABS:             "15"
-          LLM_DROP_PCT:             "0.40"
+          LLM_DROP_PCT:             "0.30"
           STALE_MONTHS:             "6"
           STALE_MIN_SCORE:          "10"
         run: python monitor.py
