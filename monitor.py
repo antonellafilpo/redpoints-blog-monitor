@@ -99,7 +99,7 @@ SEMRUSH_API_BASE         = "https://api.semrush.com/"
 TRAFFIC_DROP_PCT         = float(os.getenv("TRAFFIC_DROP_PCT", "0.30"))    # 30%
 TRAFFIC_DROP_ABS         = float(os.getenv("TRAFFIC_DROP_ABS", "50"))      # 50 clicks
 LLM_DROP_ABS             = int(os.getenv("LLM_DROP_ABS", "15"))            # 15 citations
-LLM_DROP_PCT             = float(os.getenv("LLM_DROP_PCT", "0.40"))        # 40%
+LLM_DROP_PCT             = float(os.getenv("LLM_DROP_PCT", "0.30"))        # 30%
 STALE_MONTHS             = int(os.getenv("STALE_MONTHS", "6"))             # 6 months
 STALE_MIN_SCORE          = int(os.getenv("STALE_MIN_SCORE", "10"))         # score ≥10/14
 
