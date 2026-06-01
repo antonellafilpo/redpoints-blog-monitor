@@ -408,8 +408,8 @@
     "/blog/alibaba-scams": 7,
     "/blog/red-points-vs-netcraft": 31,
     "/blog/case-management-makes-brand-protection-technology-simple": 1,
-    "/blog/remove-a-counterfeit-from-alibaba": 2,
     "/blog/red-points-vs-opsec": 27,
+    "/blog/remove-a-counterfeit-from-alibaba": 2,
     "/blog/red-points-vs-zerofox": 26,
     "/blog/how-to-remove-a-counterfeit-from-jd": 26,
     "/blog/report-infringement-amazon": 1,
@@ -484,7 +484,6 @@
     "/blog/protect-intellectual-property-internationally": 2,
     "/blog/prevent-digital-fraud": 2,
     "/blog/map-compliance": 2,
-    "/blog/enforce-map-pricing": 1,
     "/blog/intellectual-property-theft": 2,
     "/blog/etsy-trademark-infringement": 2,
     "/blog/how-to-report-a-scam-website": 2,
@@ -495,6 +494,7 @@
     "/blog/fashion-brand-protection": 2,
     "/blog/triangulation-fraud": 2,
     "/blog/godaddy-dmca-takedown": 2,
+    "/blog/enforce-map-pricing": 1,
     "/blog/how-to-detect-fake-social-media-account": 2,
     "/blog/how-to-avoid-third-party-sellers-on-amazon": 2,
     "/blog/cloudflare-dmca-takedown": 2,
@@ -519,6 +519,7 @@
     "/blog/free-to-play-piracy": 1,
     "/blog/app-impersonation": 1,
     "/blog/how-to-spot-a-scam-on-linkedin": 1,
+    "/blog/how-to-report-a-counterfeit-in-tiktok-shop": 1,
     "/blog/ebay-trademark-infringement": 1,
     "/blog/how-report-ebay-copyright-infringement": 1,
     "/blog/report-duplicate-website-to-google": 1,
@@ -526,8 +527,6 @@
     "/blog/report-infringement-amazon/?nab=1": 1,
     "/blog/how-to-report-an-impersonation-account-on-instagram": 1,
     "/blog/report-trademark-infringement-instagram": 1,
-    "/blog/how-to-report-a-counterfeit-in-tiktok-shop": 1,
-    "/blog/shopify-report-copyright-infringement": 1,
     "/blog/how-to-report-linkedin-scams": 1,
     "/blog/remove-counterfeits-from-lazada": 1,
     "/blog/how-to-remove-a-website-from-google": 1,
@@ -536,6 +535,7 @@
     "/blog/amazon-map-violation": 1,
     "/blog/how-to-stop-software-piracy": 1,
     "/blog/how-to-detect-duplicate-websites": 1,
+    "/blog/shopify-report-copyright-infringement": 1,
     "/blog/how-to-report-a-website-to-cloudflare": 1,
     "/blog/spoofing-attacks": 1,
     "/blog/fake-designer-clothes": 1,
@@ -547,5 +547,5 @@
     "/blog/amazon-counterfeit-protection": 1,
     "/blog/brand-protection-enforcement": 1
   },
-  "generated_at": "2026-05-28T07:29:40.840006"
+  "generated_at": "2026-06-01T11:51:13.257437"
 }

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-28",
+  "generated_at": "2026-06-01",
   "weekly_goal": 8,
   "monthly_goal": 32,
   "months": [
@@ -1058,9 +1058,9 @@
       "name": "May 2026",
       "year": 2026,
       "month": 5,
-      "is_current": true,
+      "is_current": false,
       "days_total": 31,
-      "updated": 17,
+      "updated": 24,
       "weeks": [
         {
           "label": "May w1",
@@ -1080,12 +1080,12 @@
         {
           "label": "May w4",
           "posts": 6,
-          "is_current": true
+          "is_current": false
         },
         {
           "label": "May w5",
-          "posts": null,
-          "is_current": false
+          "posts": 7,
+          "is_current": true
         }
       ],
       "posts": [
@@ -1264,6 +1264,83 @@
           "ctr": 0,
           "position": 11.6,
           "prev_position": 13.9
+        },
+        {
+          "title": "How to report fake TikTok accounts, impersonators, and counterfeits (2026)",
+          "url": "/blog/report-fake-accounts-on-tiktok",
+          "modified": "2026-05-26",
+          "type": "new",
+          "clicks": 39,
+          "impressions": 3722,
+          "ctr": 1.0,
+          "position": 9.9,
+          "prev_position": 10.9
+        },
+        {
+          "title": "How to take down YouTube videos, fake channels, and copyright infringement: 2026 guide",
+          "url": "/blog/take-down-someone-elses-youtube-account",
+          "modified": "2026-05-29",
+          "type": "new",
+          "clicks": 16,
+          "impressions": 760,
+          "ctr": 2.1,
+          "position": 11.5,
+          "prev_position": 8.7
+        },
+        {
+          "title": "Duplicate websites: how to detect, protect against, and remove them",
+          "url": "/blog/how-to-detect-duplicate-websites",
+          "modified": "2026-05-26",
+          "type": "new",
+          "clicks": 0,
+          "impressions": 186,
+          "ctr": 0,
+          "position": 39.3,
+          "prev_position": 41.2
+        },
+        {
+          "title": "How to report a seller on Temu: A 2026 brand protection guide",
+          "url": "/blog/how-to-report-a-seller-on-temu",
+          "modified": "2026-05-29",
+          "type": "new",
+          "clicks": 0,
+          "impressions": 105,
+          "ctr": 0,
+          "position": 13.7,
+          "prev_position": 7.5
+        },
+        {
+          "title": "Amazon brand protection: The complete guide to removing counterfeits and unauthorized sellers",
+          "url": "/blog/remove-counterfeit-amazon",
+          "modified": "2026-05-27",
+          "type": "update",
+          "clicks": 0,
+          "impressions": 3433,
+          "ctr": 0,
+          "position": 32.9,
+          "prev_position": 45.7
+        },
+        {
+          "title": "How to report copyright infringement: notices, platforms, and prevention (2026)",
+          "url": "/blog/report-copyright-infringement",
+          "modified": "2026-05-29",
+          "type": "new",
+          "clicks": 0,
+          "impressions": 398,
+          "ctr": 0,
+          "position": 37.1,
+          "prev_position": 9.8
+        },
+        {
+          "title": "How to report a fake Shopify store: spotting scams and protecting your brand (2026)",
+          "url": "/blog/report-shopify-store",
+          "modified": "2026-05-29",
+          "type": "new",
+          "clicks": 0,
+          "impressions": 244,
+          "ctr": 0,
+          "position": 21.8,
+          "prev_position": 18.8
         }
       ]
     }
