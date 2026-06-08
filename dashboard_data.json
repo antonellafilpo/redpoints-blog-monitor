@@ -1,45 +1,8 @@
 {
-  "generated_at": "2026-06-01",
+  "generated_at": "2026-06-08",
   "weekly_goal": 8,
   "monthly_goal": 32,
   "months": [
-    {
-      "name": "December 2025",
-      "year": 2025,
-      "month": 12,
-      "is_current": false,
-      "days_total": 31,
-      "days_passed": 31,
-      "updated": 0,
-      "weeks": [
-        {
-          "label": "Dec w1",
-          "posts": 0,
-          "is_current": false
-        },
-        {
-          "label": "Dec w2",
-          "posts": 0,
-          "is_current": false
-        },
-        {
-          "label": "Dec w3",
-          "posts": 0,
-          "is_current": false
-        },
-        {
-          "label": "Dec w4",
-          "posts": 0,
-          "is_current": false
-        },
-        {
-          "label": "Dec w5",
-          "posts": 0,
-          "is_current": false
-        }
-      ],
-      "posts": []
-    },
     {
       "name": "January 2026",
       "year": 2026,
@@ -1341,6 +1304,87 @@
           "ctr": 0,
           "position": 21.8,
           "prev_position": 18.8
+        }
+      ]
+    },
+    {
+      "name": "June 2026",
+      "year": 2026,
+      "month": 6,
+      "is_current": true,
+      "days_total": 30,
+      "updated": 4,
+      "weeks": [
+        {
+          "label": "Jun w1",
+          "posts": null,
+          "is_current": false
+        },
+        {
+          "label": "Jun w2",
+          "posts": null,
+          "is_current": false
+        },
+        {
+          "label": "Jun w3",
+          "posts": null,
+          "is_current": false
+        },
+        {
+          "label": "Jun w4",
+          "posts": null,
+          "is_current": false
+        },
+        {
+          "label": "Jun w5",
+          "posts": null,
+          "is_current": false
+        }
+      ],
+      "posts": [
+        {
+          "title": "Red Points vs. Corsearch: Best Brand Protection Platform in 2026",
+          "url": "/blog/red-points-vs-corsearch",
+          "modified": "2026-06-03",
+          "type": "new",
+          "clicks": 7,
+          "impressions": 596,
+          "ctr": 1.2,
+          "position": 8.6,
+          "prev_position": 6.9
+        },
+        {
+          "title": "7 Best Brand Protection Tools for 2026: Ranked &amp; reviewed",
+          "url": "/blog/best-brand-protection-software",
+          "modified": "2026-06-04",
+          "type": "update",
+          "clicks": 0,
+          "impressions": 2629,
+          "ctr": 0,
+          "position": 44.3,
+          "prev_position": 20.3
+        },
+        {
+          "title": "eBay counterfeit protection: a complete 2026 guide",
+          "url": "/blog/ebay-counterfeit-protection",
+          "modified": "2026-06-04",
+          "type": "new",
+          "clicks": 0,
+          "impressions": 75,
+          "ctr": 0,
+          "position": 14.4,
+          "prev_position": 7.5
+        },
+        {
+          "title": "How to report a seller or fake item on eBay: counterfeits, IP infringement, and fraud",
+          "url": "/blog/how-to-report-a-fake-item-on-ebay",
+          "modified": "2026-06-04",
+          "type": "new",
+          "clicks": 0,
+          "impressions": 362,
+          "ctr": 0,
+          "position": 28.0,
+          "prev_position": 34.8
         }
       ]
     }
