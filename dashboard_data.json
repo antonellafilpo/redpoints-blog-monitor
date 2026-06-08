@@ -1317,8 +1317,8 @@
       "weeks": [
         {
           "label": "Jun w1",
-          "posts": null,
-          "is_current": false
+          "posts": 4,
+          "is_current": true
         },
         {
           "label": "Jun w2",

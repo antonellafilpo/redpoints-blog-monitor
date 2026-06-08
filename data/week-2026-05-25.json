@@ -33,13 +33,13 @@
                 "change": -3
               },
               {
-                "query": "aplikasi melacak akun fake instagram",
+                "query": "cara melacak akun fake ig itu milik siapa",
                 "prev_clicks": 2,
                 "curr_clicks": 0,
                 "change": -2
               },
               {
-                "query": "cara melacak akun fake ig itu milik siapa",
+                "query": "aplikasi melacak akun fake instagram",
                 "prev_clicks": 2,
                 "curr_clicks": 0,
                 "change": -2
@@ -67,7 +67,7 @@
       "llm_citations_this_week": 0
     }
   ],
-  "summary": "\ud83d\udd34 Our blog post about tracking fake Instagram accounts lost 31% of its traffic this week, dropping from 231 to 160 clicks - we need to check if search rankings changed or if competitors are outperforming us.\n\n\ud83d\udfe1 The significant traffic drop on our social media protection content suggests our target audience might be finding information elsewhere - consider refreshing the post with updated tactics or promoting it through our social channels.\n\n\ud83d\udcc5 Monitor this post's performance over the next two weeks to see if this is a temporary dip or a longer trend that requires content strategy adjustments.",
+  "summary": "\ud83d\udd34 Our blog post about tracking fake Instagram accounts lost 31% of its traffic this week, dropping from 231 to 160 clicks - this suggests people aren't finding our anti-counterfeiting content when they need it most, so we should boost promotion of this post across social channels.\n\n\ud83d\udfe1 Only one anomaly was detected this week, which is unusually quiet for our brand protection content - we should investigate whether our monitoring system is working properly or if we need to publish more trending topics to maintain visibility.\n\n\ud83d\udcc5 The affected post covers social media takedowns, a key service area that's underperforming in organic search - schedule a content refresh with updated examples and current platform policies to recapture lost traffic.",
   "gsc_data": {
     "/blog/how-to-take-down-an-instagram-account/": 1139,
     "/blog/how-to-track-a-fake-instagram-account/": 160,
@@ -601,5 +601,5 @@
     "/blog/amazon-project-zero": 1,
     "/blog/replica-site-clothing": 1
   },
-  "generated_at": "2026-06-08T09:58:38.526716"
+  "generated_at": "2026-06-08T11:12:18.119292"
 }
