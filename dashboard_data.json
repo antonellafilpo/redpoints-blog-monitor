@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-08",
+  "generated_at": "2026-06-15",
   "weekly_goal": 8,
   "monthly_goal": 32,
   "months": [
@@ -1313,17 +1313,17 @@
       "month": 6,
       "is_current": true,
       "days_total": 30,
-      "updated": 4,
+      "updated": 12,
       "weeks": [
         {
           "label": "Jun w1",
           "posts": 4,
-          "is_current": true
+          "is_current": false
         },
         {
           "label": "Jun w2",
-          "posts": null,
-          "is_current": false
+          "posts": 8,
+          "is_current": true
         },
         {
           "label": "Jun w3",
@@ -1385,6 +1385,94 @@
           "ctr": 0,
           "position": 28.0,
           "prev_position": 34.8
+        },
+        {
+          "title": "How to report a seller on Mercari: scams, fake items, and IP infringement",
+          "url": "/blog/how-to-report-a-seller-on-mercari",
+          "modified": "2026-06-09",
+          "type": "new",
+          "clicks": 8,
+          "impressions": 1058,
+          "ctr": 0.8,
+          "position": 6.2,
+          "prev_position": 8.7
+        },
+        {
+          "title": "Business name trademark infringement: how to protect your brand name online",
+          "url": "/blog/business-name-trademark-infringement",
+          "modified": "2026-06-09",
+          "type": "new",
+          "clicks": 0,
+          "impressions": 215,
+          "ctr": 0,
+          "position": 27.4,
+          "prev_position": 33.5
+        },
+        {
+          "title": "How to remove counterfeits from Mercado Libre (2026 guide)",
+          "url": "/blog/how-to-remove-a-counterfeit-from-mercado-libre",
+          "modified": "2026-06-09",
+          "type": "new",
+          "clicks": 1,
+          "impressions": 912,
+          "ctr": 0.1,
+          "position": 7.6,
+          "prev_position": 7.7
+        },
+        {
+          "title": "How to report an X account for impersonation (2026 guide)",
+          "url": "/blog/how-to-report-a-twitter-account-for-impersonation",
+          "modified": "2026-06-09",
+          "type": "new",
+          "clicks": 0,
+          "impressions": 272,
+          "ctr": 0,
+          "position": 16.3,
+          "prev_position": 14.8
+        },
+        {
+          "title": "Redbubble copyright infringement: how to report, remove, and prevent infringing listings in 2026",
+          "url": "/blog/redbubble-copyright-infringement",
+          "modified": "2026-06-09",
+          "type": "new",
+          "clicks": 0,
+          "impressions": 201,
+          "ctr": 0,
+          "position": 12.7,
+          "prev_position": 7.2
+        },
+        {
+          "title": "How to report IP infringement on Shopee (2026 guide)",
+          "url": "/blog/shopee-report-infringement",
+          "modified": "2026-06-09",
+          "type": "new",
+          "clicks": 0,
+          "impressions": 249,
+          "ctr": 0,
+          "position": 10.3,
+          "prev_position": 9.3
+        },
+        {
+          "title": "How to stop lookalike domain attacks",
+          "url": "/blog/similar-domain-attack",
+          "modified": "2026-06-09",
+          "type": "new",
+          "clicks": 0,
+          "impressions": 185,
+          "ctr": 0,
+          "position": 50.6,
+          "prev_position": 60.3
+        },
+        {
+          "title": "Website spoofing: what it is, how it works, and how to prevent it (2026)",
+          "url": "/blog/website-spoofing",
+          "modified": "2026-06-09",
+          "type": "new",
+          "clicks": 0,
+          "impressions": 476,
+          "ctr": 0,
+          "position": 47.5,
+          "prev_position": 58.9
         }
       ]
     }
