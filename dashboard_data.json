@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-15",
+  "generated_at": "2026-06-22",
   "weekly_goal": 8,
   "monthly_goal": 32,
   "months": [
@@ -1313,7 +1313,7 @@
       "month": 6,
       "is_current": true,
       "days_total": 30,
-      "updated": 12,
+      "updated": 24,
       "weeks": [
         {
           "label": "Jun w1",
@@ -1323,12 +1323,12 @@
         {
           "label": "Jun w2",
           "posts": 8,
-          "is_current": true
+          "is_current": false
         },
         {
           "label": "Jun w3",
-          "posts": null,
-          "is_current": false
+          "posts": 12,
+          "is_current": true
         },
         {
           "label": "Jun w4",
@@ -1473,6 +1473,138 @@
           "ctr": 0,
           "position": 47.5,
           "prev_position": 58.9
+        },
+        {
+          "title": "How to report a site on Google in 2026",
+          "url": "/blog/how-to-report-a-site-on-google",
+          "modified": "2026-06-15",
+          "type": "new",
+          "clicks": 7,
+          "impressions": 2702,
+          "ctr": 0.3,
+          "position": 25.6,
+          "prev_position": 21.7
+        },
+        {
+          "title": "How to report a website to Cloudflare (2026 guide)",
+          "url": "/blog/how-to-report-a-website-to-cloudflare",
+          "modified": "2026-06-18",
+          "type": "new",
+          "clicks": 2,
+          "impressions": 239,
+          "ctr": 0.8,
+          "position": 10.4,
+          "prev_position": 15.3
+        },
+        {
+          "title": "How to report a Weebly website (2026 guide)",
+          "url": "/blog/how-to-report-a-weebly-website",
+          "modified": "2026-06-18",
+          "type": "new",
+          "clicks": 1,
+          "impressions": 178,
+          "ctr": 0.6,
+          "position": 11.0,
+          "prev_position": 9.8
+        },
+        {
+          "title": "Trademark monitoring: how to detect and stop online infringement",
+          "url": "/blog/trademark-monitoring",
+          "modified": "2026-06-19",
+          "type": "new",
+          "clicks": 1,
+          "impressions": 1119,
+          "ctr": 0.1,
+          "position": 21.4,
+          "prev_position": 31.5
+        },
+        {
+          "title": "Website impersonation: how to identify, report, and remove fake sites (2026)",
+          "url": "/blog/website-impersonation",
+          "modified": "2026-06-18",
+          "type": "new",
+          "clicks": 1,
+          "impressions": 212,
+          "ctr": 0.5,
+          "position": 18.9,
+          "prev_position": 25.3
+        },
+        {
+          "title": "Domain name trademark infringement: how to identify, prevent, and stop it (2026 guide)",
+          "url": "/blog/domain-name-trademark-infringement",
+          "modified": "2026-06-18",
+          "type": "new",
+          "clicks": 0,
+          "impressions": 182,
+          "ctr": 0,
+          "position": 34.7,
+          "prev_position": 36.7
+        },
+        {
+          "title": "How to report LinkedIn scams: fake profiles, jobs, and messages (2026)",
+          "url": "/blog/how-to-report-linkedin-scams",
+          "modified": "2026-06-18",
+          "type": "new",
+          "clicks": 0,
+          "impressions": 219,
+          "ctr": 0,
+          "position": 20.1,
+          "prev_position": 18.1
+        },
+        {
+          "title": "How to report websites selling counterfeit goods (2026 guide)",
+          "url": "/blog/how-to-report-websites-selling-counterfeit-goods",
+          "modified": "2026-06-18",
+          "type": "new",
+          "clicks": 0,
+          "impressions": 91,
+          "ctr": 0,
+          "position": 53.3,
+          "prev_position": 49.5
+        },
+        {
+          "title": "How to report phishing sites in 2026",
+          "url": "/blog/report-phishing-sites",
+          "modified": "2026-06-15",
+          "type": "new",
+          "clicks": 5,
+          "impressions": 895,
+          "ctr": 0.6,
+          "position": 45.9,
+          "prev_position": 38.6
+        },
+        {
+          "title": "Social media impersonation: what it is and how to stop it (2026)",
+          "url": "/blog/social-media-impersonation-what-is-it-how-to-stop-it",
+          "modified": "2026-06-18",
+          "type": "new",
+          "clicks": 0,
+          "impressions": 110,
+          "ctr": 0,
+          "position": 37.3,
+          "prev_position": 53.7
+        },
+        {
+          "title": "The complete social media takedown guide (2026)",
+          "url": "/blog/social-media-takedown",
+          "modified": "2026-06-15",
+          "type": "new",
+          "clicks": 0,
+          "impressions": 221,
+          "ctr": 0,
+          "position": 20.3,
+          "prev_position": 11.3
+        },
+        {
+          "title": "How to take down a website for copyright infringement (2026 guide)",
+          "url": "/blog/take-down-website-copyright-infringement",
+          "modified": "2026-06-15",
+          "type": "new",
+          "clicks": 0,
+          "impressions": 401,
+          "ctr": 0,
+          "position": 46.0,
+          "prev_position": 45.2
         }
       ]
     }
