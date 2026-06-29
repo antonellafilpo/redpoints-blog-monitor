@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-22",
+  "generated_at": "2026-06-29",
   "weekly_goal": 8,
   "monthly_goal": 32,
   "months": [
@@ -1313,7 +1313,7 @@
       "month": 6,
       "is_current": true,
       "days_total": 30,
-      "updated": 24,
+      "updated": 31,
       "weeks": [
         {
           "label": "Jun w1",
@@ -1328,12 +1328,12 @@
         {
           "label": "Jun w3",
           "posts": 12,
-          "is_current": true
+          "is_current": false
         },
         {
           "label": "Jun w4",
-          "posts": null,
-          "is_current": false
+          "posts": 7,
+          "is_current": true
         },
         {
           "label": "Jun w5",
@@ -1352,17 +1352,6 @@
           "ctr": 1.2,
           "position": 8.6,
           "prev_position": 6.9
-        },
-        {
-          "title": "7 Best Brand Protection Tools for 2026: Ranked &amp; reviewed",
-          "url": "/blog/best-brand-protection-software",
-          "modified": "2026-06-04",
-          "type": "update",
-          "clicks": 0,
-          "impressions": 2629,
-          "ctr": 0,
-          "position": 44.3,
-          "prev_position": 20.3
         },
         {
           "title": "eBay counterfeit protection: a complete 2026 guide",
@@ -1605,6 +1594,83 @@
           "ctr": 0,
           "position": 46.0,
           "prev_position": 45.2
+        },
+        {
+          "title": "How to take down a fake website: 2026 brand impersonation guide",
+          "url": "/blog/how-to-take-down-a-fake-website",
+          "modified": "2026-06-25",
+          "type": "new",
+          "clicks": 9,
+          "impressions": 1328,
+          "ctr": 0.7,
+          "position": 31.1,
+          "prev_position": 26.6
+        },
+        {
+          "title": "How to identify fake websites: 2026 brand guide",
+          "url": "/blog/how-to-identify-fake-websites",
+          "modified": "2026-06-25",
+          "type": "new",
+          "clicks": 3,
+          "impressions": 1040,
+          "ctr": 0.3,
+          "position": 56.5,
+          "prev_position": 70.7
+        },
+        {
+          "title": "7 Best Brand Protection Software for 2026: Ranked &amp; reviewed",
+          "url": "/blog/best-brand-protection-software",
+          "modified": "2026-06-22",
+          "type": "update",
+          "clicks": 2,
+          "impressions": 2489,
+          "ctr": 0.1,
+          "position": 46.0,
+          "prev_position": 42.5
+        },
+        {
+          "title": "Executive impersonation: How to prevent it",
+          "url": "/blog/executive-impersonation",
+          "modified": "2026-06-23",
+          "type": "new",
+          "clicks": 1,
+          "impressions": 125,
+          "ctr": 0.8,
+          "position": 31.7,
+          "prev_position": 43.5
+        },
+        {
+          "title": "How to report a WordPress site",
+          "url": "/blog/how-to-report-a-wordpress-site",
+          "modified": "2026-06-23",
+          "type": "new",
+          "clicks": 1,
+          "impressions": 57,
+          "ctr": 1.8,
+          "position": 13.2,
+          "prev_position": 8.9
+        },
+        {
+          "title": "Red Points vs BrandShield: Best Brand Protection platform in 2026",
+          "url": "/blog/red-points-vs-brandshield",
+          "modified": "2026-06-26",
+          "type": "new",
+          "clicks": 1,
+          "impressions": 118,
+          "ctr": 0.8,
+          "position": 7.2,
+          "prev_position": 7.1
+        },
+        {
+          "title": "How to report IP infringement on Flipkart: Brand Assure guide (2026)",
+          "url": "/blog/brand-infringement-flipkart",
+          "modified": "2026-06-25",
+          "type": "new",
+          "clicks": 2,
+          "impressions": 881,
+          "ctr": 0.2,
+          "position": 6.1,
+          "prev_position": 7.2
         }
       ]
     }
