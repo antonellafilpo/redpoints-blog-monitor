@@ -1,56 +1,8 @@
 {
-  "generated_at": "2026-06-29",
+  "generated_at": "2026-07-06",
   "weekly_goal": 8,
   "monthly_goal": 32,
   "months": [
-    {
-      "name": "January 2026",
-      "year": 2026,
-      "month": 1,
-      "is_current": false,
-      "days_total": 31,
-      "days_passed": 31,
-      "updated": 1,
-      "weeks": [
-        {
-          "label": "Jan w1",
-          "posts": 0,
-          "is_current": false
-        },
-        {
-          "label": "Jan w2",
-          "posts": 0,
-          "is_current": false
-        },
-        {
-          "label": "Jan w3",
-          "posts": 1,
-          "is_current": false
-        },
-        {
-          "label": "Jan w4",
-          "posts": 0,
-          "is_current": false
-        },
-        {
-          "label": "Jan w5",
-          "posts": 0,
-          "is_current": false
-        }
-      ],
-      "posts": [
-        {
-          "title": "How one of the biggest online graphic design platforms stopped account sharing",
-          "url": "/blog/stop-account-sharing-software-piracy",
-          "modified": "2026-01-21",
-          "clicks": 1,
-          "impressions": 23,
-          "ctr": 4.3,
-          "position": 7.5,
-          "prev_position": 0.0
-        }
-      ]
-    },
     {
       "name": "February 2026",
       "year": 2026,
@@ -1311,7 +1263,7 @@
       "name": "June 2026",
       "year": 2026,
       "month": 6,
-      "is_current": true,
+      "is_current": false,
       "days_total": 30,
       "updated": 31,
       "weeks": [
@@ -1671,6 +1623,76 @@
           "ctr": 0.2,
           "position": 6.1,
           "prev_position": 7.2
+        }
+      ]
+    },
+    {
+      "name": "July 2026",
+      "year": 2026,
+      "month": 7,
+      "is_current": true,
+      "days_total": 31,
+      "updated": 3,
+      "weeks": [
+        {
+          "label": "Jul w1",
+          "posts": null,
+          "is_current": false
+        },
+        {
+          "label": "Jul w2",
+          "posts": null,
+          "is_current": false
+        },
+        {
+          "label": "Jul w3",
+          "posts": null,
+          "is_current": false
+        },
+        {
+          "label": "Jul w4",
+          "posts": null,
+          "is_current": false
+        },
+        {
+          "label": "Jul w5",
+          "posts": null,
+          "is_current": false
+        }
+      ],
+      "posts": [
+        {
+          "title": "How to deal with patent infringement in 2026",
+          "url": "/blog/how-to-deal-with-patent-infringement",
+          "modified": "2026-07-01",
+          "type": "new",
+          "clicks": 1,
+          "impressions": 87,
+          "ctr": 1.1,
+          "position": 19.9,
+          "prev_position": 45.1
+        },
+        {
+          "title": "Utility patent vs. design patent: Key differences in 2026",
+          "url": "/blog/utility-patent-vs-design-patent",
+          "modified": "2026-07-01",
+          "type": "new",
+          "clicks": 1,
+          "impressions": 1328,
+          "ctr": 0.1,
+          "position": 24.1,
+          "prev_position": 20.1
+        },
+        {
+          "title": "How to contact a domain registrant in 2026",
+          "url": "/blog/how-to-contact-domain-registrant",
+          "modified": "2026-07-01",
+          "type": "new",
+          "clicks": 0,
+          "impressions": 365,
+          "ctr": 0,
+          "position": 38.9,
+          "prev_position": 67.4
         }
       ]
     }
