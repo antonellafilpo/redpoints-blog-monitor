@@ -71,7 +71,7 @@ ASANA_PROJECT_GID        = os.getenv("ASANA_PROJECT_GID")
 ASANA_WORKSPACE_GID      = os.getenv("ASANA_WORKSPACE_GID")
 
 SLACK_WEBHOOK_URL        = os.getenv("SLACK_WEBHOOK_URL")
-REPORT_URL               = os.getenv("REPORT_URL", "https://lwoue-collab.github.io/redpoints-blog-monitor")
+REPORT_URL               = os.getenv("REPORT_URL", "https://antonellafilpo.github.io/redpoints-blog-monitor")
 
 GMAIL_SENDER             = os.getenv("GMAIL_SENDER", "lwoue@redpoints.com")
 GMAIL_APP_PASSWORD       = os.getenv("GMAIL_APP_PASSWORD")
@@ -1110,6 +1110,15 @@ def fetch_omnia_citations(start_date: str, end_date: str) -> dict[str, int]:
                 post_url = agg.get("url", "")
                 if "/blog/" in post_url:
                     path = "/" + post_url.split("redpoints.com/")[1] if "redpoints.com/" in post_url else post_url
+                    # KEEP_POSTS and GSC paths are canonically stored WITH a
+                    # trailing slash (e.g. "/blog/foo/"). Omnia's citation
+                    # URLs come back WITHOUT one (e.g. "/blog/foo"). Without
+                    # normalizing here, every dict lookup against this data
+                    # silently misses, curr/prev_citations are always 0, and
+                    # the LLM drop check (which requires prev_citations > 0)
+                    # never runs for any post, ever.
+                    if not path.endswith("/"):
+                        path += "/"
                     result[path] = agg.get("totalCitations", 0)
             total = data.get("pagination", {}).get("totalItems", 0)
             if page * 100 >= total:
