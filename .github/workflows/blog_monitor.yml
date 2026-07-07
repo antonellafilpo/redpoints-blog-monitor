@@ -61,7 +61,7 @@ jobs:
           OMNIA_BRAND_ID:           ${{ secrets.OMNIA_BRAND_ID }}
           SEMRUSH_API_KEY:          ${{ secrets.SEMRUSH_API_KEY }}
           ANTHROPIC_API_KEY:        ${{ secrets.ANTHROPIC_API_KEY }}
-          REPORT_URL:               https://lwoue-collab.github.io/redpoints-blog-monitor
+          REPORT_URL:               https://antonellafilpo.github.io/redpoints-blog-monitor
           TRAFFIC_DROP_PCT:         "0.30"
           TRAFFIC_DROP_ABS:         "50"
           LLM_DROP_ABS:             "15"
