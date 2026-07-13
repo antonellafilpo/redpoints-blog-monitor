@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-07",
+  "generated_at": "2026-07-13",
   "weekly_goal": 8,
   "monthly_goal": 32,
   "months": [
@@ -1632,17 +1632,17 @@
       "month": 7,
       "is_current": true,
       "days_total": 31,
-      "updated": 3,
+      "updated": 16,
       "weeks": [
         {
           "label": "Jul w1",
           "posts": 3,
-          "is_current": true
+          "is_current": false
         },
         {
           "label": "Jul w2",
-          "posts": null,
-          "is_current": false
+          "posts": 13,
+          "is_current": true
         },
         {
           "label": "Jul w3",
@@ -1693,6 +1693,149 @@
           "ctr": 0,
           "position": 38.1,
           "prev_position": 67.4
+        },
+        {
+          "title": "What is game cracking and how can developers prevent it? 2026 guide",
+          "url": "/blog/what-is-game-cracking",
+          "modified": "2026-07-07",
+          "type": "new",
+          "clicks": 35,
+          "impressions": 5255,
+          "ctr": 0.7,
+          "position": 8.0,
+          "prev_position": 7.7
+        },
+        {
+          "title": "Gaming piracy: How to protect video games from piracy, copyright infringement, and cheating",
+          "url": "/blog/gaming-piracy",
+          "modified": "2026-07-08",
+          "type": "new",
+          "clicks": 4,
+          "impressions": 421,
+          "ctr": 1.0,
+          "position": 11.4,
+          "prev_position": 21.2
+        },
+        {
+          "title": "Fake designer clothes: How counterfeits damage fashion brands in 2026",
+          "url": "/blog/fake-designer-clothes",
+          "modified": "2026-07-10",
+          "type": "new",
+          "clicks": 1,
+          "impressions": 36,
+          "ctr": 2.8,
+          "position": 15.1,
+          "prev_position": 15
+        },
+        {
+          "title": "How to spot fake apps: 2026 guide for users and brands",
+          "url": "/blog/how-to-spot-fake-apps",
+          "modified": "2026-07-07",
+          "type": "new",
+          "clicks": 1,
+          "impressions": 249,
+          "ctr": 0.4,
+          "position": 13.9,
+          "prev_position": 24.2
+        },
+        {
+          "title": "The Complete Guide to Brand Protection (2026): Strategy, Costs, KPIs &amp; AI Companies",
+          "url": "/blog/the-ultimate-guide-to-brand-protection",
+          "modified": "2026-07-10",
+          "type": "update",
+          "clicks": 2,
+          "impressions": 5218,
+          "ctr": 0.0,
+          "position": 21.3,
+          "prev_position": 26.7
+        },
+        {
+          "title": "What is a mod APK and how can you prevent it?",
+          "url": "/blog/what-is-mod-apk-and-how-can-you-prevent-it",
+          "modified": "2026-07-09",
+          "type": "new",
+          "clicks": 6,
+          "impressions": 690,
+          "ctr": 0.9,
+          "position": 27.2,
+          "prev_position": 24.3
+        },
+        {
+          "title": "App store copyright infringement: how to report and remove infringing apps",
+          "url": "/blog/app-store-copyright-infringement",
+          "modified": "2026-07-10",
+          "type": "new",
+          "clicks": 0,
+          "impressions": 190,
+          "ctr": 0,
+          "position": 11.8,
+          "prev_position": 11.7
+        },
+        {
+          "title": "Counterfeiting: What It Is, Economic Impact, Consumer Psychology &amp; Why It\u2019s Illegal (2026 Guide)",
+          "url": "/blog/counterfeiting-complete-guide",
+          "modified": "2026-07-09",
+          "type": "update",
+          "clicks": 1,
+          "impressions": 1242,
+          "ctr": 0.1,
+          "position": 29.3,
+          "prev_position": 30.1
+        },
+        {
+          "title": "DMCA takedown: What it is and how to file one",
+          "url": "/blog/dmca-takedown",
+          "modified": "2026-07-10",
+          "type": "new",
+          "clicks": 0,
+          "impressions": 957,
+          "ctr": 0,
+          "position": 34.4,
+          "prev_position": 33.1
+        },
+        {
+          "title": "How to join eBay\u2019s VeRO program in 2026",
+          "url": "/blog/ebay-vero-program",
+          "modified": "2026-07-10",
+          "type": "new",
+          "clicks": 1,
+          "impressions": 462,
+          "ctr": 0.2,
+          "position": 16.2,
+          "prev_position": 17.5
+        },
+        {
+          "title": "Fashion brand protection: How to protect designs, IP, and revenue in 2026",
+          "url": "/blog/fashion-brand-protection",
+          "modified": "2026-07-10",
+          "type": "new",
+          "clicks": 0,
+          "impressions": 67,
+          "ctr": 0,
+          "position": 38.1,
+          "prev_position": 38.5
+        },
+        {
+          "title": "How to report trademark infringement on Zazzle in 2026",
+          "url": "/blog/how-to-report-a-trademark-infringement-on-zazzle",
+          "modified": "2026-07-08",
+          "type": "new",
+          "clicks": 0,
+          "impressions": 183,
+          "ctr": 0,
+          "position": 4.9,
+          "prev_position": 4.1
+        },
+        {
+          "title": "How to detect and prevent typosquatting",
+          "url": "/blog/prevent-typosquatting",
+          "modified": "2026-07-06",
+          "type": "new",
+          "clicks": 0,
+          "impressions": 217,
+          "ctr": 0,
+          "position": 20.2,
+          "prev_position": 38.9
         }
       ]
     }
