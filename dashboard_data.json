@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13",
+  "generated_at": "2026-07-20",
   "weekly_goal": 8,
   "monthly_goal": 32,
   "months": [
@@ -1632,7 +1632,7 @@
       "month": 7,
       "is_current": true,
       "days_total": 31,
-      "updated": 16,
+      "updated": 22,
       "weeks": [
         {
           "label": "Jul w1",
@@ -1642,12 +1642,12 @@
         {
           "label": "Jul w2",
           "posts": 13,
-          "is_current": true
+          "is_current": false
         },
         {
           "label": "Jul w3",
-          "posts": null,
-          "is_current": false
+          "posts": 6,
+          "is_current": true
         },
         {
           "label": "Jul w4",
@@ -1836,6 +1836,72 @@
           "ctr": 0,
           "position": 20.2,
           "prev_position": 38.9
+        },
+        {
+          "title": "Fake vs replica: the difference, the law, and how to spot both",
+          "url": "/blog/fake-vs-replica",
+          "modified": "2026-07-13",
+          "type": "new",
+          "clicks": 12,
+          "impressions": 3146,
+          "ctr": 0.4,
+          "position": 8.5,
+          "prev_position": 8.7
+        },
+        {
+          "title": "How to serve a cease and desist letter: A 2026 guide",
+          "url": "/blog/how-to-serve-a-cease-and-desist-letter",
+          "modified": "2026-07-14",
+          "type": "new",
+          "clicks": 2,
+          "impressions": 313,
+          "ctr": 0.6,
+          "position": 12.3,
+          "prev_position": 11.3
+        },
+        {
+          "title": "7 Best Brand Protection Software for 2026: Ranked &amp; reviewed",
+          "url": "/blog/best-brand-protection-software",
+          "modified": "2026-07-14",
+          "type": "update",
+          "clicks": 1,
+          "impressions": 3374,
+          "ctr": 0.0,
+          "position": 48.1,
+          "prev_position": 43.4
+        },
+        {
+          "title": "Business identity theft: What it is, warning signs, and prevention (2026)",
+          "url": "/blog/business-identity-theft",
+          "modified": "2026-07-14",
+          "type": "new",
+          "clicks": 0,
+          "impressions": 222,
+          "ctr": 0,
+          "position": 46.1,
+          "prev_position": 43.9
+        },
+        {
+          "title": "How to file a UDRP complaint: process, costs, and requirements",
+          "url": "/blog/file-udrp-complain",
+          "modified": "2026-07-13",
+          "type": "new",
+          "clicks": 1,
+          "impressions": 99,
+          "ctr": 1.0,
+          "position": 21.7,
+          "prev_position": 34.5
+        },
+        {
+          "title": "Intellectual property infringements: Types, examples, and prevention (2026)",
+          "url": "/blog/intellectual-property-infringements-types",
+          "modified": "2026-07-14",
+          "type": "new",
+          "clicks": 0,
+          "impressions": 440,
+          "ctr": 0,
+          "position": 13.0,
+          "prev_position": 12.0
         }
       ]
     }
