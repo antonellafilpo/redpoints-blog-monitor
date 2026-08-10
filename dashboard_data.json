@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03",
+  "generated_at": "2026-08-10",
   "weekly_goal": 8,
   "monthly_goal": 32,
   "months": [
@@ -2106,7 +2106,7 @@
       "month": 8,
       "is_current": true,
       "days_total": 31,
-      "updated": 12,
+      "updated": 10,
       "weeks": [
         {
           "label": "Aug w1",
@@ -2115,8 +2115,8 @@
         },
         {
           "label": "Aug w2",
-          "posts": null,
-          "is_current": false
+          "posts": 10,
+          "is_current": true
         },
         {
           "label": "Aug w3",
@@ -2134,7 +2134,118 @@
           "is_current": false
         }
       ],
-      "posts": []
+      "posts": [
+        {
+          "title": "How to take down a TikTok account (Updated 2026 steps)",
+          "url": "/blog/how-to-take-down-a-tiktok-account",
+          "modified": "2026-08-03",
+          "type": "update",
+          "clicks": 79,
+          "impressions": 3721,
+          "ctr": 2.1,
+          "position": 9.5,
+          "prev_position": 11.9
+        },
+        {
+          "title": "How to report fake TikTok accounts, impersonators, and counterfeits (2026)",
+          "url": "/blog/report-fake-accounts-on-tiktok",
+          "modified": "2026-08-04",
+          "type": "new",
+          "clicks": 37,
+          "impressions": 5176,
+          "ctr": 0.7,
+          "position": 9.5,
+          "prev_position": 10.6
+        },
+        {
+          "title": "TikTok DMCA takedown: How to remove stolen content (2026 guide)\u00a0",
+          "url": "/blog/tiktok-dmca-takedown",
+          "modified": "2026-08-03",
+          "type": "update",
+          "clicks": 24,
+          "impressions": 2609,
+          "ctr": 0.9,
+          "position": 7.4,
+          "prev_position": 5.9
+        },
+        {
+          "title": "Amazon brand protection: The complete guide to removing counterfeits and unauthorized sellers",
+          "url": "/blog/remove-counterfeit-amazon",
+          "modified": "2026-08-07",
+          "type": "update",
+          "clicks": 6,
+          "impressions": 3397,
+          "ctr": 0.2,
+          "position": 17.8,
+          "prev_position": 30.0
+        },
+        {
+          "title": "DMCA takedowns on Google and Bing: The complete filing guide (2026)",
+          "url": "/blog/dmca-takedown-google",
+          "modified": "2026-08-07",
+          "type": "update",
+          "clicks": 5,
+          "impressions": 3167,
+          "ctr": 0.2,
+          "position": 16.0,
+          "prev_position": 21.2
+        },
+        {
+          "title": "Counterfeiting: What It Is, Economic Impact, Consumer Psychology &amp; Why It\u2019s Illegal (2026 Guide)",
+          "url": "/blog/counterfeiting-complete-guide",
+          "modified": "2026-08-04",
+          "type": "new",
+          "clicks": 3,
+          "impressions": 2503,
+          "ctr": 0.1,
+          "position": 26.8,
+          "prev_position": 29.0
+        },
+        {
+          "title": "Gaming piracy: How to protect video games from piracy, copyright infringement, and cheating",
+          "url": "/blog/gaming-piracy",
+          "modified": "2026-08-04",
+          "type": "new",
+          "clicks": 4,
+          "impressions": 1958,
+          "ctr": 0.2,
+          "position": 10.3,
+          "prev_position": 14.5
+        },
+        {
+          "title": "Counterfeit removal on online marketplaces: Complete guide (2026)",
+          "url": "/blog/online-marketplaces-complete-guide",
+          "modified": "2026-08-03",
+          "type": "update",
+          "clicks": 1,
+          "impressions": 483,
+          "ctr": 0.2,
+          "position": 19.5,
+          "prev_position": 13.8
+        },
+        {
+          "title": "What is the gray market, and is it legal?",
+          "url": "/blog/what-is-grey-market",
+          "modified": "2026-08-04",
+          "type": "new",
+          "clicks": 1,
+          "impressions": 1735,
+          "ctr": 0.1,
+          "position": 22.6,
+          "prev_position": 20.0
+        },
+        {
+          "title": "How to report a copyright infringement on TikTok (2026 Guide)",
+          "url": "/blog/copyright-infringement-tiktok",
+          "modified": "2026-08-03",
+          "type": "update",
+          "clicks": 4,
+          "impressions": 2677,
+          "ctr": 0.1,
+          "position": 10.6,
+          "prev_position": 9.8
+        }
+      ]
     }
   ]
 }
