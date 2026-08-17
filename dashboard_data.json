@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-10",
+  "generated_at": "2026-08-17",
   "weekly_goal": 8,
   "monthly_goal": 32,
   "months": [
@@ -2106,7 +2106,7 @@
       "month": 8,
       "is_current": true,
       "days_total": 31,
-      "updated": 10,
+      "updated": 14,
       "weeks": [
         {
           "label": "Aug w1",
@@ -2116,12 +2116,12 @@
         {
           "label": "Aug w2",
           "posts": 10,
-          "is_current": true
+          "is_current": false
         },
         {
           "label": "Aug w3",
-          "posts": null,
-          "is_current": false
+          "posts": 4,
+          "is_current": true
         },
         {
           "label": "Aug w4",
@@ -2244,6 +2244,50 @@
           "ctr": 0.1,
           "position": 10.6,
           "prev_position": 9.8
+        },
+        {
+          "title": "Domain name trademark infringement: How to identify, prevent, and stop it (2026 guide)",
+          "url": "/blog/domain-name-trademark-infringement",
+          "modified": "2026-08-14",
+          "type": "update",
+          "clicks": 2,
+          "impressions": 1103,
+          "ctr": 0.2,
+          "position": 21.4,
+          "prev_position": 25.4
+        },
+        {
+          "title": "How to report a fake business on Google Maps in 2026",
+          "url": "/blog/how-to-report-a-fake-business-on-google-maps",
+          "modified": "2026-08-11",
+          "type": "new",
+          "clicks": 3,
+          "impressions": 870,
+          "ctr": 0.3,
+          "position": 14.1,
+          "prev_position": 15.0
+        },
+        {
+          "title": "How to report a piracy website in 2026",
+          "url": "/blog/how-to-report-a-piracy-website",
+          "modified": "2026-08-12",
+          "type": "new",
+          "clicks": 0,
+          "impressions": 234,
+          "ctr": 0,
+          "position": 50,
+          "prev_position": 43.9
+        },
+        {
+          "title": "Social media phishing: 9 threats brands should know and how to prevent them",
+          "url": "/blog/social-media-phishing",
+          "modified": "2026-08-13",
+          "type": "new",
+          "clicks": 0,
+          "impressions": 300,
+          "ctr": 0,
+          "position": 23.7,
+          "prev_position": 16.7
         }
       ]
     }
