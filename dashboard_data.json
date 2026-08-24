@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-17",
+  "generated_at": "2026-08-24",
   "weekly_goal": 8,
   "monthly_goal": 32,
   "months": [
@@ -2106,7 +2106,7 @@
       "month": 8,
       "is_current": true,
       "days_total": 31,
-      "updated": 14,
+      "updated": 19,
       "weeks": [
         {
           "label": "Aug w1",
@@ -2121,12 +2121,12 @@
         {
           "label": "Aug w3",
           "posts": 4,
-          "is_current": true
+          "is_current": false
         },
         {
           "label": "Aug w4",
-          "posts": null,
-          "is_current": false
+          "posts": 5,
+          "is_current": true
         },
         {
           "label": "Aug w5",
@@ -2288,6 +2288,61 @@
           "ctr": 0,
           "position": 23.7,
           "prev_position": 16.7
+        },
+        {
+          "title": "Parallel imports explained",
+          "url": "/blog/parallel-imports-explained",
+          "modified": "2026-08-19",
+          "type": "new",
+          "clicks": 2,
+          "impressions": 580,
+          "ctr": 0.3,
+          "position": 32.3,
+          "prev_position": 36.1
+        },
+        {
+          "title": "Google Ads trademark infringement: How to report misuse in 2026",
+          "url": "/blog/google-adwords-trademark-infringement",
+          "modified": "2026-08-19",
+          "type": "new",
+          "clicks": 0,
+          "impressions": 1028,
+          "ctr": 0,
+          "position": 35.6,
+          "prev_position": 26.7
+        },
+        {
+          "title": "How to combat AI-powered scams",
+          "url": "/blog/how-to-combat-ai-powered-scams",
+          "modified": "2026-08-20",
+          "type": "new",
+          "clicks": 0,
+          "impressions": 18,
+          "ctr": 0,
+          "position": 10.7,
+          "prev_position": 28
+        },
+        {
+          "title": "How to copyright a design for T-shirts: Copyright, trademarks, and fashion design patents",
+          "url": "/blog/how-to-copyright-a-design-for-t-shirts",
+          "modified": "2026-08-19",
+          "type": "new",
+          "clicks": 0,
+          "impressions": 375,
+          "ctr": 0,
+          "position": 44.4,
+          "prev_position": 26.0
+        },
+        {
+          "title": "Triangulation fraud: how it works and how to prevent it",
+          "url": "/blog/triangulation-fraud",
+          "modified": "2026-08-17",
+          "type": "new",
+          "clicks": 0,
+          "impressions": 36,
+          "ctr": 0,
+          "position": 34.7,
+          "prev_position": 39.8
         }
       ]
     }
