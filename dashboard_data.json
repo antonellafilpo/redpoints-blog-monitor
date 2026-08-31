@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-24",
+  "generated_at": "2026-08-31",
   "weekly_goal": 8,
   "monthly_goal": 32,
   "months": [
@@ -2106,7 +2106,7 @@
       "month": 8,
       "is_current": true,
       "days_total": 31,
-      "updated": 19,
+      "updated": 22,
       "weeks": [
         {
           "label": "Aug w1",
@@ -2126,12 +2126,12 @@
         {
           "label": "Aug w4",
           "posts": 5,
-          "is_current": true
+          "is_current": false
         },
         {
           "label": "Aug w5",
-          "posts": null,
-          "is_current": false
+          "posts": 3,
+          "is_current": true
         }
       ],
       "posts": [
@@ -2189,17 +2189,6 @@
           "ctr": 0.2,
           "position": 16.0,
           "prev_position": 21.2
-        },
-        {
-          "title": "Counterfeiting: What It Is, Economic Impact, Consumer Psychology &amp; Why It\u2019s Illegal (2026 Guide)",
-          "url": "/blog/counterfeiting-complete-guide",
-          "modified": "2026-08-04",
-          "type": "new",
-          "clicks": 3,
-          "impressions": 2503,
-          "ctr": 0.1,
-          "position": 26.8,
-          "prev_position": 29.0
         },
         {
           "title": "Gaming piracy: How to protect video games from piracy, copyright infringement, and cheating",
@@ -2343,6 +2332,39 @@
           "ctr": 0,
           "position": 34.7,
           "prev_position": 39.8
+        },
+        {
+          "title": "The best 6 YouTube MCNs in 2026 (and why they still matter)",
+          "url": "/blog/best-youtube-mcn",
+          "modified": "2026-08-26",
+          "type": "new",
+          "clicks": 6,
+          "impressions": 234,
+          "ctr": 2.6,
+          "position": 7.4,
+          "prev_position": 0.0
+        },
+        {
+          "title": "Fake vs replica: the difference, the law, and how to spot both",
+          "url": "/blog/fake-vs-replica",
+          "modified": "2026-08-27",
+          "type": "update",
+          "clicks": 8,
+          "impressions": 3148,
+          "ctr": 0.3,
+          "position": 8.5,
+          "prev_position": 8.0
+        },
+        {
+          "title": "Counterfeiting: What It Is, Economic Impact, Consumer Psychology &amp; Why It\u2019s Illegal (2026 Guide)",
+          "url": "/blog/counterfeiting-complete-guide",
+          "modified": "2026-08-27",
+          "type": "update",
+          "clicks": 4,
+          "impressions": 3145,
+          "ctr": 0.1,
+          "position": 24.7,
+          "prev_position": 28.5
         }
       ]
     }
