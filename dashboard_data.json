@@ -1,156 +1,8 @@
 {
-  "generated_at": "2026-08-31",
+  "generated_at": "2026-09-07",
   "weekly_goal": 8,
   "monthly_goal": 32,
   "months": [
-    {
-      "name": "March 2026",
-      "year": 2026,
-      "month": 3,
-      "is_current": false,
-      "days_total": 31,
-      "days_passed": 31,
-      "updated": 11,
-      "weeks": [
-        {
-          "label": "Mar w1",
-          "posts": 1,
-          "is_current": false
-        },
-        {
-          "label": "Mar w2",
-          "posts": 2,
-          "is_current": false
-        },
-        {
-          "label": "Mar w3",
-          "posts": 3,
-          "is_current": false
-        },
-        {
-          "label": "Mar w4",
-          "posts": 3,
-          "is_current": false
-        },
-        {
-          "label": "Mar w5",
-          "posts": 2,
-          "is_current": false
-        }
-      ],
-      "posts": [
-        {
-          "title": "How to take down a fake website before it destroys your brand",
-          "url": "/blog/how-to-take-down-a-fake-website",
-          "modified": "2026-03-27",
-          "clicks": 10,
-          "impressions": 3040,
-          "ctr": 0.3,
-          "position": 30.7,
-          "prev_position": 19.4
-        },
-        {
-          "title": "The Complete Guide to Brand Protection (2026): Strategy, Costs, KPIs &amp; AI Companies",
-          "url": "/blog/the-ultimate-guide-to-brand-protection",
-          "modified": "2026-03-19",
-          "clicks": 7,
-          "impressions": 12344,
-          "ctr": 0.1,
-          "position": 32.9,
-          "prev_position": 33.5
-        },
-        {
-          "title": "Red Points vs BrandShield: Best Brand Protection platform in 2026",
-          "url": "/blog/red-points-vs-brandshield",
-          "modified": "2026-03-10",
-          "clicks": 3,
-          "impressions": 5435,
-          "ctr": 0.1,
-          "position": 6.1,
-          "prev_position": 0.0
-        },
-        {
-          "title": "Red Points vs. Corsearch: Best Brand Protection Platform in 2026",
-          "url": "/blog/red-points-vs-corsearch",
-          "modified": "2026-03-10",
-          "clicks": 3,
-          "impressions": 7567,
-          "ctr": 0.0,
-          "position": 4.8,
-          "prev_position": 0.0
-        },
-        {
-          "title": "12 Brand Protection strategies for 2026 (with real-world examples)",
-          "url": "/blog/brand-protection-strategies-for-businesses-of-all-sizes",
-          "modified": "2026-03-23",
-          "clicks": 1,
-          "impressions": 2797,
-          "ctr": 0.0,
-          "position": 37.2,
-          "prev_position": 24.2
-        },
-        {
-          "title": "Brand identity protection: The complete legal guide to protect your logo, name &amp; business idea (2026)",
-          "url": "/blog/how-to-legally-protect-a-business-idea",
-          "modified": "2026-03-30",
-          "clicks": 1,
-          "impressions": 1165,
-          "ctr": 0.1,
-          "position": 55.9,
-          "prev_position": 41.5
-        },
-        {
-          "title": "Counterfeit removal on online marketplaces: Complete guide (2026)",
-          "url": "/blog/online-marketplaces-complete-guide",
-          "modified": "2026-03-31",
-          "clicks": 1,
-          "impressions": 24,
-          "ctr": 4.2,
-          "position": 5.5,
-          "prev_position": 0.0
-        },
-        {
-          "title": "Red Points vs OpSec: Best Brand Protection platform in 2026",
-          "url": "/blog/red-points-vs-opsec",
-          "modified": "2026-03-18",
-          "clicks": 1,
-          "impressions": 1001,
-          "ctr": 0.1,
-          "position": 5.9,
-          "prev_position": 0.0
-        },
-        {
-          "title": "How to report &#038; remove fake ads impersonating your brand (2026 Guide)",
-          "url": "/blog/report-fake-ads-complete-guide",
-          "modified": "2026-03-20",
-          "clicks": 1,
-          "impressions": 849,
-          "ctr": 0.1,
-          "position": 9.1,
-          "prev_position": 0.0
-        },
-        {
-          "title": "BII: Online &#038; offline anti-counterfeiting investigations",
-          "url": "/blog/bii-online-offline-anti-counterfeiting-investigations",
-          "modified": "2026-03-05",
-          "clicks": 0,
-          "impressions": 32,
-          "ctr": 0,
-          "position": 17.4,
-          "prev_position": 26.8
-        },
-        {
-          "title": "Chinese Marketplace Brand Protection: Complete Guide to Removing Counterfeits (2026)",
-          "url": "/blog/chinese-marketplaces-complete-guide",
-          "modified": "2026-03-27",
-          "clicks": 0,
-          "impressions": 75,
-          "ctr": 0,
-          "position": 3.8,
-          "prev_position": 0.0
-        }
-      ]
-    },
     {
       "name": "April 2026",
       "year": 2026,
@@ -2104,7 +1956,7 @@
       "name": "August 2026",
       "year": 2026,
       "month": 8,
-      "is_current": true,
+      "is_current": false,
       "days_total": 31,
       "updated": 22,
       "weeks": [
@@ -2365,6 +2217,76 @@
           "ctr": 0.1,
           "position": 24.7,
           "prev_position": 28.5
+        }
+      ]
+    },
+    {
+      "name": "September 2026",
+      "year": 2026,
+      "month": 9,
+      "is_current": true,
+      "days_total": 30,
+      "updated": 3,
+      "weeks": [
+        {
+          "label": "Sep w1",
+          "posts": null,
+          "is_current": false
+        },
+        {
+          "label": "Sep w2",
+          "posts": null,
+          "is_current": false
+        },
+        {
+          "label": "Sep w3",
+          "posts": null,
+          "is_current": false
+        },
+        {
+          "label": "Sep w4",
+          "posts": null,
+          "is_current": false
+        },
+        {
+          "label": "Sep w5",
+          "posts": null,
+          "is_current": false
+        }
+      ],
+      "posts": [
+        {
+          "title": "How to report phishing sites in 2026",
+          "url": "/blog/report-phishing-sites",
+          "modified": "2026-09-04",
+          "type": "update",
+          "clicks": 3,
+          "impressions": 1233,
+          "ctr": 0.2,
+          "position": 38.8,
+          "prev_position": 24.7
+        },
+        {
+          "title": "The Complete Guide to Brand Protection (2026): Strategy, Costs, KPIs &amp; AI Companies",
+          "url": "/blog/the-ultimate-guide-to-brand-protection",
+          "modified": "2026-09-04",
+          "type": "update",
+          "clicks": 1,
+          "impressions": 4651,
+          "ctr": 0.0,
+          "position": 16.2,
+          "prev_position": 22.6
+        },
+        {
+          "title": "How to file a UDRP complaint: process, costs, and requirements",
+          "url": "/blog/file-udrp-complain",
+          "modified": "2026-09-03",
+          "type": "update",
+          "clicks": 0,
+          "impressions": 284,
+          "ctr": 0,
+          "position": 35.9,
+          "prev_position": 28.1
         }
       ]
     }
