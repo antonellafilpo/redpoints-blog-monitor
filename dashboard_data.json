@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-07",
+  "generated_at": "2026-09-14",
   "weekly_goal": 8,
   "monthly_goal": 32,
   "months": [
@@ -2226,7 +2226,7 @@
       "month": 9,
       "is_current": true,
       "days_total": 30,
-      "updated": 3,
+      "updated": 1,
       "weeks": [
         {
           "label": "Sep w1",
@@ -2235,8 +2235,8 @@
         },
         {
           "label": "Sep w2",
-          "posts": null,
-          "is_current": false
+          "posts": 1,
+          "is_current": true
         },
         {
           "label": "Sep w3",
@@ -2287,6 +2287,17 @@
           "ctr": 0,
           "position": 35.9,
           "prev_position": 28.1
+        },
+        {
+          "title": "Patent protection: How to protect and enforce patents in 2026",
+          "url": "/blog/patent-protection",
+          "modified": "2026-09-10",
+          "type": "new",
+          "clicks": 0,
+          "impressions": 97,
+          "ctr": 0,
+          "position": 55.1,
+          "prev_position": 61.3
         }
       ]
     }
