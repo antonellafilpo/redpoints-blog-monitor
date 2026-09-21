@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-14",
+  "generated_at": "2026-09-21",
   "weekly_goal": 8,
   "monthly_goal": 32,
   "months": [
@@ -2226,7 +2226,7 @@
       "month": 9,
       "is_current": true,
       "days_total": 30,
-      "updated": 1,
+      "updated": 5,
       "weeks": [
         {
           "label": "Sep w1",
@@ -2236,12 +2236,12 @@
         {
           "label": "Sep w2",
           "posts": 1,
-          "is_current": true
+          "is_current": false
         },
         {
           "label": "Sep w3",
-          "posts": null,
-          "is_current": false
+          "posts": 4,
+          "is_current": true
         },
         {
           "label": "Sep w4",
@@ -2298,6 +2298,50 @@
           "ctr": 0,
           "position": 55.1,
           "prev_position": 61.3
+        },
+        {
+          "title": "Alibaba IP Protection Platform: How it works in 2026",
+          "url": "/blog/alibaba-ip-protection",
+          "modified": "2026-09-17",
+          "type": "new",
+          "clicks": 0,
+          "impressions": 570,
+          "ctr": 0,
+          "position": 7.9,
+          "prev_position": 10.2
+        },
+        {
+          "title": "Impact of piracy: Business costs, risks and prevention in 2026",
+          "url": "/blog/impact-of-piracy",
+          "modified": "2026-09-16",
+          "type": "new",
+          "clicks": 0,
+          "impressions": 23,
+          "ctr": 0,
+          "position": 65.7,
+          "prev_position": 39.5
+        },
+        {
+          "title": "Intellectual property dispute: Types, damages and litigation guide",
+          "url": "/blog/intellectual-property-dispute",
+          "modified": "2026-09-16",
+          "type": "new",
+          "clicks": 0,
+          "impressions": 149,
+          "ctr": 0,
+          "position": 41.9,
+          "prev_position": 54.3
+        },
+        {
+          "title": "7 steps to prevent password sharing on digital platforms",
+          "url": "/blog/prevent-password-sharing",
+          "modified": "2026-09-17",
+          "type": "new",
+          "clicks": 0,
+          "impressions": 10,
+          "ctr": 0,
+          "position": 31.9,
+          "prev_position": 42.4
         }
       ]
     }
